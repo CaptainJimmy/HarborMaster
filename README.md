@@ -1,0 +1,2 @@
+# OldAndBusted
+Concept: Small passenger cruising vessel management  There is a possible need in the small passenger vessel industry for management of the vessel(s) in the fleet, consumables such as engine oil, fuel levels, alcohol and beverages, as well as trip manifest logging. Ideally there will be three different consoles, one for captain, one for bartender, and one for manager.  The consoles will be mobile-friendly, and mobile-first. They each perform different functions.
