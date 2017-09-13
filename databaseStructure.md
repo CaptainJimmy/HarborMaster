@@ -83,4 +83,37 @@ checkout reports
 	liberty
 
 vessel manifests
-	records
+	active 
+		//When the trip returns, the captain selects the active trip, adds the arrival information, and submits. 
+		//The Record then gets submitted to the completed folder and deleted from active.
+		
+		active trips go here
+			captain
+			trip
+			time scheduled
+			passenger count
+			crew count
+			crew names
+			date
+			time submitted
+			time actually departed
+			scheduled duration
+
+	completed
+		//records get dumped here
+		//sample record
+		recordid?
+			captain
+			trip
+			time scheduled
+			passenger count
+			crew count
+			crew names
+			date
+			time submitted
+			time actually departed
+			scheduled duration
+			time returned
+			time return submitted
+
+
