@@ -1,6 +1,110 @@
 # Database Structure
 Here's the idea so far:
 
+
+# Here is a DB Export in JSON in case you need it:
+
+{
+  "checkinReports" : {
+    "vessel" : {
+      "liberty" : {
+        "records" : "go here"
+      },
+      "patriot" : {
+        "records" : "go here"
+      }
+    }
+  },
+  "checkoutReports" : {
+    "vessel" : {
+      "liberty" : {
+        "test" : "test"
+      },
+      "patriot" : {
+        "test" : "test"
+      }
+    }
+  },
+  "fuelingReports" : {
+    "liberty" : {
+      "records" : "go here"
+    },
+    "patriot" : {
+      "records" : "go here"
+    }
+  },
+  "liberty" : {
+    "fuel" : {
+      "currentFuel" : {
+        "aft" : 35,
+        "fwd" : 11
+      },
+      "lastMeasured" : {
+        "captainName" : "Jim",
+        "date" : "9/10/2017",
+        "level" : {
+          "aft" : 35,
+          "fwd" : 11
+        }
+      }
+    },
+    "lastWashed" : {
+      "captainName" : "Walt",
+      "date" : "9/08/2017"
+    },
+    "oil" : {
+      "amountOnBoard" : 20,
+      "lastAdded" : {
+        "captainName" : "Walt",
+        "date" : "9/07/2017"
+      }
+    }
+  },
+  "patriot" : {
+    "fuel" : {
+      "currentFuel" : {
+        "aft" : 5,
+        "fwd" : 34
+      },
+      "lastMeasured" : {
+        "captainName" : "Harry",
+        "date" : "9/09/2017",
+        "level" : {
+          "aft" : 34,
+          "fwd" : 5
+        }
+      },
+      "oil" : {
+        "amountOnBoard" : 20,
+        "lastAdded" : {
+          "captainName" : "Jim",
+          "date" : "9/08/2017"
+        }
+      }
+    },
+    "lastWashed" : {
+      "captainName" : "Jim",
+      "date" : "9/09/2017"
+    }
+  },
+  "vesselManifests" : {
+    "liberty" : {
+      "records" : "go here"
+    },
+    "patriot" : {
+      "records" : "go here"
+    }
+  },
+  "vesselWashing" : {
+    "liberty" : {
+      "record" : "goes here"
+    },
+    "patriot" : {
+      "record" : "goes here"
+    }
+  }
+}
+
 # These are NOT the actual names of the records, more of a whiteboarding of them
 
 // Persistent DB Records.  These are the items that matter because the data is current, and updated whenever a file is submitted
