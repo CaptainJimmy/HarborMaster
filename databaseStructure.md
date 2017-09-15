@@ -5,6 +5,9 @@ Here's the idea so far:
 # Here is a DB Export in JSON in case you need it:
 
 {
+  "activeTrips" : {
+    "tripInfo" : "goes here"
+  },
   "checkinReports" : {
     "vessel" : {
       "liberty" : {
@@ -34,10 +37,23 @@ Here's the idea so far:
     }
   },
   "liberty" : {
+    "blackTank" : {
+      "currentLevel" : 4,
+      "lastPumpedOut" : {
+        "captainName" : "Walt",
+        "date" : "9/04/2017"
+      }
+    },
     "fuel" : {
       "currentFuel" : {
         "aft" : 35,
         "fwd" : 11
+      },
+      "lastFueled" : {
+        "aft" : 75,
+        "captainName" : "Jim",
+        "date" : "9/04/2017",
+        "fwd" : 10
       },
       "lastMeasured" : {
         "captainName" : "Jim",
@@ -56,15 +72,32 @@ Here's the idea so far:
       "amountOnBoard" : 20,
       "lastAdded" : {
         "captainName" : "Walt",
-        "date" : "9/07/2017"
+        "date" : "9/07/2017",
+        "howMuch" : 3
       }
     }
   },
+  "loggedIn" : {
+    "loginTokens" : "go here"
+  },
   "patriot" : {
+    "blackTank" : {
+      "currentLevel" : 5,
+      "lastPumpedOut" : {
+        "captainName" : "Walt",
+        "date" : "9/04/2017"
+      }
+    },
     "fuel" : {
       "currentFuel" : {
         "aft" : 5,
         "fwd" : 34
+      },
+      "lastFueled" : {
+        "aftTank" : 60,
+        "captainName" : "Harry",
+        "date" : "9/02/2017",
+        "fwdTank" : 10
       },
       "lastMeasured" : {
         "captainName" : "Harry",
@@ -85,6 +118,22 @@ Here's the idea so far:
     "lastWashed" : {
       "captainName" : "Jim",
       "date" : "9/09/2017"
+    },
+    "oil" : {
+      "amountOnBoard" : 20,
+      "lastAdded" : {
+        "captainName" : "Jim",
+        "date" : "9/04/2017",
+        "howMuch" : 2
+      }
+    }
+  },
+  "pumpOutReports" : {
+    "liberty" : {
+      "records" : "go here"
+    },
+    "patriot" : {
+      "records" : "go here"
     }
   },
   "vesselManifests" : {
@@ -104,6 +153,8 @@ Here's the idea so far:
     }
   }
 }
+
+
 
 # These are NOT the actual names of the records, more of a whiteboarding of them
 
@@ -131,14 +182,18 @@ vessels
 			last time fueled
 				captain
 				date
-				gallons taken
-					fwd
-					aft 
+				fwd
+				aft 
 		oil
 			amount on board
 			last added
 				captainName
 				date
+    black tank
+      last pumped out
+        captainName
+        date
+
 
 	liberty
 		lastWashed
@@ -171,6 +226,7 @@ vessels
 				date
 
 
+
 //These hold the whole records upon submit for historical purposes
 
 checkin reports
@@ -182,9 +238,10 @@ checkin reports
 
 checkout reports
 	patriot
-
+    records
 
 	liberty
+    records
 
 vessel manifests
 	active 
@@ -221,3 +278,11 @@ vessel manifests
 			time return submitted
 
 
+pumpOutRecords
+  liberty
+    records go here
+
+  patriot
+    records go here
+
+  

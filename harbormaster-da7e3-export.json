@@ -1,4 +1,7 @@
 {
+  "activeTrips" : {
+    "tripInfo" : "goes here"
+  },
   "checkinReports" : {
     "vessel" : {
       "liberty" : {
@@ -28,10 +31,23 @@
     }
   },
   "liberty" : {
+    "blackTank" : {
+      "currentLevel" : 4,
+      "lastPumpedOut" : {
+        "captainName" : "Walt",
+        "date" : "9/04/2017"
+      }
+    },
     "fuel" : {
       "currentFuel" : {
         "aft" : 35,
         "fwd" : 11
+      },
+      "lastFueled" : {
+        "aft" : 75,
+        "captainName" : "Jim",
+        "date" : "9/04/2017",
+        "fwd" : 10
       },
       "lastMeasured" : {
         "captainName" : "Jim",
@@ -50,15 +66,32 @@
       "amountOnBoard" : 20,
       "lastAdded" : {
         "captainName" : "Walt",
-        "date" : "9/07/2017"
+        "date" : "9/07/2017",
+        "howMuch" : 3
       }
     }
   },
+  "loggedIn" : {
+    "loginTokens" : "go here"
+  },
   "patriot" : {
+    "blackTank" : {
+      "currentLevel" : 5,
+      "lastPumpedOut" : {
+        "captainName" : "Walt",
+        "date" : "9/04/2017"
+      }
+    },
     "fuel" : {
       "currentFuel" : {
         "aft" : 5,
         "fwd" : 34
+      },
+      "lastFueled" : {
+        "aftTank" : 60,
+        "captainName" : "Harry",
+        "date" : "9/02/2017",
+        "fwdTank" : 10
       },
       "lastMeasured" : {
         "captainName" : "Harry",
@@ -79,6 +112,22 @@
     "lastWashed" : {
       "captainName" : "Jim",
       "date" : "9/09/2017"
+    },
+    "oil" : {
+      "amountOnBoard" : 20,
+      "lastAdded" : {
+        "captainName" : "Jim",
+        "date" : "9/04/2017",
+        "howMuch" : 2
+      }
+    }
+  },
+  "pumpOutReports" : {
+    "liberty" : {
+      "records" : "go here"
+    },
+    "patriot" : {
+      "records" : "go here"
     }
   },
   "vesselManifests" : {
