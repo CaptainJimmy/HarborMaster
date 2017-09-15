@@ -2,6 +2,7 @@
  
 [X]Creation of Login Page  --william
 []Frontend Leading To Captain’s Role Page or Manager Reports -- Ruthie
+[]Captains Page cleanup (either hide, modals, etc, to hide forms that are not in use)
 []Google Authentication for firebase and gmail -- Ruthie/William
 [X]Creation of database structure -- James
 []Creation of ajax queries and JSON data parsing --William
