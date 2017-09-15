@@ -5,8 +5,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harbor Master</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
+<!--     <link rel="stylesheet" href="css/foundation.css">
+ -->    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
   </head>
   <body>
@@ -35,7 +38,7 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Which vessel are you checking into for the day?
-                  <select>
+                  <select id="vessel-name-check-in">
                     <option placeholder="select"></option>
                     <option value="Liberty">Liberty</option>
                     <option value="Patriot">Patriot</option>   
@@ -46,10 +49,10 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Engine Hours</label>
-                <input type="text" placeholder="small-12.cell" />
+                <input type="text" id="engine-hours-in" placeholder="small-12.cell" />
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
+            <div class="grid-x grid-padding-x"> 
               <div class="small-12 cell">
                 <label>Is the vessel clean and orderly from the previous day?</label>
                 <input type="radio" name="clean" value="yes" id="cleanYes"><label for="cleanYes">Yes</label>
@@ -63,13 +66,13 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Fwd Tank Fuel Level in Inches</label>
-                <input type="text" placeholder="small-12.cell" />
+                <input type="text" id="fwd-fuel-in" placeholder="small-12.cell" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
-                <label>After Tank Fuel Level in Inches</label>
-                <input type="text" placeholder="small-12.cell" />
+                <label>Aft Tank Fuel Level in Inches</label>
+                <input type="text" id="aft-fuel-in" placeholder="small-12.cell" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
@@ -97,7 +100,7 @@
                 <input type="radio" name="belt" value="no" id="beltNo"><label for="beltNo">No</label>
                 <div id="beltAdd" class="small-12 cell hide">
                   <label>Comments</label>
-                  <textarea placeholder="small-12.cell"></textarea>
+                  <textarea id="placeholder="small-12.cell"></textarea>
                 </div>
               </div>
             </div>
@@ -114,7 +117,7 @@
                     <label>How much oil did you add, in quarts?</label>
                     <input type="text" placeholder="small-12.cell" />
                     <label>Approximately how much oil is left on board now?</label>
-                    <input type="text" placeholder="small-12.cell" />
+                    <input type="text" id="oil-on-board" placeholder="small-12.cell" />
                   </div>
                   <div id="noOilAdd" class="small-12 cell hide">
                     <label>Why not?</label>
@@ -126,7 +129,7 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Shine a flashlight at the black water tank. <br/> On a scale of 1-10, how full is it?
-                  <select>
+                  <select id="black-water-in">
                     <option placeholder="select"></option>
                     <option value="1">1</option>
                     <option value="2">2</option> 
@@ -164,7 +167,7 @@
             </div>
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
-                <a href="#" class="expanded button">Submit</a>
+                <a href="#" id="captain-check-in-submit" class="expanded button">Submit</a>
               </div>
             </div>
           </form>
@@ -181,7 +184,7 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Which vessel are you checking out of for the day?
-                  <select>
+                  <select id="vessel-name-out">
                     <option placeholder="select"></option>
                     <option value="Liberty">Liberty</option>
                     <option value="Patriot">Patriot</option>
@@ -192,7 +195,7 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Engine Hours</label>
-                <input type="text" placeholder="small-12.cell" />
+                <input type="text" id="engine-hours-out" placeholder="small-12.cell" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
@@ -293,7 +296,7 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Which vessel are you checking out of for the day?
-                  <select>
+                  <select id="vessel-check-out">
                     <option placeholder="select"></option>
                     <option value="Liberty">Liberty</option>
                     <option value="Patriot">Patriot</option>
@@ -332,13 +335,13 @@
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Scheduled Departure Time</label>
-                <input type="text" placeholder="small-12.cell" />
+                <input type="time" id="scheduled-departure" class="form-control" placeholder="small-12.cell" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Scheduled Duration Time</label>
-                <input type="text" placeholder="small-12.cell" />
+                <input type="time" id="scheduled-duration" class="form-control" placeholder="small-12.cell" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
@@ -348,33 +351,31 @@
                 <input type="radio" name="ontime" value="no" id="onTimeNo"><label for="onTimeNo">No</label>
                 <div id="ontimeAdd" class="small-12 cell hide">
                   <label>Actual Departure Time</label>
-                  <input type="text" placeholder="small-12.cell" />
+                  <input type="time" id="actual-departure" class="form-control" placeholder="small-12.cell" />
                 </div>
               </div>
             </div>
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Number of passengers on board</label>
-                <input type="number" placeholder="small-12.cell" />
+                <input type="number" id="passenger-count" placeholder="small-12.cell" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Number of crew members on board</label>
-                <input type="number" placeholder="small-12.cell" />
+                <input type="number" id="crew-count" placeholder="small-12.cell" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
                 <label>Names of crew members on board</label>
-                <input type="text" placeholder="captain" />
-                <input type="text" placeholder="bartender" />
-                <input type="text" placeholder="mate" />
+                <input type="text" id="crew-names" placeholder="Crew Names" />
               </div>
             </div>
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
-                <a href="#" class="expanded button">Submit</a>
+                <a href="#" id="manifest-submit" class="expanded button">Submit</a>
               </div>
             </div>
             </form>
@@ -387,6 +388,8 @@
           <div class="callout">
             <h3>Captain's Log</h3>
             <h4>Trip Manifest Log - Arrival</h4>
+            <!-- WOuld it be best to pull the outstanding arrivals out of the active trips ?  Jim -->
+
             <form id="tripManifestReturn">
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
@@ -428,8 +431,12 @@
       
 
     <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.1/what-input.js" type="text/javascript" charset="utf-8" async defer></script> 
+<!--     <script src="js/vendor/what-input.js"></script> -->
+<!--     <script src="js/vendor/foundation.js"></script> -->
+<script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="js/app.js"></script>
   </body>
 </html>
