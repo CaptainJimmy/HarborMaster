@@ -20,20 +20,21 @@
           <header class="sticky-shrinknav-header">
             <h1 class="sticky-shrinknav-header-title">Harbor Master</h1>
             <ul class="menu align-center sticky-shrinknav-menu">
-              <li><a href="#">Captain</a></li>
+              <li><a href="captain.html">Captain</a></li>
               <!--li><a href="#">Bartender</a></li-->
-              <li><a href="#">Manager</a></li>
+              <li><a href="manager.html">Manager</a></li>
             </ul>
           </header>
         </div>
       </div>
-      
+
+      <!-- Check In -->
       <div class="grid-x grid-padding-x">
         <div class="small-12 cell">
           <div class="callout">
             <h3>Captain's Log</h3>
             <h4>Check In</h4>
-            <form id="captainCheckIn">
+            <form id="captainCheckIn" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Which vessel are you checking into for the day?
@@ -173,12 +174,14 @@
           </div>
         </div>
       </div>
+
+      <!-- Checkout -->
       <div class="grid-x grid-padding-x">
         <div class="small-12 cell">
           <div class="callout">
             <h3>Captain's Log</h3>
             <h4>Check Out</h4>
-            <form id="captainCheckOut">
+            <form id="captainCheckOut" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Which vessel are you checking out of for the day?
@@ -284,12 +287,14 @@
           </div>
         </div>
       </div>
+
+      <!-- Trip Manifest -->
       <div class="grid-x grid-padding-x">
         <div class="small-12 cell">
           <div class="callout">
             <h3>Captain's Log</h3>
             <h4>Trip Manifest Log</h4>
-            <form id="tripManifest">
+            <form id="tripManifest" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Which vessel are you checking out of for the day?
@@ -379,13 +384,15 @@
           </div>
         </div>
       </div>
+
+      <!-- Trip Manifest Arrival -->
       <div class="grid-x grid-padding-x">
         <div class="small-12 cell">
           <div class="callout">
             <h3>Captain's Log</h3>
             <h4>Trip Manifest Log - Arrival</h4>
-            <!-- WOuld it be best to pull the outstanding arrivals out of the active trips ?  Jim -->
-            <form id="tripManifestReturn">
+            <!-- Would it be best to pull the outstanding arrivals out of the active trips ?  Jim -->
+            <form id="tripManifestReturn" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Scheduled Arrival Time</label>
