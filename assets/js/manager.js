@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 
             $('#patriot-status').on('click', function() {
-                database.ref('/patriot').once("value").then(function(snapshot) {
+                database.ref('/persistentData/patriot').once("value").then(function(snapshot) {
                     //pull info from firebase
                     var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
                     var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
             //liberty status report
             $('#liberty-status').on('click', function() {
-                database.ref('/liberty').once("value").then(function(snapshot) {
+                database.ref('/persistentData/liberty').once("value").then(function(snapshot) {
                     //pull info from firebase
                     var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
                     var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
@@ -126,7 +126,7 @@ $(document).ready(function() {
                         database.ref('/activeTrips').once("value").then(function(snapshot) {
                             var tripDiv = $('#active-trips');
                             tripDiv.empty();
-                            tripDiv.html($('<tr>'));
+                            tripDiv.html($('<tr>').addClass("reportInfo"));
                             tripDiv.append(
                                 $('<th>').text('Trip Name'),
                                 $('<th>').text('Vessel'),
