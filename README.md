@@ -1,6 +1,8 @@
 # Harbor Master
 
-_**Concept:**_ Small passenger cruising vessel management  There is a possible need in the small passenger vessel industry for management of the vessel(s) in the fleet, consumables such as engine oil, fuel levels, alcohol and beverages, as well as trip manifest logging. Ideally there will be three different consoles, one for captain, one for bartender, and one for manager.  The consoles will be mobile-friendly, and mobile-first. They each perform different functions.</p>
+_**Concept:**_ There is a possible need in the small passenger vessel industry for management of the vessel(s) in the fleet, consumables such as engine oil, fuel levels, trip manifest logging. alcohol and beverages, as well as  alcohol, beverages, consumable supplies on hand. Ideally there will be three different consoles, one for captain, one for bartender, and one for manager.  The consoles will be mobile-friendly, and mobile-first. They each perform different functions, but they are easily done with the users phone, as they are written with Mobile First idealogy.
+
+Each function will store the data in a database (google firebase) as a record, and kept forever. The program will then update certain important parameters in tables that are only relevant at the current time (current fuel levels, engine hours, black water tank levels, etc), allowing the manager to easily within a couple of clicks find out exactly what he needs to know - such as when the last time the vessel was pumped out, how much ice is in the freezer, etc..
 
 ## Captain's Console:
 Captain Logs in and is presented with a menu of tasks
