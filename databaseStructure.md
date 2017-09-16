@@ -6,7 +6,18 @@ Here's the idea so far:
 
 {
   "activeTrips" : {
-    "tripInfo" : "goes here"
+    "Sample Trip" : {
+      "captainName" : "Harry",
+      "crewCount" : 2,
+      "crewNames" : "Jim Chandra",
+      "departedTime" : "15:02",
+      "passengerCount" : 20,
+      "scheduledReturn" : "16:00",
+      "scheduledTime" : "15:00",
+      "timeSubmitted" : "15:05",
+      "tripName" : "Sample Cruise",
+      "vessel" : "Patriot"
+    }
   },
   "checkinReports" : {
     "vessel" : {
@@ -36,96 +47,86 @@ Here's the idea so far:
       "records" : "go here"
     }
   },
-  "liberty" : {
-    "blackTank" : {
-      "currentLevel" : 4,
-      "lastPumpedOut" : {
-        "captainName" : "Walt",
-        "date" : "9/04/2017"
-      }
-    },
-    "fuel" : {
-      "currentFuel" : {
-        "aft" : 35,
-        "fwd" : 11
-      },
-      "lastFueled" : {
-        "aft" : 75,
-        "captainName" : "Jim",
-        "date" : "9/04/2017",
-        "fwd" : 10
-      },
-      "lastMeasured" : {
-        "captainName" : "Jim",
-        "date" : "9/10/2017",
-        "level" : {
-          "aft" : 35,
-          "fwd" : 11
-        }
-      }
-    },
-    "lastWashed" : {
-      "captainName" : "Walt",
-      "date" : "9/08/2017"
-    },
-    "oil" : {
-      "amountOnBoard" : 20,
-      "lastAdded" : {
-        "captainName" : "Walt",
-        "date" : "9/07/2017",
-        "howMuch" : 3
-      }
-    }
-  },
   "loggedIn" : {
     "loginTokens" : "go here"
   },
-  "patriot" : {
-    "blackTank" : {
-      "currentLevel" : 5,
-      "lastPumpedOut" : {
-        "captainName" : "Walt",
-        "date" : "9/04/2017"
-      }
-    },
-    "fuel" : {
-      "currentFuel" : {
-        "aft" : 5,
-        "fwd" : 34
-      },
-      "lastFueled" : {
-        "aftTank" : 60,
-        "captainName" : "Harry",
-        "date" : "9/02/2017",
-        "fwdTank" : 10
-      },
-      "lastMeasured" : {
-        "captainName" : "Harry",
-        "date" : "9/09/2017",
-        "level" : {
-          "aft" : 34,
-          "fwd" : 5
+  "persistentData" : {
+    "liberty" : {
+      "blackTank" : {
+        "currentLevel" : 5,
+        "lastPumpedOut" : {
+          "captainName" : "Walt",
+          "date" : "9/04/2017"
         }
+      },
+      "fuel" : {
+        "currentFuel" : {
+          "aft" : 35,
+          "fwd" : 11,
+          "tankRunningOn" : "aft"
+        },
+        "lastFueled" : {
+          "aftTankGals" : 60,
+          "captainName" : "Harry",
+          "date" : "9/04/2017",
+          "fwdTankGals" : 10
+        },
+        "lastMeasured" : {
+          "captainName" : "Jim",
+          "date" : "9/10/2017"
+        }
+      },
+      "lastWashed" : {
+        "captainName" : "Walt",
+        "date" : "9/08/2017"
       },
       "oil" : {
         "amountOnBoard" : 20,
         "lastAdded" : {
-          "captainName" : "Jim",
-          "date" : "9/08/2017"
+          "captainName" : "walt",
+          "date" : "9/07/2017",
+          "howMuch" : 3
         }
       }
     },
-    "lastWashed" : {
-      "captainName" : "Jim",
-      "date" : "9/09/2017"
-    },
-    "oil" : {
-      "amountOnBoard" : 20,
-      "lastAdded" : {
+    "patriot" : {
+      "blackTank" : {
+        "currentLevel" : 5,
+        "lastPumpedOut" : {
+          "captainName" : "Walt",
+          "date" : "9/04/2017"
+        }
+      },
+      "fuel" : {
+        "currentFuel" : {
+          "aft" : 34,
+          "fwd" : 11,
+          "tankRunningOn" : "aft"
+        },
+        "lastFueled" : {
+          "aftTankGals" : 60,
+          "captainName" : "harry",
+          "date" : "9/02/2017",
+          "fwdTankGals" : 10
+        },
+        "lastMeasured" : {
+          "captainName" : "Harry",
+          "date" : "9/09/2017"
+        }
+      },
+      "lastWashed" : {
         "captainName" : "Jim",
-        "date" : "9/04/2017",
-        "howMuch" : 2
-      }
+        "date" : "9/09/2017"
+      },
+      "oil" : {
+        "amountOnBoard" : 25,
+        "lastAdded" : {
+          "captainName" : "Jim",
+          "date" : "9/04/2017",
+          "howMuch" : 2
+        }
+      },
+      "placeholder" : "."
     }
   },
   "pumpOutReports" : {

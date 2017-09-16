@@ -42,7 +42,7 @@ $(document).ready(function() {
                     //build report info into #report-output
 
                     var fuelDiv = $('<div>');
-                    fuelDiv.addClass("col-xs-5");
+                    fuelDiv.addClass("col-xs-6");
                     fuelDiv.append(
                         $('<div>').text('Current Fuel in Aft Tank: ' + currentFuelAft),
                         $('<div>').text('Current Fuel in Fwd Tank: ' + currentFuelFwd),
@@ -53,7 +53,7 @@ $(document).ready(function() {
                     vesselReport.append(fuelDiv);
 
                     var miscInfoDiv = $('<div>');
-                    miscInfoDiv.addClass('col-xs-5');
+                    miscInfoDiv.addClass('col-xs-6');
                     miscInfoDiv.append(
                         $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
                         $('<div>').text('Current Blacktank Level (1-10): ' + blackWaterTankLevel),
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
             //liberty status report
             $('#liberty-status').on('click', function() {
-                database.ref('/patriot').once("value").then(function(snapshot) {
+                database.ref('/liberty').once("value").then(function(snapshot) {
                     //pull info from firebase
                     var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
                     var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
@@ -123,7 +123,7 @@ $(document).ready(function() {
             //if rthere are active trips, push the data to #active-trips
 
             $('#active-trips-refresh').on('click', function() {
-                        database.ref('/activeTrips').on("value").then(function(snapshot) {
+                        database.ref('/activeTrips').once("value").then(function(snapshot) {
                             var tripDiv = $('#active-trips');
                             tripDiv.empty();
                             tripDiv.html($('<tr>'));
@@ -142,29 +142,39 @@ $(document).ready(function() {
 
 
                             snapshot.forEach(function(childSnapshot) {
-                                var tripName = childSnapshot.val().activeTrips.trip;
-                                var vessel = childSnapshot.val().activeTrips.vessel;
-                                var captainName = childSnapshot.val().activeTrips.captainName;
-                                var schedDepart = childSnapshot.val().activeTrips.scheduledTime;
-                                var actualDepart = childSnapshot.val().activeTrips.departedTime;
-                                var schedReturn = childSnapshot.val().activeTrips.scheduledReturn;
-                                var paxCount = childSnapshot.val().activeTrips.passengerCount;
-                                var crewCount = childSnapshot.val().activeTrips.crewCount;
+                                var tripName = childSnapshot.val().tripName;
+                                var vessel = childSnapshot.val().vessel;
+                                var captainName = childSnapshot.val().captainName;
+                                var schedDepart = childSnapshot.val().scheduledTime;
+                                var actualDepart = childSnapshot.val().departedTime;
+                                var schedReturn = childSnapshot.val().scheduledReturn;
+                                var paxCount = childSnapshot.val().passengerCount;
+                                var crewCount = childSnapshot.val().crewCount;
                                 var totalSouls = paxCount + crewCount;
                                 var newRow = $('<tr>');
 
                                 newRow.append(
-                                    $('<td>').text(),
+                                    $('<td>').text(tripName),
+                                    $('<td>').text(vessel),
+                                    $('<td>').text(captainName),
+                                    $('<td>').text(schedDepart),
+                                    $('<td>').text(actualDepart),
+                                    $('<td>').text(schedReturn),
+                                    $('<td>').text(paxCount),
+                                    $('<td>').text(crewCount),
+                                    $('<td>').text(totalSouls)
+                                );
+                                tripDiv.append(newRow);
 
-                                )
 
 
 
-
-                            })
+                            });
 
 
 
 
 
                         });
+                    });
+        });
