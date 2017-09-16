@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-client_id" content="411348476711-0j71s6pf6qda8equhp1nr7ua6abhbq8.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -18,32 +21,60 @@
    	<!-- Foundation Compressed CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
 
+     <!-- Bootstrap compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <!-- Additional Styles -->
    	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 
 	<div class="page-container">
+        <div class="container" id="blox">
 			<h1>HarborMaster</h1>
+
             <h2>Login</h2>
-            <form action="" method="post">
-                <input type="text" name="username" class="username" placeholder="Username">
-                <input type="password" name="password" class="password" placeholder="Password">
-                <button type="submit">Sign in</button>
-                <div class="error"><span>+</span></div>
-            </form>
-            <div class="connect">
-                <p>Or connect with:</p>
-                <p>
-                    <a class="facebook" href=""></a>
-                    <a class="twitter" href=""></a>
-                </p>
+
+            </br>
+            
+            <div class="row">
+                <a class="btn btn-social btn-google" id="gSignIn">
+                    <span class="fa fa-google"></span> Sign in with Google
+                </a>
             </div>
+
+            </br>
+            
+            <div class="row">
+                <a class="btn btn-social btn-github signIn">
+                    <span class="fa fa-github"></span> Sign in with GitHub
+                </a>
+            </div>
+
+            </br>
+
+            <div class="row">
+                <a class="btn btn-social btn-facebook signIn">
+                    <span class="fa fa-facebook"></span> Sign in with Facebook
+                </a>
+            </div>
+
+            </br>
+
+            <div class="userContent"></div>
+
         </div>
+    </div>
 
         <!-- Javascript -->
         <script src="assets/js/jquery-1.8.2.min.js"></script>
+        <script src="https://use.fontawesome.com/cd53706be4.js"></script>
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        <script src="assets/js/harbormaster.js"></script>
         <script src="assets/js/scripts.js"></script>
+
+
 </body>
 </html>
