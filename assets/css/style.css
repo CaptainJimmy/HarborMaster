@@ -1,3 +1,54 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|PT+Sans');
+
+html{
+	background: url(../images/boat-background.jpeg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+    background: transparent;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+.page-container {
+    margin: 200px auto 0 auto;
+    border-size: 2px;
+    border-style: solid;
+}
+
+h1 {
+	font-family: 'Kaushan Script', cursive;
+    font-size: 45px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0,0,0,.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2{
+	font-size: 30px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0,0,0,.2);
+    margin-bottom: 10px;
+}
+
+#blox{
+
+    height: 271px;
+    width: 320px;
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    
+}
+
+=======
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|PT+Sans');
 
 html{
@@ -191,3 +242,4 @@ button:active {
 .connect a.twitter { background: url(../images/twitter.png) center center no-repeat; }
 
 .connect a:hover { background-position: center bottom; }
+>>>>>>> 07bbc63003d7a8e8de7d1ecbc82ee507ebfb19b3
