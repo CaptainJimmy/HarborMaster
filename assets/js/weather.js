@@ -1,6 +1,7 @@
 // Declare Variables
 var lat;
 var lon;
+var map;
 
 // Document Ready
 $(document).ready(function(){
@@ -9,9 +10,10 @@ $(document).ready(function(){
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
-      var lat = "lat=" + position.coords.latitude;
-      var lon = "lon=" + position.coords.longitude;
+      var lat = position.coords.latitude;
+      var lon = position.coords.longitude;
       getWeather(lat, lon);
+      initializeMap(lat, lon);
     });
   } else {
     console.log("Geolocation is not supported by this browser.");
@@ -23,7 +25,7 @@ function getWeather(lat, lon) {
 
 	// var darkSkyAPI = "https://api.darksky.net/forecast/c302a50d97629336f69dbb53384f75fb/" + lat + "," + lon;
 
-	var owAPIurl = "http://api.openweathermap.org/data/2.5/forecast?" + lat + "&" + lon + "&units=imperial&APPID=4e0ae26b68029fdb4141d49a573c0b8f";
+	var owAPIurl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=4e0ae26b68029fdb4141d49a573c0b8f";
 
 	$.ajax({
     url: owAPIurl,
@@ -41,8 +43,19 @@ function getWeather(lat, lon) {
     })
 };
 
-// Function to Title Case Weather Description
+// setup initial map
+function initializeMap(lat, lon) {
+    var myLatlng = new google.maps.LatLng(lat, lon);
+    var myOptions = {
+      zoom: 8,
+      center: myLatlng,
+      mapTypeId:'satellite'
+    }
+    var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+  };
 
+
+// Function to Title Case Weather Description
 function titleCase(str) {
 
     str = str.toLowerCase();
