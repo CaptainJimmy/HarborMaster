@@ -1,10 +1,11 @@
 # Harbor Master Tasks
 []Google Authentication for firebase and gmail -- Ruthie/William
-[]Creation of email generation using GMAIL Api -- James 
-[]Creation of emailed reports --JAmes
+		[]Creation of email generation using GMAIL Api -- James (reliant on OAuth)
+			[]Creation of emailed reports --JAmes
 []Integration of manager.html into index.html --William
-[]HTML Pages Fully Polished
-[]Bug Checking
+[]HTML Pages Fully Polished --Ruthie
+[]Project Presentation Powerpoint --James
+[]Bug Checking --All
 
 
 [X]Creation of Login Page  --william
