@@ -47,6 +47,7 @@ h2{
     -webkit-box-shadow: none;
     
 }
+<<<<<<< HEAD
 
 .callout{
     margin-right: 40px;
@@ -57,3 +58,9 @@ h2{
   min-height: 100px;
   min-width: 100px;
 }
+=======
+.reportInfo{
+    margin:20px;
+    padding:20px;
+}
+>>>>>>> aad150723bfd8dd955af3819cb9069c570300e2b
