@@ -154,3 +154,24 @@ $("body").on("change", ":radio", function() {
     };
 });
 
+//Vessel Procedures
+$("body").on("change", ":radio", function() {
+    var radioChoice = (this.id)
+    console.log(radioChoice);
+    //Was the fwd tank fueled?
+    if (radioChoice === "fwdTankFueledYes") {
+    	//console.log("open new div")
+    	$("#fwdTankFueledAdd").removeClass("hide").addClass("show");
+    } else if (radioChoice === "fwdTankFueledNo") {
+    	//console.log("close new div")
+    	$("#fwdTankFueledAdd").removeClass("show").addClass("hide");
+    };
+    //Was the aft tank fueled?
+    if (radioChoice === "aftTankFueledYes") {
+    	//console.log("open new div")
+    	$("#aftTankFueledAdd").removeClass("hide").addClass("show");
+    } else if (radioChoice === "aftTankFueledNo") {
+    	//console.log("close new div")
+    	$("#aftTankFueledAdd").removeClass("show").addClass("hide");
+    };
+});
