@@ -26,7 +26,7 @@
           <div class="callout">
             <h3>Captain's Log</h3>
             <h4>Check In</h4>
-            <form id="captainCheckIn"> <!--class="hide"-->
+            <form id="captainCheckIn" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Which vessel are you checking into for the day?
@@ -140,8 +140,8 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Are there any other non critical items you'd like to add to the log?</label>
-                  <input type="radio" name="altTension" value="yes" id="altTensionYes"><label for="altTensionYes">Yes</label>
-                  <input type="radio" name="altTention" value="no" id="altTensionNo"><label for="altTensionNo">No</label>
+                  <input type="radio" name="nonCritical" value="yes" id="nonCriticalYes"><label for="notCriticalYes">Yes</label>
+                  <input type="radio" name="nonCritical" value="no" id="nonCriticalNo"><label for="nonCriticalNo">No</label>
                   <div id="nonCriticalAdd" class="small-12 cell hide">
                     <textarea placeholder="Non Critical Items to Log"></textarea>
                   </div>
@@ -192,7 +192,7 @@
           <div class="callout">
             <h3>Captain's Log</h3>
             <h4>Check Out</h4>
-            <form id="captainCheckOut"< <!--class="hide"-->
+            <form id="captainCheckOut" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Which vessel are you checking out of for the day?
@@ -272,9 +272,9 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Are there any other non critical items you'd like to add to the log?</label>
-                  <input type="radio" name="altTension" value="yes" id="altTensionYes"><label for="altTensionYes">Yes</label>
-                  <input type="radio" name="altTention" value="no" id="altTensionNo"><label for="altTensionNo">No</label>
-                  <div id="nonCriticalAdd" class="small-12 cell hide">
+                  <input type="radio" name="nonCritical1" value="yes" id="nonCriticalYes1"><label for="nonCriticalYes1">Yes</label>
+                  <input type="radio" name="nonCritical1" value="no" id="nonCriticalNo1"><label for="nonCriticalNo1">No</label>
+                  <div id="nonCritical1Add" class="small-12 cell hide">
                     <textarea placeholder="Non Critical Items to Log"></textarea>
                   </div>
                 </div>
@@ -282,16 +282,16 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                  <input type="radio" name="alertManager" value="yes" id="alertManagerYes"><label for="alertManagerYes">Yes</label>
-                  <input type="radio" name="alertManager" value="no" id="alertManagerNo"><label for="altTensionNo">No</label>
-                  <div id="alertManagerAdd" class="small-12 cell hide">
+                  <input type="radio" name="criticalAlert" value="yes" id="criticalAlertYes"><label for="criticalAlertYes">Yes</label>
+                  <input type="radio" name="criticalAlert" value="no" id="criticalAlertNo"><label for="criticalAlertNo">No</label>
+                  <div id="criticalAlertAdd" class="small-12 cell hide">
                     <textarea placeholder="Critical Items to Log"></textarea>
                   </div>
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
-                  <a href="#" class="expanded button">Submit</a>
+                  <a href="#" class="expanded button hollow button">Submit</a>
                 </div>
               </div>
             </form>
@@ -304,8 +304,8 @@
         <div class="small-12 cell">
           <div class="callout">
             <h3>Captain's Log</h3>
-            <h4>Trip Manifest Log</h4>
-            <form id="tripManifest"> <!--class="hide"-->
+            <h4>Trip Manifest Log - Departure</h4>
+            <form id="tripManifest" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Which vessel are you checking out of for the day?
@@ -331,8 +331,8 @@
                   <input type="radio" name="trip" value="Bartrams-Garden" id="tripBartramsGarden"><label for="tripBartramsGarden">Bartrams Garden</label><br/>
                   <div id="bartramsAdd" class="small-12 cell hide">
                     <label>Deporting Dock?</label>
-                    <input type="radio" name="trip" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label>
-                    <input type="radio" name="trip" value="Sunset-Cruise" id="tripSunsetCruise"><label for="tripSunsetCruise">Sunset Cruise</label>
+                    <input type="radio" name="tripBartram" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label>
+                    <input type="radio" name="tripBartram" value="Sunset-Cruise" id="tripSunsetCruise"><label for="tripSunsetCruise">Sunset Cruise</label>
                   </div>
                   <input type="radio" name="trip" value="Seaport-Camp" id="tripSeaportCamp"><label for="tripSeaportCamp">Seaport Museum Summer Camp</label><br/>
                   <input type="radio" name="trip" value="Other-Pass" id="tripOtherPass"><label for="tripOtherPass">Other Passenger Related Trip</label><br/>
@@ -361,8 +361,8 @@
                 <div class="small-12 cell">
                   <label>Did you leave on time?</label>
                   <input type="radio" name="onTime" value="yes" id="onTimeYes"><label for="onTimeYes">Yes</label>
-                  <input type="radio" name="ontime" value="no" id="onTimeNo"><label for="onTimeNo">No</label>
-                  <div id="ontimeAdd" class="small-12 cell hide">
+                  <input type="radio" name="onTime" value="no" id="onTimeNo"><label for="onTimeNo">No</label>
+                  <div id="onTimeAdd" class="small-12 cell hide">
                     <label>Actual Departure Time</label>
                     <input type="time" id="actual-departure" class="form-control" placeholder="Actual Departure Time" />
                   </div>
@@ -405,7 +405,7 @@
             <h3>Captain's Log</h3>
             <h4>Trip Manifest Log - Arrival</h4>
             <!-- Would it be best to pull the outstanding arrivals out of the active trips ?  Jim -->
-            <form id="tripManifestReturn"> <!--class="hide"-->
+            <form id="tripManifestReturn" class="hide">
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Scheduled Arrival Time</label>
@@ -417,7 +417,7 @@
                   <label>Did you arrive on time?</label>
                   <input type="radio" name="arriveOnTime" value="yes" id="arriveOnTimeYes"><label for="arriveOnTimeYes">Yes</label>
                   <input type="radio" name="arriveOnTime" value="no" id="arriveOnTimeNo"><label for="arriveOnTimeNo">No</label>
-                  <div id="arriveOnIimeAdd" class="small-12 cell hide">
+                  <div id="arriveOnTimeAdd" class="small-12 cell hide">
                     <label>Actual Arrival Time</label>
                     <input type="time" placeholder="" />
                   </div>
@@ -426,9 +426,9 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   <label>Are there any problems that management needs to be alerted about?</label>
-                  <input type="radio" name="alertManager1" value="yes" id="alertManager1Yes"><label for="alertManager1Yes">Yes</label>
-                  <input type="radio" name="alertManager1" value="no" id="alertManager1No"><label for="alertManager1No">No</label>
-                  <div id="alertManager1Add" class="small-12 cell hide">
+                  <input type="radio" name="problems" value="yes" id="problemsYes"><label for="problemsYes">Yes</label>
+                  <input type="radio" name="problems" value="no" id="problemsNo"><label for="problemsNo">No</label>
+                  <div id="problemsAdd" class="small-12 cell hide">
                     <textarea placeholder="Alert the Manager"></textarea>
                   </div>
                 </div>
@@ -454,7 +454,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" type="text/javascript" charset="utf-8" async defer></script>
       <!-- Google Maps API -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi2Zs7n8LyknyyVYiiYfVh3XoxHmzSoIo"></script>
-      <!-- <script src="assets/js/captain.js"></script> -->
+      <script src="assets/js/form.js"></script>
       <script src="assets/js/weather.js"></script>
     </body>
   </html>
