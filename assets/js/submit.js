@@ -129,7 +129,7 @@ $(document).ready(function() {
             var safeDrop = $('#safeDropYes').val();
             var linesSecure = $('#secureYes').val();
             
-            var currentTimeStamp = moment();
+            var currentTimeStamp = moment().format();
 
 
             //actual data again
@@ -185,15 +185,43 @@ $(document).ready(function() {
        		 			 database.ref("/outgoingEmails").push(newEmail);
     });
 
-
+    //vessel pump out
  	$("body").on("click", "#vessel-pumped-out-submit", function(event) {
  		   	event.preventDefault();
-            var vesselName=$('#vessel-name-out').val().trim();
+            var vesselName=$('#vessel-pumped').val().trim();
             var vesselNameLC=vesselName.toLowerCase();
             var dbPath='/pumpOutReports/'+vesselNameLC;
-            var dateStamp=moment();
-            
-
-
-
+            var dateStamp=moment().format();
+            var captainName="PlaceHolderCaptain"
+            var newPumpOut={
+                "vesselName": vesselName,
+                "date": dateStamp,
+                "captainName:": captainName
+            }
+            database.ref(dbPath).push(newPumpOut);
+            dbPath='/persistentData/'+vesselNameLC+'/blackTank'
+                database.ref(dbPath).update({
+                    "lastPumpedOut": {
+                            "captainName": captainName,
+                            "date": dateStamp
+                        }
+                    });
+        });
+    //vessel Fueled
+    $("body").on("click", "#vesselFueledSubmit", function(event) {
+        var vesselName=$('#vessel-name-out').val().trim();
+        var vesselNameLC=vesselName.toLowerCase();
+        var dbPath='/fuelingReports/'+vesselNameLC;
+            var dateStamp=moment().format();
+            var captainName="PlaceHolderCaptain"
+            var newFueled={
+                "captainName": captainName,
+                "date": dateStamp,
+                "vesselName": vesselName,
+                "gallonsAddedAft": $('#gallonsAddedAft').val().trim(),
+                "gallonsAddedFwd": $('#gallonsAddedFwd').val().trim(),
+                "amountSpent": $('#fuelAmountSpent').val().trim(),
+            }
+            database.ref(dbPath).push(newFueled);
+        });
 });
