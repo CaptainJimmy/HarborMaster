@@ -336,8 +336,14 @@
                 <div class="small-12 cell">
 
                   <label>Which tank did you run on today?</label>
-                  <input type="radio" name="tank" value="Fwd" id="tankFwd"><label for="tankFwd">Fwd</label>
-                  <input type="radio" name="tank" value="Aft" id="tankAft"><label for="tankAft">Aft</label>
+                  <select id="activeTankOut">
+                      <option placeholder="select"></option>
+                      <option value="Fwd">Fwd</option>
+                      <option value="Aft">Aft</option>
+                    </select>
+
+                  <!-- <input type="radio" name="tank" value="Fwd" id="tankFwd"><label for="tankFwd">Fwd</label>
+                  <input type="radio" name="tank" value="Aft" id="tankAft"><label for="tankAft">Aft</label> -->
                 
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
@@ -355,9 +361,16 @@
                 <div class="small-12 cell">
                   
                   <label>Is the boat clean?</label>
-                  <input type="radio" name="boatClean" value="Yes" id="boatCleanYes"><label for="boatCleanYes">Yes</label>
+                  <select id="boatCleanOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+                  
+
+                 <!--  <input type="radio" name="boatClean" value="Yes" id="boatCleanYes"><label for="boatCleanYes">Yes</label>
                   <input type="radio" name="boatClean" value="No" id="boatCleanNo"><label for="boatCleanNo">No</label>
-                
+                 -->
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
               
@@ -365,9 +378,14 @@
                 <div class="small-12 cell">
                   
                   <label>Did the bartender restock?</label>
-                  <input type="radio" name="barStock" value="Yes" id="barStockYes"><label for="barStockYes">Yes</label>
-                  <input type="radio" name="barStock" value="No" id="barStockNo"><label for="barStockNo">No</label>
-                
+                 <!--  <input type="radio" name="barStock" value="Yes" id="barStockYes"><label for="barStockYes">Yes</label>
+                  <input type="radio" name="barStock" value="No" id="barStockNo"><label for="barStockNo">No</label> -->
+                      <select id="barStockOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
@@ -375,19 +393,32 @@
                 <div class="small-12 cell">
                   
                   <label>Are all breakers off, including the 24 volt battery cutoff?</label>
-                  <input type="radio" name="breakers" value="Yes" id="breakersYes"><label for="breakersYes">Yes</label>
+                  <select id="breakersOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+
+
+<!--                   <input type="radio" name="breakers" value="Yes" id="breakersYes"><label for="breakersYes">Yes</label>
                   <input type="radio" name="breakers" value="No" id="breakersNo"><label for="breakersNo">No</label>
                 
-                </div><!--small-12 cell-->
+ -->                </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
               
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   
                   <label>Are the wheelhouse and cash register locked?</label>
-                  <input type="radio" name="locked" value="Yes" id="lockedYes"><label for="lockedYes">Yes</label>
+                    <select id="lockedOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+
+         <!--          <input type="radio" name="locked" value="Yes" id="lockedYes"><label for="lockedYes">Yes</label>
                   <input type="radio" name="locked" value="No" id="lockedNo"><label for="lockedNo">No</label>
-                
+                 -->
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
@@ -395,9 +426,15 @@
                 <div class="small-12 cell">
 
                   <label>Did you do a safe drop?</label>
-                  <input type="radio" name="safeDrop" value="Yes" id="safeDropYes"><label for="safeDropYes">Yes</label>
+                    <select id="safeDropOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+
+                 <!--  <input type="radio" name="safeDrop" value="Yes" id="safeDropYes"><label for="safeDropYes">Yes</label>
                   <input type="radio" name="safeDrop" value="No" id="safeDropNo"><label for="safeDropNo">No</label>
-                  
+                   -->
                   <!--hidden div-->
                   <div id="safeDropAdd" class="small-12 cell hide">
                     
@@ -413,9 +450,15 @@
                 <div class="small-12 cell">
                   
                   <label>Are the lines secure?</label>
-                  <input type="radio" name="secure" value="Yes" id="secureYes"><label for="secureYes">Yes</label>
+                      <select id="linesSecuredOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+
+                <!--   <input type="radio" name="secure" value="Yes" id="secureYes"><label for="secureYes">Yes</label>
                   <input type="radio" name="secure" value="No" id="secureNo"><label for="secureNo">No</label>
-                
+                 -->
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
@@ -423,8 +466,14 @@
                 <div class="small-12 cell">
 
                   <label>Are there any other non critical items you'd like to add to the log?</label>
-                  <input type="radio" name="nonCritical1" value="yes" id="nonCriticalYes1"><label for="nonCriticalYes1">Yes</label>
-                  <input type="radio" name="nonCritical1" value="no" id="nonCriticalNo1"><label for="nonCriticalNo1">No</label>
+                      <select id="nonCriticalItemsOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+
+<!--                   <input type="radio" name="nonCritical1" value="yes" id="nonCriticalYes1"><label for="nonCriticalYes1">Yes</label>
+                  <input type="radio" name="nonCritical1" value="no" id="nonCriticalNo1"><label for="nonCriticalNo1">No</label> -->
                   
                   <!--hidden div-->
                   <div id="nonCritical1Add" class="small-12 cell hide">
@@ -440,8 +489,14 @@
                 <div class="small-12 cell">
 
                   <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                  <input type="radio" name="criticalAlert" value="yes" id="criticalAlertYes"><label for="criticalAlertYes">Yes</label>
-                  <input type="radio" name="criticalAlert" value="no" id="criticalAlertNo"><label for="criticalAlertNo">No</label>
+                      <select id="criticalItemsOut">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+
+<!--                   <input type="radio" name="criticalAlert" value="yes" id="criticalAlertYes"><label for="criticalAlertYes">Yes</label>
+                  <input type="radio" name="criticalAlert" value="no" id="criticalAlertNo"><label for="criticalAlertNo">No</label> -->
                   
                   <!--hidden div-->
                   <div id="criticalAlertAdd" class="small-12 cell hide">

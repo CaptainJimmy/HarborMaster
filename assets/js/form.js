@@ -82,26 +82,30 @@ $("body").on("change", ":radio", function() {
     var radioChoice = (this.id)
     //console.log(radioChoice);
     //How much was the safe drop?
-    if (radioChoice === "safeDropNo") {
+    var safeDrop=$('#safeDropOut').val();
+    if (!safeDrop) {
     	//console.log("open new div")
     	$("#safeDropAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "safeDropYes") {
+    } else if (safeDrop) {
     	//console.log("close new div")
     	$("#safeDropAdd").removeClass("show").addClass("hide");
     };
+    var nonCriticalItemsOut=$('#nonCriticalItemsOut').val();
     //Are there any non critical items to add to the log? 
-    if (radioChoice === "nonCriticalNo1") {
+    if (nonCriticalItemsOut) {
     	//console.log("open new div")
     	$("#nonCritical1Add").removeClass("hide").addClass("show");
-    } else if (radioChoice === "nonCriticalYes1") {
+    } else if (!nonCriticalItemsOut) {
     	//console.log("close new div")
     	$("#nonCriticalAdd").removeClass("show").addClass("hide");
     };
+
+    var criticalItemsOut=$('#criticalItemsOut').val();
     //Are there any critical items to alert manager?
-    if (radioChoice === "criticalAlertYes") {
+    if (criticalItemsOut) {
     	//console.log("open new div")
     	$("#criticalAlertAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "criticalAlertNo") {
+    } else if (!criticalItemsOut) {
     	//console.log("close new div")
     	$("#criticalAlertAdd").removeClass("show").addClass("hide");
     };
