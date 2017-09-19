@@ -1,68 +1,88 @@
 
 $(document).ready(function() {
 
-    // $('.page-container form').submit(function(){
-    //     var username = $(this).find('.username').val();
-    //     var password = $(this).find('.password').val();
-    //     if(username == '') {
-    //         $(this).find('.error').fadeOut('fast', function(){
-    //             $(this).css('top', '27px');
-    //         });
-    //         $(this).find('.error').fadeIn('fast', function(){
-    //             $(this).parent().find('.username').focus();
-    //         });
-    //         return false;
-    //     }
-    //     if(password == '') {
-    //         $(this).find('.error').fadeOut('fast', function(){
-    //             $(this).css('top', '96px');
-    //         });
-    //         $(this).find('.error').fadeIn('fast', function(){
-    //             $(this).parent().find('.password').focus();
-    //         });
-    //         return false;
-    //     }
-    // });
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD2IqtC1ckzWzD4vR9ucDFsxwMYWa7PYXI",
+    authDomain: "harbormaster-da7e3.firebaseapp.com",
+    databaseURL: "https://harbormaster-da7e3.firebaseio.com",
+    projectId: "harbormaster-da7e3",
+    storageBucket: "harbormaster-da7e3.appspot.com",
+    messagingSenderId: "940441283597"
+  };
+  firebase.initializeApp(config);
 
-    // $('.page-container form .username, .page-container form .password').keyup(function(){
-    //     $(this).parent().find('.error').fadeOut('fast');
-    // });
 
-    function onSuccess(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    gapi.client.load('plus', 'v1', function () {
-        var request = gapi.client.plus.people.get({
-            'userId': 'me'
+var app = document.querySelector('#app');
+
+app.signIn = function() {
+    var email = app.email;
+    var password = app.password;
+
+    if (!email || !password){
+        return console.log('email and password required');
+    }
+
+    // Sign in user
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .catch(function(error){
+            // Handle errors here
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log('signIn error', error);
         });
-        //Display the user details
-        request.execute(function (resp) {
-            var profileHTML = '<div class="profile"><div class="head">Welcome '+resp.name.givenName+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></div>';
-            profileHTML += '<img src="'+resp.image.url+'"/><div class="proDetails"><p>'+resp.displayName+'</p><p>'+resp.emails[0].value+'</p><p>'+resp.gender+'</p><p>'+resp.id+'</p><p><a href="'+resp.url+'">View Google+ Profile</a></p></div></div>';
-            $('.userContent').html(profileHTML);
-            $('#gSignIn').slideUp('slow');
+    };
+
+app.register = function() {
+    var email = app.email;
+    var password = app.password;
+
+      if (!email || !password) {
+        return console.log('email and password required');
+    }
+
+    // Register User
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .catch(function(error){
+            console.log('register error', error);
+            if (error.code === 'auth/email-already-in-use') {
+                var credential = firebase.auth.EmailAuthProvider.credential(email, password);
+
+                app.signInWithGoogle()
+                    .then(function(){
+                        firebase.auth().currentUser.link(credential)
+                            .then(function(user){
+                                console.log("Account linking success", user);
+                            }, function(error){
+                                console.log("Account linking error", error);
+                            });
+                    });
+            } 
         });
+    };
+
+
+    app.signInWithGoogle = function() {
+        // Sign in with Google
+        var provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('profile');
+        provider.addScope('email');
+
+        return firebase.auth().signInWithPopup(provider)
+            .catch(function(error){
+                console.log('Google sign in error', error);
+            });
+    };
+
+    app.signOut = function() {
+        // Sign Out
+        firebase.auth().signOut();
+    };
+
+    // Listen to auth state changes
+    firebase.auth().onAuthStateChanged(function(user) {
+        app.user = user;
+        console.log('user', user);
     });
-}
-    function onFailure(error) {
-        alert(error);
-    }
-    function renderButton() {
-        gapi.signin2.render('gSignIn', {
-            'scope': 'profile email',
-            'width': 240,
-            'height': 50,
-            'longtitle': true,
-            'theme': 'dark',
-            'onsuccess': onSuccess,
-            'onfailure': onFailure
-        });
-    }
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            $('.userContent').html('');
-            $('#gSignIn').slideDown('slow');
-        });
-    }
 
-});
+
