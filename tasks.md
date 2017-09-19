@@ -2,6 +2,7 @@
 	
 - [ ]Integration of Gmail API to send --William
 - [ ]Fix Logic Issues in captain.html forms, submit.js --James/Ruthie
+- [ ]Vessel Trip Submit, Trip Tracking, Select Active Trip to Checkout --James
 - [ ]HTML Pages Fully Polished --Ruthie
 - [ ]Bug Checking --All
 
