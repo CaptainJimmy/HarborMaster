@@ -90,7 +90,11 @@ p, label {
   top: 2px;
   font-weight: bold;
   font-size: 0.875rem;
-  color: #0c3e5f;
+  color: #fff;
+}
+
+.fa {
+  color: #fff;
 }
 
 
@@ -142,7 +146,7 @@ p, label {
 }
 
 .menu-hover-lines li:first-child a {
-  margin-left: 0;
+  
 }
 
 .menu-hover-lines li.active > a {
@@ -182,8 +186,6 @@ p, label {
   width: 100%;
 }
 
-.listItem {
-  text-align: center;
-}
+
 
 
