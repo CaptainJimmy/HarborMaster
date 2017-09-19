@@ -1,19 +1,17 @@
 # Harbor Master Tasks
-- [ ]Google Authentication for firebase and gmail -- William
-	- [X]Creation of email generation using GMAIL Api or Use Firebase DB Push to Outgoing Email Folder (for Node.js later) James 
-		- [X]Creation of emailed reports --JAmes  
-		## note: emails are pushed to /outgoingEmails in firebase for now, objects are built, needs API integration or leave for node.js delivery
-		
-
-
-
-- [ ]Creation of ajax queries and JSON data parsing --William/James
-- [ ]Creation of JSON objects to push to Firebase -William/James
-- [ ]Logic to use update() to change the persistent data fields --William/James
+	
+- [ ]Integration of Gmail API to send --William
+- [ ]Fix Logic Issues in captain.html forms, submit.js --James/Ruthie
 - [ ]HTML Pages Fully Polished --Ruthie
 - [ ]Bug Checking --All
 
 
+
+- [X]Creation of emailed report/Objects --JAmes 
+- [X]Google Authentication for firebase and gmail -- William
+- [X]Creation of ajax queries and JSON data parsing --James
+- [X]Creation of JSON objects to push to Firebase -James
+- [X]Logic to use update() to change the persistent data fields --James
 - [X]Creation of Login Page  --william
 - [X]Frontend Leading To Captain’s Role Page
 - [X]Captains Page cleanup (either hide, modals, etc, to hide forms that are not in use)--William
