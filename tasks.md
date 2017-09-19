@@ -1,7 +1,10 @@
 # Harbor Master Tasks
 - [ ]Google Authentication for firebase and gmail -- William
-	- [ ]Creation of email generation using GMAIL Api or Use Firebase DB Push to Outgoing Email Folder (for Node.js later) James 
-		- [ ]Creation of emailed reports --JAmes 
+	- [X]Creation of email generation using GMAIL Api or Use Firebase DB Push to Outgoing Email Folder (for Node.js later) James 
+		- [X]Creation of emailed reports --JAmes  
+		## note: emails are pushed to /outgoingEmails in firebase for now, objects are built, needs API integration or leave for node.js delivery
+		
+
 
 
 - [ ]Creation of ajax queries and JSON data parsing --William/James

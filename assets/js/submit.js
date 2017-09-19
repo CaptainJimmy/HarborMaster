@@ -186,7 +186,13 @@ $(document).ready(function() {
     });
 
 
-
+ 	$("body").on("click", "#vessel-pumped-out-submit", function(event) {
+ 		   	event.preventDefault();
+            var vesselName=$('#vessel-name-out').val().trim();
+            var vesselNameLC=vesselName.toLowerCase();
+            var dbPath='/pumpOutReports/'+vesselNameLC;
+            var dateStamp=moment();
+            
 
 
 
