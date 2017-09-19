@@ -17,6 +17,18 @@
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD2IqtC1ckzWzD4vR9ucDFsxwMYWa7PYXI",
+        authDomain: "harbormaster-da7e3.firebaseapp.com",
+        databaseURL: "https://harbormaster-da7e3.firebaseio.com",
+        projectId: "harbormaster-da7e3",
+        storageBucket: "harbormaster-da7e3.appspot.com",
+        messagingSenderId: "940441283597"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="assets/js/scripts.js"></script>
     <script src="/__/firebase/4.3.0/firebase-app.js"></script>
     <script src="/__/firebase/4.3.0/firebase-auth.js"></script>
@@ -49,11 +61,11 @@
         <h2>Login</h2>
         
         <form action="" method="post" id="app">
-            <input type="text" name="username" class="username" placeholder="Username">
-            <input type="password" name="password" class="password" placeholder="Password">
-            <button type="submit" class="signIn">Sign in</button>
-            <button type="submit" class="register">Register</button>
-            <div class="error"><span>+</span></div>
+            <input type="text" id="email" name="email" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button id="quickstart-sign-in" name="signin">Sign in</button>
+            <button id="quickstart-sign-up" name="signup">Register</button>
+            
         </form>
 
         <div class="connect">
