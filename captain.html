@@ -680,7 +680,7 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
 
-                  <a href="#" class="expanded button hollow button">Submit</a>
+                  <a href="#" id="vessel-pumped-out-submit" class="expanded button hollow button">Submit</a>
                 
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
@@ -713,14 +713,14 @@
                   
                   <!--hidden div-->
                   <div id="fwdTankFueledAdd" class="small-12 cell hide">
-                    <label>What was the forward tank measurement (in inches) prior to fueling?</label>
-                    <input type="text" placeholder="Tank Measurements in Inches" />
+                   <!--  <label>What was the forward tank measurement (in inches) prior to fueling?</label>
+                    <input type="text" placeholder="Tank Measurements in Inches" /> -->
                     <label>How many gallons were added to the forward tank?</label>
-                    <input type="number" placeholder="Gallons Added" />
-                    <label>Is the forward tank full?</label>
+                    <input type="number" id="gallonsAddedFwd" placeholder="0" />
+                 <!--    <label>Is the forward tank full?</label>
                     <input type="radio" name="fwdTankFull" value="yes" id="fwdTankFullYes"><label for="fwdTankFullYes">Yes</label>
                     <input type="radio" name="fwdTankFull" value="no" id="fwdTankFullNo"><label for="fwdTankFullNo">No</label>
-                    <input type="radio" name="fwdTankFull" value="don't know" id="fwdTankFullNs"><label for="fwdTankFullNs">Not Sure</label>
+                    <input type="radio" name="fwdTankFull" value="don't know" id="fwdTankFullNs"><label for="fwdTankFullNs">Not Sure</label> -->
                   </div><!--fwdTankFueledAdd-->
                 
                 </div><!--small-12 cell-->
@@ -736,14 +736,14 @@
                   <!--hidden div-->
                   <div id="aftTankFueledAdd" class="small-12 cell hide">
 
-                    <label>What was the aft tank measurement (in inches) prior to fueling?</label>
-                    <input type="text" placeholder="Tank Measurements in Inches" />
+                  <!--   <label>What was the aft tank measurement (in inches) prior to fueling?</label>
+                    <input type="text" placeholder="Tank Measurements in Inches" /> -->
                     <label>How many gallons were added to the aft tank?</label>
-                    <input type="number" placeholder="Gallons Added" />
-                    <label>Is the aft tank full?</label>
+                    <input type="number" id="gallonsAddedAft" placeholder="0" />
+                    <!-- <label>Is the aft tank full?</label>
                     <input type="radio" name="aftTankFull" value="yes" id="aftTankFullYes"><label for="aftTankFullYes">Yes</label>
                     <input type="radio" name="aftTankFull" value="no" id="aftTankFullNo"><label for="aftTankFullNo">No</label>
-                    <input type="radio" name="aftTankFull" value="don't know" id="aftTankFullNs"><label for="aftTankFullNS">Not Sure</label>
+                    <input type="radio" name="aftTankFull" value="don't know" id="aftTankFullNs"><label for="aftTankFullNS">Not Sure</label> -->
                   
                   </div><!--aftTankFueledAdd-->
 
@@ -754,7 +754,7 @@
                 <div class="small-12 cell">
 
                   <label>What was the total amount spent?</label>
-                  <input type="number" id="crew-count" placeholder="Total Amount Spent"/>
+                  <input type="number" id="fuelAmountSpent" placeholder="0"/>
                 
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
@@ -762,8 +762,8 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
 
-                  <a href="#" class="expanded button hollow button">Submit</a>
-
+                  <a href="#" id="vesselFueledSubmit" class="expanded button hollow button">Submit</a>
+  
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
@@ -776,13 +776,19 @@
 
                   <h5>Fresh Water Tank Fill</h5>
                   <label>Which water tank was filled?
-                    <select id="vessel-fueled">
+                    <select id="vessel-watered">
                       <option placeholder="select"></option>
                       <option value="Liberty">Liberty</option>
                       <option value="Patriot">Patriot</option>
                     </select>
                   </label>
+                <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
 
+                  <a href="#" id="waterTankFilledSubmit" class="expanded button hollow button">Submit</a>
+                
+                </div><!--small-12 cell-->
+              </div><!--grid-x grid-padding-x-->
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
@@ -791,7 +797,7 @@
 
                   <h5>Vessel Wash</h5>
                   <label>Which vessel was washed?
-                    <select id="vessel-fueled">
+                    <select id="vessel-washed">
                       <option placeholder="select"></option>
                       <option value="Liberty">Liberty</option>
                       <option value="Patriot">Patriot</option>
@@ -804,7 +810,7 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
 
-                  <a href="#" class="expanded button hollow button">Submit</a>
+                  <a href="#" id="vesselWashedSubmit" class="expanded button hollow button">Submit</a>
                 
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
