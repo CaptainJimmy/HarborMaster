@@ -3,61 +3,75 @@ $("body").on("change", ":radio", function() {
     var radioChoice = (this.id)
     //console.log(radioChoice);
     //Is vessel clean and orderly from the previous day?
-    if (radioChoice === "cleanNo") {
-    	//console.log("open new div")
+    var vesselClean=$('#vesselCleanFromPrevious').val();
+    console.log(vesselClean);
+    if (!vesselClean) {
+    	console.log("vessel is dirty");
     	$("#cleanAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "cleanYes") {
-    	//console.log("close new div")
+    } else if (vesselClean) {
+    	console.log("vessel is clean");
     	$("#cleanAdd").removeClass("show").addClass("hide");
     };
+
     //Do fuel filters appear clean?
-    if (radioChoice === "fuelFiltersNo") {
+    var filtersClean=$('#fuelFiltersClean').val();
+
+    if (!filtersClean) {
     	//console.log("open new div")
     	$("#fuelFiltersAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "fuelFiltersYes") {
+    } else if (filtersClean) {
     	//console.log("close new div")
     	$("#fuelFiltersAdd").removeClass("show").addClass("hide");
     };
+
+    var beltTensioned=$('#beltTensioned').val();
     //Is the front belt properly tentioned?
-    if (radioChoice === "beltNo") {
+    if (!beltTensioned) {
     	//console.log("open new div")
     	$("#beltAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "beltYes") {
+    } else if (beltTensioned) {
     	//console.log("close new div")
     	$("#beltAdd").removeClass("show").addClass("hide");
     };
+
+    var oilProperLevel=$('#oilProperLevel').val();
     //Is the engine oil at the proper level?
-    if (radioChoice === "engineOilNo") {
+    if (!oilProperLevel) {
     	//console.log("open new div")
     	$("#engineOilAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "engineOilYes") {
+    } else if (oilProperLevel) {
     	//console.log("close new div")
     	$("#engineOilAdd").removeClass("show").addClass("hide");
     };
     //Did you add oil?
     //How much oil did you add in quarts?
-    if (radioChoice === "addOilYes") {
+
+    var oilAdded=$('oilAdded').val();    
+    if (oilAdded) {
     	//console.log("open new div")
     	$("#addOilAdd").removeClass("hide").addClass("show");
     	$("#noOilAdd").removeClass("show").addClass("hide");
-    } else if (radioChoice === "addOilNo") {
+    } else if (!oilAdded) {
     	//console.log("close new div")
     	$("#addOilAdd").removeClass("show").addClass("hide");
     	$("#noOilAdd").removeClass("hide").addClass("show");
     };
+
+    var nonCriticalIems=$('#nonCriticalItems').val();
     //Is there any other Non Critical items you'd like to log?
-    if (radioChoice === "nonCriticalYes") {
+    if (nonCriticalIems) {
     	//console.log("open new div")
     	$("#nonCriticalAdd").removeClass("hide").addClass("show");
-    }else if (radioChoice === "nonCriticalNo") {
+    }else if (!nonCriticalIems) {
     	//console.log("close new div")
     	$("#nonCriticalAdd").removeClass("show").addClass("hide");
     };
     //Is there anything you'd like management to be alerted on immediately?
-    if (radioChoice === "alertManagerYes") {
+    var criticalItems=$('#criticalItems').val();
+    if (criticalItems) {
     	//console.log("open new div")
     	$("#alertManagerAdd").removeClass("hide").addClass("show");
-    }else if (radioChoice === "alertManagerNo") {
+    }else if (!criticalItems) {
     	//console.log("close new div")
     	$("#alertManagerAdd").removeClass("show").addClass("hide");
     };

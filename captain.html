@@ -58,10 +58,14 @@
                 <div class="small-12 cell">
                   
                   <label>Is the vessel clean and orderly from the previous day?</label>
-                  <input type="radio" name="clean" value="yes" id="cleanYes"><label for="cleanYes">Yes</label>
-                  <input type="radio" name="clean" value="no" id="cleanNo"><label for="cleanNo">No</label>
+                  <select id="vesselCleanFromPrevious">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+<!--                   <input type="radio" name="clean" value="yes" id="cleanYes"><label for="cleanYes">Yes</label>
+                  <input type="radio" name="clean" value="no" id="cleanNo"><label for="cleanNo">No</label> -->
                   
                   <!--hidden div-->
+                </select>
                   <div id="cleanAdd" class="small-12 cell hide">
                     <label>Comments</label>
                     <textarea placeholder="Comments Here"></textarea>
@@ -92,9 +96,14 @@
                 <div class="small-12 cell">
                   
                   <label>Head down below. <br/> Which tank is the vessel running on?</label>
-                  <input type="radio" name="running" value="Fwd" id="runningFwd"><label for="runningFwd">Fwd</label>
+
+                    <select id="fuelTankActive">
+                    <option value="Fwd">Forward</option>
+                    <option value="Aft">Aft</option>
+                 <!--  <input type="radio" name="running" value="Fwd" id="runningFwd"><label for="runningFwd">Fwd</label>
                   <input type="radio" name="running" value="Aft" id="runningAft"><label for="runningAft">Aft</label>
-                
+                 -->
+               </select>
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
               
@@ -102,8 +111,11 @@
                 <div class="small-12 cell">
                   
                   <label>Do the fuel filters appear clean?</label>
-                  <input type="radio" name="fuelFilters" value="yes" id="fuelFiltersYes"><label for="fuelFiltersYes">Yes</label>
-                  <input type="radio" name="fuelFilters" value="no" id="fuelFiltersNo"><label for="fuelFiltersNo">No</label>
+                    <select id="fuelFiltersClean">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                  <!-- <input type="radio" name="fuelFilters" value="yes" id="fuelFiltersYes"><label for="fuelFiltersYes">Yes</label>
+                  <input type="radio" name="fuelFilters" value="no" id="fuelFiltersNo"><label for="fuelFiltersNo">No</label> -->
                   
                   <!--hidden div-->
                   <div id="fuelFiltersAdd" class="small-12 cell hide">
@@ -118,10 +130,14 @@
                 <div class="small-12 cell">
 
                   <label>Is the front drive belt properly tensioned?</label>
-                  <input type="radio" name="belt" value="yes" id="beltYes"><label for="beltYes">Yes</label>
+                    <select id="beltTensioned">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                 <!--  <input type="radio" name="belt" value="yes" id="beltYes"><label for="beltYes">Yes</label>
                   <input type="radio" name="belt" value="no" id="beltNo"><label for="beltNo">No</label>
-                  
+                   -->
                   <!--hidden div-->
+                  </select>
                   <div id="beltAdd" class="small-12 cell hide">
                     <label>Comments</label>
                     <textarea id="beltAddComment" placeholder="Comments Here"></textarea>
@@ -134,17 +150,26 @@
                 <div class="small-12 cell">
                   
                   <label>Is the engine oil at the proper level?</label>
-                  <input type="radio" name="engineOil" value="yes" id="engineOilYes"><label for="engineOilYes">Yes</label>
-                  <input type="radio" name="engineOil" value="no" id="engineOilNo"><label for="engineOilNo">No</label>
+                   <select id="oilProperLevel">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+<!--                   <input type="radio" name="engineOil" value="yes" id="engineOilYes"><label for="engineOilYes">Yes</label>
+                  <input type="radio" name="engineOil" value="no" id="engineOilNo"><label for="engineOilNo">No</label> -->
                   
                   <!--hidden div-->
+                </select>
                   <div id="engineOilAdd" class="small-12 cell hide">
 
                     <label>Did you add oil?</label>
+                  <select id="oilAdded">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                    <!-- 
                     <input type="radio" name="addOil" value="yes" id="addOilYes"><label for="addOilYes">Yes</label>
                     <input type="radio" name="addOil" value="no" id="addOilNo"><label for="addOilNo">No</label>
-                    
+                     -->
                     <!--hidden div-->
+                  </select>
                     <div id="addOilAdd" class="small-12 cell hide">
                       
                       <label>How much oil did you add, in quarts?</label>
@@ -193,8 +218,12 @@
                 <div class="small-12 cell">
 
                   <label>Are there any other non critical items you'd like to add to the log?</label>
-                  <input type="radio" name="nonCritical" value="yes" id="nonCriticalYes"><label for="notCriticalYes">Yes</label>
-                  <input type="radio" name="nonCritical" value="no" id="nonCriticalNo"><label for="nonCriticalNo">No</label>
+                    <select id="nonCriticalItems">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                    </select>
+            <!--       <input type="radio" name="nonCritical" value="yes" id="nonCriticalYes"><label for="notCriticalYes">Yes</label>
+                  <input type="radio" name="nonCritical" value="no" id="nonCriticalNo"><label for="nonCriticalNo">No</label> -->
                   
                   <!--hidden div-->
                   <div id="nonCriticalAdd" class="small-12 cell hide">
@@ -210,9 +239,13 @@
                 <div class="small-12 cell">
 
                   <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                  <input type="radio" name="alertManager" value="yes" id="alertManagerYes"><label for="alertManagerYes">Yes</label>
+                    <select id="criticalItems">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                  </select>
+<!--                   <input type="radio" name="alertManager" value="yes" id="alertManagerYes"><label for="alertManagerYes">Yes</label>
                   <input type="radio" name="alertManager" value="no" id="alertManagerNo"><label for="altTensionNo">No</label>
-                  
+                   -->
                   <!--hidden div-->
                   <div id="alertManagerAdd" class="small-12 cell hide">
                     
