@@ -1,3 +1,21 @@
+//Role Call
+$('#iAmCaptain, #iAmManager').click(function () {
+   if (this.id == "iAmCaptain") {
+   	  $("#navMenu").removeClass("hide").addClass("show");
+   	  $("#roleCall").removeClass("show").addClass("hide");
+      $("#divSet1").removeClass("hide").addClass("show");
+      $("#divSet2").removeClass("hide").addClass("show");
+      $("#divSet3").removeClass("hide").addClass("show");
+      $("#divSet4").removeClass("hide").addClass("show");
+      $("#divSet5").removeClass("hide").addClass("show");
+   }
+   else if (this.id == "iAmManager") {
+   	  $("#navMenu").removeClass("hide").addClass("show");
+   	  $("#roleCall").removeClass("show").addClass("hide");
+      $("#divSet6").removeClass("hide").addClass("show");
+   }
+});
+
 //Captain Check In Form
 $("body").on("change", ":radio", function() {
     var radioChoice = (this.id)
@@ -154,7 +172,7 @@ $("body").on("change", ":radio", function() {
     };
 });
 
-//Vessel Procedures
+//Vessel Procedures 0-1-2
 $("body").on("change", ":radio", function() {
     var radioChoice = (this.id)
     console.log(radioChoice);

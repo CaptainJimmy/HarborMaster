@@ -1,23 +1,189 @@
+#captainForms {
+  background: none;
+}
+
 #captain {
   text-align: left;
 }
 
 .callout {
-	border: 2px solid #2093df;
+  border: none;
+}
+
+.managerDiv {
+  text-align: center;
 }
 
 body {
   padding-top: 30px;
+  font-family:'Delius', cursive;
 }
 
 label {
   font-size: 16px;
 }
 
-h1, h3 {
-	font-family: 'Oleo Script Swash Caps', cursive;
+h1 {
+  color: #000;
+  text-align: center;
+}
+
+h2, h4, h5 {
+  font-family:'Delius', cursive;
+  text-shadow: 0 1px 4px rgba(0,0,0,.2);
+  color: #000;
 }
 
 h3 {
-	font-size: 1.5rem;
+    font-size: 2.0rem;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
+
+p, label {
+  color: #666;
+}
+
+/*mobile footer*/
+.mobile-bottom-bar {
+  width: 100%;
+  height: 3.778rem;
+  background: #18c;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile-bottom-bar .footer-link {
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: center;
+  color: #0c3e5f;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  padding: 0.907rem 1rem;
+}
+
+.mobile-bottom-bar .footer-link i.fa {
+  opacity: 0.8;
+  margin-right: 0.625rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.mobile-bottom-bar .footer-link:focus, .mobile-bottom-bar .footer-link:active {
+  color: #0c3e5f;
+}
+
+.mobile-bottom-bar .footer-text {
+  position: relative;
+  top: 2px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #0c3e5f;
+}
+
+
+/*role*/
+.marketing-site-two-up {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.marketing-site-two-up .row {
+  max-width: 900px;
+}
+
+.marketing-site-two-up .columns {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+  .marketing-site-two-up .columns {
+    margin-bottom: 0;
+  }
+}
+
+.marketing-site-two-up .fa {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1779ba;
+}
+
+.marketing-site-two-up-headline {
+  margin-bottom: 2rem;
+  font-size: 24px;
+}
+
+/*nav*/
+.menu-hover-lines {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.35s ease;
+}
+
+.menu-hover-lines li a {
+  padding: 0.75rem 0;
+  color: rgba(10, 10, 10, 0.5);
+  position: relative;
+  margin-left: 1rem;
+}
+
+.menu-hover-lines li:first-child a {
+  margin-left: 0;
+}
+
+.menu-hover-lines li.active > a {
+  background-color: transparent;
+}
+
+.menu-hover-lines a:before,
+.menu-hover-lines a::after {
+  height: 3px;
+  position: absolute;
+  content: '';
+  transition: all 0.35s ease;
+  background-color: #1779ba;
+  width: 0;
+}
+
+.menu-hover-lines a::before {
+  top: 0;
+  left: 0;
+}
+
+.menu-hover-lines a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.menu-hover-lines a:hover,
+.menu-hover-lines li.active > a {
+  color: #0a0a0a;
+  transition: all 0.35s ease;
+}
+
+.menu-hover-lines a:hover::before,
+.menu-hover-lines .active a::before,
+.menu-hover-lines a:hover::after,
+.menu-hover-lines .active a::after {
+  width: 100%;
+}
+
+.listItem {
+  text-align: center;
+}
+
+
