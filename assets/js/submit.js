@@ -8,7 +8,7 @@ $(document).ready(function() {
         messagingSenderId: "940441283597"
     };
     firebase.initializeApp(config);
-
+    var destinationEmail="james.reinknecht@gmail.com";
     var database = firebase.database();
 
     //captain check in
@@ -25,10 +25,12 @@ $(document).ready(function() {
             var aftTankLevel = $('#aft-fuel-in').val();
             var currentActiveTank = $('#runningAft').val();
             var blackTankLevel = $('#black-water-in').val();
-
+            var criticalComments =   $('#alertManagerAdd').val();
+            var currentTimeStamp = moment();
 
             var newCheckInSubmit = {
                 "vesselName": vesselName,
+                //"date": currentTimeStamp,
                 "engineHours": $('#engine-hours-in').val(),
                 "vesselClean": $('#cleanYes').val(),
                 "vesselDirty": $('#cleanNo').val(),
@@ -48,7 +50,7 @@ $(document).ready(function() {
                 //"oilOnBoard": $('#oil-on-board').val(),
                 "blackTankLevel": blackTankLevel,
                 "nonCriticalComments": $('#nonCriticalAdd').val(),
-                "criticalComments": $('#alertManagerAdd').val(),
+                "criticalComments": criticalComments
             };
             //path for liberty
             if (vesselName === "Liberty") {
@@ -90,15 +92,101 @@ $(document).ready(function() {
 
                 });
 
+               
+
+
 
             } else {
                 console.log("ERROR");
             }
-        
 
+       		 //Email Functionality for Critical Comments 
+       		 //place holder, possibly changing this to use the API instead of a node.js listener
 
+       		 if ( criticalComments != "") {
+       		 			var newEmail={
+       		 				"To": destinationEmail,
+       		 				"Subject": "Critical Alert from Captain on " + vesselName,
+       		 				"Message":  "You are receiving a critical alert from your Captain, submitted at " + currentTimeStamp + ". Attached is his/her comments: " + criticalComments
+       		 			 };
+       		 			 database.ref("/outgoingEmails").push(newEmail);
+       		 }
 
     });
+
+    $("body").on("click", "#captain-check-out-submit", function(event) {
+            event.preventDefault();
+            var vesselName=$('#vessel-name-out').val();
+            var engineHours = $('#engine-hours-out').val();
+            
+            var activeTankLevel = $('#active-tank-level-out').val()
+            //placeholders .... Needs logic update.  These dont really do anything
+            var activeTank = $('#tankAft').val();
+            var boatCleaned = $('#boatCleanYes').val();
+            var barStocked = $('#barStockYes').val();
+            var breakersOff = $('#breakersYes').val();
+            var lockedUp = $('#lockedYes').val()
+            var safeDrop = $('#safeDropYes').val();
+            var linesSecure = $('#secureYes').val();
+            
+            var currentTimeStamp = moment();
+
+
+            //actual data again
+            var safeDropAmount=$('#safe-drop-amount').val().trim();
+            var nonCriticalComments = $('#nonCriticalCommentsOut').val().trim();
+            var criticalComments = $('#criticalCommentsOut').val().trim();
+
+            var newCheckOutSubmit = {
+            	"vesselName": vesselName,
+                //"date": currentTimeStamp,
+                "engineHours": engineHours,
+                "vesselClean": boatCleaned,
+                "activeTankLevel": activeTankLevel,
+                "barStocked": barStocked,
+                "breakersOff": breakersOff,
+                "safeDrop": safeDrop,
+                "safeDropAmount": safeDropAmount,
+                "linesSecure": linesSecure,
+                //needs ID / logic change
+                "currentActiveTank": activeTank,
+                "nonCriticalComments": nonCriticalComments,
+                "criticalComments": criticalComments
+            }
+
+           if (vesselName === "Liberty") {
+                var dbPath = "/checkoutReports/vessel/liberty"
+                database.ref(dbPath).push(newCheckOutSubmit);
+            }
+            else if (vesselName === "Patriot") {
+                var dbPath = "/checkoutReports/vessel/patriot"
+                database.ref(dbPath).push(newCheckOutSubmit);
+            }
+            else {console.log("ERROR AT CHECKOUT")};
+
+            //email data
+            var messageBody = $('<html>');
+            	messageBody.append(
+            		$('<div>').text("Vessel: " + vesselName),
+            		$('<div>').text("Date Stamp: " + currentTimeStamp),
+            		$('<div>').text("Engine Hours: " + engineHours),
+            		$('<div>').text("Vessel Cleaned: " + boatCleaned),
+            		$('<div>').text("Active Fuel Tank: " + activeTank),
+            		$('<div>').text("Active Fuel Tank Level: " +activeTankLevel),
+            		$('<div>').text("Safe Drop: " + safeDrop + " Amount: " + safeDropAmount),
+            		$('<div>').text("Non Critical Comments: " + nonCriticalComments),
+            		$('<div>').text("Critical Comments: " + criticalComments)
+            		);
+            var newEmail={
+       		 				"To": destinationEmail,
+       		 				"Subject": "Vessel Check Out Report: " + vesselName,
+       		 				"Message": "You are receiving a checkout alert from your Captain, submitted at " + currentTimeStamp + " on vessel " + vesselName +". " + messageBody
+       		 			 };
+       		 			 database.ref("/outgoingEmails").push(newEmail);
+    });
+
+
+
 
 
 
