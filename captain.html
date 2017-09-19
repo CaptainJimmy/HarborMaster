@@ -148,7 +148,7 @@
                     <div id="addOilAdd" class="small-12 cell hide">
                       
                       <label>How much oil did you add, in quarts?</label>
-                      <input type="text" placeholder="Oil Added in Quarts" />
+                      <input type="text" id="oilAddedAmount" placeholder="Oil Added in Quarts" />
                       <label>Approximately how much oil is left on board now?</label>
                       <input type="number" id="oil-on-board" placeholder="Oil Left On Board" />
                    
@@ -158,7 +158,7 @@
                     <div id="noOilAdd" class="small-12 cell hide">
                       
                       <label>Why not?</label>
-                      <textarea placeholder="Explain"></textarea>
+                      <textarea id="noOilAddedComments" placeholder="Explain"></textarea>
                    
                     </div><!--noOilAdd-->
                   
@@ -313,7 +313,7 @@
                 <div class="small-12 cell">
 
                   <label>Fuel levels of the tank you ran on</label>
-                  <input type="text" placeholder="Fuel Levels" />
+                  <input type="text" id="active-tank-level-out" placeholder="Fuel Levels" />
 
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
@@ -369,7 +369,7 @@
                   <div id="safeDropAdd" class="small-12 cell hide">
                     
                     <label>How much did you drop?</label>
-                    <textarea placeholder="How Much Was Safe Drop"></textarea>
+                    <textarea id="safe-drop-amount" placeholder="How Much Was Safe Drop"></textarea>
                   
                   </div><!--safeDropAdd-->
 
@@ -396,7 +396,7 @@
                   <!--hidden div-->
                   <div id="nonCritical1Add" class="small-12 cell hide">
                     
-                    <textarea placeholder="Non Critical Items to Log"></textarea>
+                    <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log"></textarea>
                   
                   </div><!--nonCritical1Add-->
                 
@@ -413,7 +413,7 @@
                   <!--hidden div-->
                   <div id="criticalAlertAdd" class="small-12 cell hide">
                     
-                    <textarea placeholder="Critical Items to Log"></textarea>
+                    <textarea id="criticalCommentsOut" placeholder="Critical Items to Log"></textarea>
                   
                   </div><!--criticalAlertAdd-->
                 
@@ -423,7 +423,7 @@
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   
-                  <a href="#" class="expanded button hollow button">Submit</a>
+                  <a href="#" id="captain-check-out-submit" class="expanded button hollow button">Submit</a>
                 
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
