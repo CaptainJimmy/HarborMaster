@@ -5,20 +5,17 @@ $(document).ready(function(){
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyD2IqtC1ckzWzD4vR9ucDFsxwMYWa7PYXI",
-    authDomain: "harbormaster-da7e3.firebaseapp.com",
-    databaseURL: "https://harbormaster-da7e3.firebaseio.com",
-    projectId: "harbormaster-da7e3",
-    storageBucket: "harbormaster-da7e3.appspot.com",
-    messagingSenderId: "940441283597"
+    apiKey: "AIzaSyDi2Zs7n8LyknyyVYiiYfVh3XoxHmzSoIo",
+    authDomain: "harbormaster-180023.firebaseapp.com",
+    databaseURL: "https://harbormaster-180023.firebaseio.com",
+    projectId: "harbormaster-180023",
+    storageBucket: "",
+    messagingSenderId: "411348476711"
   };
   firebase.initializeApp(config);
 
   // declare variable for Firebase database
   var database = firebase.database();
-
-  // 
-  $('.content').hide();
 
   // Auth using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
