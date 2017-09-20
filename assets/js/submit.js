@@ -116,28 +116,27 @@ $(document).ready(function() {
         var vesselName = $('#vessel-name-out').val();
         var engineHours = $('#engine-hours-out').val();
 
-        var activeTankLevel = $('#active-tank-level-out').val()
+        var activeTankLevel = $('#active-tank-level-out').val();
         var activeTank = $('#activeTankOut').val();
         var boatCleaned = $('#boatCleanOut').val();
         var barStocked = $('#barStockOut').val();
         var breakersOff = $('#breakersOut').val();
-        var lockedUp = $('#lockedOut').val()
+        var lockedUp = $('#lockedOut').val();
         var safeDrop = $('#safeDropOut').val();
         var linesSecure = $('#linesSecuredOut').val();
 
         var currentTimeStamp = moment().format();
 
-
-        //actual data again
-        var safeDropAmount = $('#safe-drop-amount').val().trim();
-        var nonCriticalComments = $('#nonCriticalCommentsOut').val().trim();
-        var criticalComments = $('#criticalCommentsOut').val().trim();
+        var safeDropAmount = $('#safeDropAdd').val();
+        var nonCriticalComments = $('#nonCriticalCommentsOut').val();
+        var criticalComments = $('#criticalCommentsOut').val();
 
         var newCheckOutSubmit = {
             "vesselName": vesselName,
             "date": currentTimeStamp,
             "engineHours": engineHours,
             "vesselClean": boatCleaned,
+            "activeTank": activeTank,
             "activeTankLevel": activeTankLevel,
             "barStocked": barStocked,
             "breakersOff": breakersOff,
@@ -150,10 +149,11 @@ $(document).ready(function() {
         }
 
         if (vesselName === "Liberty") {
-            var dbPath = "/checkoutReports/vessel/liberty"
+            var dbPath = "/checkoutReports/vessel/liberty";
+            console.log("checkingOutLiberty");
             database.ref(dbPath).push(newCheckOutSubmit);
         } else if (vesselName === "Patriot") {
-            var dbPath = "/checkoutReports/vessel/patriot"
+            var dbPath = "/checkoutReports/vessel/patriot";
             database.ref(dbPath).push(newCheckOutSubmit);
         } else {
             console.log("ERROR AT CHECKOUT")
