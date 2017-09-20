@@ -26,52 +26,47 @@ $(document).ready(function() {
          
             //on page load look for active trips
             //if rthere are active trips, push the data to #active-trips
-
-            $('#active-trips-refresh').on('click', function() {
-                        database.ref('/activeTrips').once("value").then(function(snapshot) {
+function tripRefresh(){
+database.ref('/activeTrips').once("value").then(function(snapshot) {
                             var tripDiv = $('#active-trips');
                             tripDiv.empty();
                             tripDiv.html($('<tr>').addClass("reportInfo"));
                             tripDiv.append(
-                                $('<th>').text('Trip Name'),
                                 $('<th>').text('Vessel'),
-                                $('<th>').text('Captain'),
+                                $('<th>').text('Trip Name'),
                                 $('<th>').text('Sched. Depart.'),
                                 $('<th>').text('Actual Depart.'),
                                 $('<th>').text('Sched Return'),
                                 $('<th>').text('Pax Count'),
                                 $('<th>').text('Crew Count'),
-                                $('<th>').text('Total Souls')
+                                $('<th>').text('Crew Names')
                             );
 
 
-                                console.log(snapshot.val());
-                                console.log("testing");
-
 
                             snapshot.forEach(function(childSnapshot) {
+                                var tripKey = childSnapshot.val().key;
                                 var tripName = childSnapshot.val().tripName;
-                                var vessel = childSnapshot.val().vessel;
-                                var captainName = childSnapshot.val().captainName;
+                                var vessel = childSnapshot.val().vesselName;
                                 var schedDepart = childSnapshot.val().scheduledTime;
-                                var actualDepart = childSnapshot.val().departedTime;
-                                var schedReturn = childSnapshot.val().scheduledReturn;
-                                var paxCount = childSnapshot.val().passengerCount;
+                                var actualDepart = childSnapshot.val().actualDepart;
+                                var paxCount = childSnapshot.val().paxCount;
                                 var crewCount = childSnapshot.val().crewCount;
-                                var totalSouls = paxCount + crewCount;
+                                var crewNames = childSnapshot.val().crewNames;
                                 var newRow = $('<tr>');
 
                                 newRow.append(
-                                    $('<td>').text(tripName),
                                     $('<td>').text(vessel),
-                                    $('<td>').text(captainName),
+                                    $('<td>').text(tripName),
                                     $('<td>').text(schedDepart),
                                     $('<td>').text(actualDepart),
-                                    $('<td>').text(schedReturn),
                                     $('<td>').text(paxCount),
                                     $('<td>').text(crewCount),
-                                    $('<td>').text(totalSouls),
-                                    $('<a href="#">').addClass("button radius activeTrips").attr("id", tripName).text("Return")
+                                    $('<td>').text(crewNames),
+                                    $('<a href="#">').addClass("button radius activeTrips").attr({
+                                        "id": tripName,
+                                        "data-value": tripKey
+                                        }).text("Returned to Port")
                                 );
                                 tripDiv.append(newRow);
 
@@ -85,5 +80,73 @@ $(document).ready(function() {
 
 
                         });
+            $('#formMessage').text("Trips Refreshed");
+
+}
+            $('#active-trips-refresh').on('click', function() {
+
+                tripRefresh();
+                        
                     });
+                //submit new manifest
+            $('body').on("click", "#manifest-submit", function(event){
+                event.preventDefault();
+                                    //grab variables
+                var vesselName=$('#vesselActiveForTrip').val()
+                var tripName=$('#tripName').val();
+                //var bartramsDepartingDock=$('#bartramsDepartingDock').val();
+                //var otherTripAdd=$('#otherNonAdd').val();
+                var scheduledTime=$('#scheduled-departure').val();
+                var onTime=$('#onTime').val();
+                if (onTime === "true"){
+                    var actualDepart=scheduledTime;
+                }
+                else {
+                    var actualDepart=$('#actual-departure').val();
+
+                }
+                var paxCount=$('#passenger-count').val();
+                var crewCount=$('#crew-count').val();
+                var crewNames=$('#crew-names').val();
+                var timeStamp=moment().format();
+                                    //build object
+
+                var newTrip={
+                    "vesselName": vesselName,
+                    "tripName": tripName,
+                    "scheduledTime": scheduledTime,
+                    "onTime": onTime,
+                    "actualDepart": actualDepart,
+                    "paxCount": paxCount,
+                    "crewCount": crewCount,
+                    "timeStamp": timeStamp,
+                    "crewNames": crewNames
+                }
+
+
+                    //push up to database
+
+                    database.ref('/activeTrips').push(newTrip);
+                    tripRefresh();
+                    $('#formMessage').text("Trip Submitted Successfully");
+
+                    //RESET THE FORM
+
+                    // RUTHIE LOOK HERE PLZ
+
+                    //$('#tripManifest').foundation('resetForm');
+                  // document.getElementById("#tripManifest").reset();
+            });
+
+
+            //manifest arrival listener
+                //grab variables from database
+                //grab variables from form
+                //build object
+
+                //create finished trip and push
+
+                //remove active trip
+
+
         });

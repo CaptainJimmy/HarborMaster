@@ -224,9 +224,9 @@
                         <div id="addOilAdd" class="small-12 cell hide">
                       
                         <label>How much oil did you add, in quarts?</label>
-                        <input type="text" placeholder="Oil Added in Quarts" />
+                        <input id="addedOilAmount" type="text" placeholder="Oil Added in Quarts" />
                         <label>Approximately how much oil is left on board now?</label>
-                        <input type="number" id="oil-on-board" placeholder="Oil Left On Board" />
+                        <input id="oilLeftOnBoard" type="number" placeholder="Oil Left On Board" />
                    
                         </div><!--addOilAdd-->
 
@@ -370,7 +370,7 @@
                     <div class="small-12 cell">
 
                       <label>Fuel levels of the tank you ran on</label>
-                      <input type="text" placeholder="Fuel Levels" />
+                      <input id="active-tank-level-out" type="text" placeholder="Fuel Levels" />
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -438,10 +438,10 @@
                       </select>
                   
                       <!--hidden div-->
-                      <div id="safeDropAdd" class="small-12 cell hide">
+                      <div class="small-12 cell hide">
                     
                         <label>How much did you drop?</label>
-                        <textarea placeholder="How Much Was Safe Drop"></textarea>
+                        <textarea id="safeDropAdd" placeholder="How Much Was Safe Drop"></textarea>
                   
                       </div><!--safeDropAdd-->
 
@@ -472,9 +472,9 @@
                       </select>
                   
                       <!--hidden div-->
-                      <div id="nonCritical1Add" class="small-12 cell hide">
+                      <div class="small-12 cell hide">
                     
-                        <textarea placeholder="Non Critical Items to Log"></textarea>
+                        <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log"></textarea>
                   
                       </div><!--nonCritical1Add-->
                 
@@ -504,7 +504,9 @@
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
                   
-                      <a href="#" id="criticalCommentsOut" class="orange expanded button">Submit</a>
+
+                      <a href="#" id="captain-check-out-submit" class="orange expanded button">Submit</a>
+
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -529,7 +531,7 @@
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
                   
-                      <label>Which vessel are you checking out of for the day?
+                      <label>Which vessel are you using
                         <select id="vesselActiveForTrip">
                           <option placeholder="select"></option>
                           <option value="Liberty">Liberty</option>
@@ -929,8 +931,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" type="text/javascript" charset="utf-8" async defer></script>
     <!-- Google Maps API -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi2Zs7n8LyknyyVYiiYfVh3XoxHmzSoIo"></script>
+          <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+
       <script src="assets/js/form.js"></script>
-      <!--script src="assets/js/manager.js"></script-->
+      <script src="assets/js/submit.js"></script>
       <!--script src="assets/js/weather.js"></script-->
       <script src="assets/js/submit.js"></script>
 
