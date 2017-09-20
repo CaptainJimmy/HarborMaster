@@ -1,68 +1,227 @@
 
 $(document).ready(function() {
 
-    // $('.page-container form').submit(function(){
-    //     var username = $(this).find('.username').val();
-    //     var password = $(this).find('.password').val();
-    //     if(username == '') {
-    //         $(this).find('.error').fadeOut('fast', function(){
-    //             $(this).css('top', '27px');
-    //         });
-    //         $(this).find('.error').fadeIn('fast', function(){
-    //             $(this).parent().find('.username').focus();
-    //         });
-    //         return false;
-    //     }
-    //     if(password == '') {
-    //         $(this).find('.error').fadeOut('fast', function(){
-    //             $(this).css('top', '96px');
-    //         });
-    //         $(this).find('.error').fadeIn('fast', function(){
-    //             $(this).parent().find('.password').focus();
-    //         });
-    //         return false;
-    //     }
-    // });
 
-    // $('.page-container form .username, .page-container form .password').keyup(function(){
-    //     $(this).parent().find('.error').fadeOut('fast');
-    // });
+function toggleSignIn() {
+      if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email.length < 4) {
+          alert('Please enter an email address.');
+          return;
+        }
+        if (password.length < 4) {
+          alert('Please enter a password.');
+          return;
+        }
+        // Sign in with email and pass.
+        // [START authwithemail]
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+          document.getElementById('quickstart-sign-in').app = false;
+          // [END_EXCLUDE]
+        }).then(function(){
+            location.replace("https://captainjimmy.github.io/HarborMaster/manager.html");
+        });
+        // [END authwithemail]
+      }
+      document.getElementById('quickstart-sign-in').disabled = true;
+    }
 
-    function onSuccess(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    gapi.client.load('plus', 'v1', function () {
-        var request = gapi.client.plus.people.get({
-            'userId': 'me'
-        });
-        //Display the user details
-        request.execute(function (resp) {
-            var profileHTML = '<div class="profile"><div class="head">Welcome '+resp.name.givenName+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></div>';
-            profileHTML += '<img src="'+resp.image.url+'"/><div class="proDetails"><p>'+resp.displayName+'</p><p>'+resp.emails[0].value+'</p><p>'+resp.gender+'</p><p>'+resp.id+'</p><p><a href="'+resp.url+'">View Google+ Profile</a></p></div></div>';
-            $('.userContent').html(profileHTML);
-            $('#gSignIn').slideUp('slow');
-        });
-    });
-}
-    function onFailure(error) {
-        alert(error);
+    /**
+     * Handles the sign up button press.
+     */
+    function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      }).then(function() {
+        alert("Success! Please Login")
+      });
+      // [END createwithemail]
     }
-    function renderButton() {
-        gapi.signin2.render('gSignIn', {
-            'scope': 'profile email',
-            'width': 240,
-            'height': 50,
-            'longtitle': true,
-            'theme': 'dark',
-            'onsuccess': onSuccess,
-            'onfailure': onFailure
+
+    function signInWithGoogle() {
+    if (!firebase.auth().currentUser) {
+        // [START createprovider]
+        var provider = new firebase.auth.GoogleAuthProvider();
+        // [END createprovider]
+        // [START addscopes]
+        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        // [END addscopes]
+        // [START signin]
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+          // The signed-in user info.
+          var user = result.user;
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/account-exists-with-different-credential') {
+            alert('You have already signed up with a different auth provider for that email.');
+            // If you are using multiple auth providers on your app you should handle linking
+            // the user's accounts here.
+          } else {
+            console.error(error);
+          }
+          // [END_EXCLUDE]
         });
+        // [END signin]
+      } else {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      }
+      
     }
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            $('.userContent').html('');
-            $('#gSignIn').slideDown('slow');
-        });
+
+
+
+    /**
+     * initApp handles setting up UI event listeners and registering Firebase auth listeners:
+     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
+     *    out, and that is where we update the UI.
+     */
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().onAuthStateChanged(function(user) {
+        
+        if (user) {
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var photoURL = user.photoURL;
+          // var uid = user.uid;
+          var providerData = user.providerData;
+            }
+      });
+      // [END authstatelistener]
+
+      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('quickstart-sign-in-with-google').addEventListener('click', signInWithGoogle, false);
+      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+
     }
+
+    window.onload = function() {
+      initApp();
+    };
+
+
 
 });
+
+
+// var app = document.querySelector('#app');
+
+// app.signIn = function() {
+//     var email = app.email;
+//     var password = app.password;
+
+//     if (!email || !password){
+//         return console.log('email and password required');
+//     }
+
+//     // Sign in user
+//     firebase.auth().signInWithEmailAndPassword(email, password)
+//         .catch(function(error){
+//             // Handle errors here
+//             var errorCode = error.code;
+//             var errorMessage = error.message;
+//             console.log('signIn error', error);
+//         });
+//     };
+
+// app.register = function() {
+//     var email = app.email;
+//     var password = app.password;
+
+//       if (!email || !password) {
+//         return console.log('email and password required');
+//     }
+
+//     // Register User
+//     firebase.auth().createUserWithEmailAndPassword(email, password)
+//         .catch(function(error){
+//             console.log('register error', error);
+//             if (error.code === 'auth/email-already-in-use') {
+//                 var credential = firebase.auth.EmailAuthProvider.credential(email, password);
+
+//                 app.signInWithGoogle()
+//                     .then(function(){
+//                         firebase.auth().currentUser.link(credential)
+//                             .then(function(user){
+//                                 console.log("Account linking success", user);
+//                             }, function(error){
+//                                 console.log("Account linking error", error);
+//                             });
+//                     });
+//             } 
+//         });
+//     };
+
+
+//     app.signInWithGoogle = function() {
+//         // Sign in with Google
+//         var provider = new firebase.auth.GoogleAuthProvider();
+//         provider.addScope('profile');
+//         provider.addScope('email');
+
+//         return firebase.auth().signInWithPopup(provider)
+//             .catch(function(error){
+//                 console.log('Google sign in error', error);
+//             });
+//     };
+
+//     app.signOut = function() {
+//         // Sign Out
+//         firebase.auth().signOut();
+//     };
+
+//     // Listen to auth state changes
+//     firebase.auth().onAuthStateChanged(function(user) {
+//         app.user = user;
+//         console.log('user', user);
+//     });
