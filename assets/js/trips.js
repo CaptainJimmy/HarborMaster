@@ -187,7 +187,8 @@ $(document).ready(function() {
                 var dbPath = "/vesselManifests/" + vesselName;
                 console.log(dbPath);
                 database.ref(dbPath).push(tripArrivedObject);
-                database
+                console.log("removing old entry");
+                database.ref(refPath).remove();
 
             });
 
