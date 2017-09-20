@@ -4,15 +4,11 @@ $('#iAmCaptain, #iAmManager').click(function () {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet1").removeClass("hide").addClass("show");
-      $("#divSet2").removeClass("hide").addClass("show");
-      $("#divSet3").removeClass("hide").addClass("show");
-      $("#divSet4").removeClass("hide").addClass("show");
-      $("#divSet5").removeClass("hide").addClass("show");
    }
    else if (this.id == "iAmManager") {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
-      $("#divSet6").removeClass("hide").addClass("show");
+      $("#divSet2").removeClass("hide").addClass("show");
    }
 });
 

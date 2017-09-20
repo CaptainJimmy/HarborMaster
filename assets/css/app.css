@@ -52,6 +52,7 @@ p, label {
 
 /*mobile footer*/
 .mobile-bottom-bar {
+  clear: both;
   width: 100%;
   height: 3.778rem;
   background: #18c;
