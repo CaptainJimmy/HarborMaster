@@ -1,5 +1,5 @@
 //Captain Check In Form
-$("body").on("change", ":selected", function() {
+$("body").on("change", function() {
    // var radioChoice = (this.id)
     //console.log(radioChoice);
     //Is vessel clean and orderly from the previous day?
