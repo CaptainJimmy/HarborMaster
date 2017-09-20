@@ -44,6 +44,16 @@
     color: #fefefe;
 }
 
+.button.hollow {
+    color: #f63;
+    border: 1px solid;
+}
+
+.button.hollow:focus, .button.hollow:hover {
+    border-color: #0aa;
+    color: #0aa;
+}
+
 body {
   padding-top: 30px;
   font-family:'Delius', cursive;
@@ -85,7 +95,7 @@ p, label {
   clear: both;
   width: 100%;
   height: 3.778rem;
-  background: #18c;
+  background: #0aa;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -156,7 +166,7 @@ p, label {
 .marketing-site-two-up .fa {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #1779ba;
+  color: #0aa;
 }
 
 .marketing-site-two-up-headline {
@@ -194,7 +204,7 @@ p, label {
   position: absolute;
   content: '';
   transition: all 0.35s ease;
-  background-color: #1779ba;
+  background-color: #0aa;
   width: 0;
 }
 
@@ -210,7 +220,7 @@ p, label {
 
 .menu-hover-lines a:hover,
 .menu-hover-lines li.active > a {
-  color: #0a0a0a;
+  color: #f63;
   transition: all 0.35s ease;
 }
 
