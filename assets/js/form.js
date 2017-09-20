@@ -16,6 +16,7 @@ $('#iAmCaptain, #iAmManager').click(function () {
    }
 });
 
+
 //Captain Check In Form
 $("body").on("change", ":radio", function() {
     var radioChoice = (this.id)

@@ -22,16 +22,16 @@
           <div class="grid-x grid-padding-x small-12">
 
             <ul class="menu menu-hover-lines">
-              <li class="active"><a href="#">Captain</a></li>
-              <li><a href="#">Manager</a></li>
-              <li><a href="#">Log Out</a></li>
+              <li id="captainRoleLi" class="active"><a href="#" id="captainRole">Captain</a></li>
+              <li><a href="#" id="managerRole">Manager</a></li>
+              <li><a href="#" id="log-out">Log Out</a></li>
             </ul>
 
           </div>
         </div><!---nav-->
 
         <!--select your role-->
-        <div id="roleCall" class="show">
+        <div id="roleCall" class="show small-12 cell">
           <section class="marketing-site-two-up">
             <h2 class="marketing-site-two-up-headline">Select Your Role</h2>
             <div class="row medium-unstack">
@@ -50,7 +50,7 @@
         </div><!--roleCall-->
 
         <!--Current Location-->
-        <div class="small-12 cell">
+        <!--div class="small-12 cell">
           <div class="callout">
 
             <h3>Current Location</h3>
@@ -65,19 +65,20 @@
             
             <p><span id="high-temp"></span> | <span id="low-temp"></span></p>
           
-          </div><!--callout-->
-        </div><!--small-12 cell--><!--Current Location-->
+          </div--><!--callout-->
+        <!--/div--><!--small-12 cell--><!--Current Location-->
 
         <!--Map Display-->
-        <div class="small-12 cell">
+        <!--div class="small-12 cell">
           <div class="callout">
 
             <p><span id="map-canvas"></span></p>
          
-          </div><!--small-12 cell-->
-        </div><!--grid-x grid-padding-x--><!--Map Display-->
-
-        <div id="divSet1" class="hide">
+          <!/div--><!--small-12 cell-->
+        <!--/div--><!--grid-x grid-padding-x--><!--Map Display-->
+        
+        <div class="row">
+        <div id="divSet1" class="hide small-12">
           <!--Check In-->
           <div class="grid-x grid-padding-x">
             <div class="small-12 cell">
@@ -87,9 +88,10 @@
             
                 <hr/>
             
+                <div class="row">
                 <form id="captainCheckIn">
                     
-                  <div class="grid-x grid-padding-x">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                     
                       <label>Which vessel are you checking into for the day?
@@ -102,7 +104,7 @@
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
 
-                  <div class="grid-x grid-padding-x">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                   
                       <label>Engine Hours</label>
@@ -110,8 +112,10 @@
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
 
-                  <div class="grid-x grid-padding-x">
+                  <div class="row">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                   
                     <label>Is the vessel clean and orderly from the previous day?</label>
@@ -119,15 +123,15 @@
                     <input type="radio" name="clean" value="no" id="cleanNo"><label for="cleanNo">No</label>
                   
                     <!--hidden div-->
-                    <div id="cleanAdd" class="small-12 cell hide">
+                    <div id="cleanAdd" class="small-12 cell hide columns">
                       <label>Comments</label>
                       <textarea placeholder="Comments Here"></textarea>
                     </div><!--cleanAdd-->
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
-            
-                  <div class="grid-x grid-padding-x">
+                  
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                   
                       <label>Fwd Tank Fuel Level in Inches</label>
@@ -135,8 +139,10 @@
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
-                
-                  <div class="grid-x grid-padding-x">
+                  </div><!--row-->
+
+                  <div class="row">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                   
                       <label>Aft Tank Fuel Level in Inches</label>
@@ -145,7 +151,7 @@
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
 
-                  <div class="grid-x grid-padding-x">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                   
                       <label>Head down below. <br/> Which tank is the vessel running on?</label>
@@ -154,8 +160,10 @@
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
 
-                  <div class="grid-x grid-padding-x">
+                  <div class="row">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                   
                       <label>Do the fuel filters appear clean?</label>
@@ -163,15 +171,16 @@
                       <input type="radio" name="fuelFilters" value="no" id="fuelFiltersNo"><label for="fuelFiltersNo">No</label>
                   
                       <!--hidden div-->
-                      <div id="fuelFiltersAdd" class="small-12 cell hide">
+                      <div id="fuelFiltersAdd" class="small-12 cell hide columns">
                         <label>Comments</label>
                         <textarea id="fuelFiltersAddComment" placeholder="Comments Here"></textarea>
                       </div><!--fuelFiltersAdd-->
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
+  
 
-                  <div class="grid-x grid-padding-x">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
 
                       <label>Is the front drive belt properly tensioned?</label>
@@ -179,15 +188,17 @@
                       <input type="radio" name="belt" value="no" id="beltNo"><label for="beltNo">No</label>
                   
                       <!--hidden div-->
-                      <div id="beltAdd" class="small-12 cell hide">
+                      <div id="beltAdd" class="small-12 cell hide columns">
                         <label>Comments</label>
                         <textarea id="beltAddComment" placeholder="Comments Here"></textarea>
                       </div><!--beltAdd-->
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
 
-                  <div class="grid-x grid-padding-x">
+                  <div class="row">
+                  <div class="grid-x grid-padding-x medium-6 columns">
                     <div class="small-12 cell">
                   
                       <label>Is the engine oil at the proper level?</label>
@@ -195,14 +206,14 @@
                       <input type="radio" name="engineOil" value="no" id="engineOilNo"><label for="engineOilNo">No</label>
                   
                       <!--hidden div-->
-                      <div id="engineOilAdd" class="small-12 cell hide">
+                      <div id="engineOilAdd" class="small-12 cell hide columns">
 
                         <label>Did you add oil?</label>
                         <input type="radio" name="addOil" value="yes" id="addOilYes"><label for="addOilYes">Yes</label>
                         <input type="radio" name="addOil" value="no" id="addOilNo"><label for="addOilNo">No</label>
                     
                         <!--hidden div-->
-                        <div id="addOilAdd" class="small-12 cell hide">
+                        <div id="addOilAdd" class="small-12 cell hide columns">
                       
                         <label>How much oil did you add, in quarts?</label>
                         <input type="text" placeholder="Oil Added in Quarts" />
@@ -212,7 +223,7 @@
                         </div><!--addOilAdd-->
 
                         <!--hidden div-->
-                        <div id="noOilAdd" class="small-12 cell hide">
+                        <div id="noOilAdd" class="small-12 cell hide columns">
                       
                           <label>Why not?</label>
                           <textarea placeholder="Explain"></textarea>
@@ -223,6 +234,7 @@
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
 
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
@@ -293,8 +305,9 @@
             </div><!--small-12 cell-->
           </div><!--grid-x grid-padding-x-->
         </div><!--divSet1--> 
+        </div><!--row-->
 
-        <div id="divSet2" class="hide">
+        <div id="divSet2" class="hide small-12">
           <!--Check Out-->
           <div class="grid-x grid-padding-x">
             <div class="small-12 cell">
@@ -463,8 +476,8 @@
             </div><!--small-12 cell-->
           </div><!--grid-x grid-paddin-x-->
         </div><!--divSet2-->
-
-        <div id="divSet3" class="hide">
+      
+        <div id="divSet3" class="hide small-12">
           <!-- Trip Manifest -->
             <div class="grid-x grid-padding-x">
               <div class="small-12 cell">
@@ -918,7 +931,8 @@
     <!-- Google Maps API -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi2Zs7n8LyknyyVYiiYfVh3XoxHmzSoIo"></script>
       <script src="assets/js/form.js"></script>
-      <script src="assets/js/weather.js"></script>
+      <!--script src="assets/js/manager.js"></script-->
+      <!--script src="assets/js/weather.js"></script-->
 
   </body>
 </html>
