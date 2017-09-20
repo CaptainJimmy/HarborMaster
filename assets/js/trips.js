@@ -36,7 +36,6 @@ database.ref('/activeTrips').once("value").then(function(snapshot) {
                                 $('<th>').text('Trip Name'),
                                 $('<th>').text('Sched. Depart.'),
                                 $('<th>').text('Actual Depart.'),
-                                $('<th>').text('Sched Return'),
                                 $('<th>').text('Pax Count'),
                                 $('<th>').text('Crew Count'),
                                 $('<th>').text('Crew Names')
