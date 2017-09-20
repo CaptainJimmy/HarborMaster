@@ -120,14 +120,13 @@ $(document).ready(function() {
         var engineHours = $('#engine-hours-out').val();
 
         var activeTankLevel = $('#active-tank-level-out').val()
-            //placeholders .... Needs logic update.  These dont really do anything
-        var activeTank = $('#tankAft').val();
-        var boatCleaned = $('#boatCleanYes').val();
-        var barStocked = $('#barStockYes').val();
-        var breakersOff = $('#breakersYes').val();
-        var lockedUp = $('#lockedYes').val()
-        var safeDrop = $('#safeDropYes').val();
-        var linesSecure = $('#secureYes').val();
+        var activeTank = $('#activeTankOut').val();
+        var boatCleaned = $('#boatCleanOut').val();
+        var barStocked = $('#barStockOut').val();
+        var breakersOff = $('#breakersOut').val();
+        var lockedUp = $('#lockedOut').val()
+        var safeDrop = $('#safeDropOut').val();
+        var linesSecure = $('#linesSecuredOut').val();
 
         var currentTimeStamp = moment().format();
 
@@ -240,4 +239,9 @@ $(document).ready(function() {
 
 
     });
+
+   $("body").on("click", "#vesselWashedSubmit", function(event) {
+
+   });
+
 });
