@@ -1,62 +1,124 @@
 <!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<html id="captainForms" class="no-js" lang="en" dir="ltr">
   <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harbor Master</title>
     <!--link rel="stylesheet" href="css/foundation.css"-->
-
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/boat-favicon.png" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-   
+    <link rel="stylesheet" href="assets/css/app.css">
+ 
   </head>
   <body id="captain">
-    <div class="grid-container">
+      <div class="grid-container">
 
-      <!-- Check In -->
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
+        <div id="navMenu" class="hide">
+          <div class="grid-x grid-padding-x small-12">
+
+            <ul class="menu menu-hover-lines">
+              <li id="captainRoleLi" class="active"><a href="#" id="captainRole">Captain</a></li>
+              <li><a href="#" id="managerRole">Manager</a></li>
+              <li><a href="#" id="log-out">Log Out</a></li>
+            </ul>
+
+          </div>
+        </div><!---nav-->
+
+        <!--select your role-->
+        <div id="roleCall" class="show small-12 cell">
+          <section class="marketing-site-two-up">
+            <h2 class="marketing-site-two-up-headline">Select Your Role</h2>
+            <div class="row medium-unstack">
+              <div class="columns">
+                <i class="fa fa-ship" aria-hidden="true"></i>
+                <h4 class="marketing-site-two-up-title">Insert Clever Captain Quote Here.</h4>
+                <a href="#" id="iAmCaptain" class="button button hollow marketing-site-two-up-desc">Captain</a>
+              </div><!--columns-->
+              <div class="columns">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <h4 class="marketing-site-two-up-title">Insert Clever Manager Quote Here.</h4>
+                <a href="#" id="iAmManager" class="button button hollow marketing-site-two-up-desc">Manager</a>
+              </div><!--columns-->
+            </div><!--row medium-unstack-->
+          </section>
+        </div><!--roleCall-->
+
+        <!--Current Location-->
+        <!--div class="small-12 cell">
           <div class="callout">
+
+            <h3>Current Location</h3>
+
+            <hr/>
             
-            <h3>Captain's Log</h3>
+            <p><span id="location"></span></p>
             
-            <h4>Check In</h4>
+            <p><span id="desc"></span></p>
             
-            <form id="captainCheckIn"><!--class="hide"-->
+            <p><span id="current-temp"></span></p>
             
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
-                  
-                  <label>Which vessel are you checking into for the day?
-                    <select id="vessel-name-check-in">
-                      <option placeholder="select"></option>
-                      <option value="Liberty">Liberty</option>
-                      <option value="Patriot">Patriot</option>
-                    </select>
-                  </label>
+            <p><span id="high-temp"></span> | <span id="low-temp"></span></p>
+          
+          </div--><!--callout-->
+        <!--/div--><!--small-12 cell--><!--Current Location-->
+
+        <!--Map Display-->
+        <!--div class="small-12 cell">
+          <div class="callout">
+
+            <p><span id="map-canvas"></span></p>
+         
+          <!/div--><!--small-12 cell-->
+        <!--/div--><!--grid-x grid-padding-x--><!--Map Display-->
+        
+        <div class="row">
+        <div id="divSet1" class="hide small-12">
+          <!--Check In-->
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                <h3>Check In</h3>
+            
+                <hr/>
+            
+                <div class="row">
+                <form id="captainCheckIn">
+                    
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
+                    
+                      <label>Which vessel are you checking into for the day?
+                        <select id="vessel-name-check-in">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
                   
-                  <label>Engine Hours</label>
-                  <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" />
+                      <label>Engine Hours</label>
+                      <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" />
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
-                  
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
+
+                  <div class="row">
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
+                 
+
                   <label>Is the vessel clean and orderly from the previous day?</label>
                   <select id="vesselCleanFromPrevious">
                     <option value="true">Yes</option>
@@ -70,31 +132,36 @@
                     <label>Comments</label>
                     <textarea placeholder="Comments Here"></textarea>
                   </div><!--cleanAdd-->
+
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
                   
-                  <label>Fwd Tank Fuel Level in Inches</label>
-                  <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" />
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
+                  
+                      <label>Fwd Tank Fuel Level in Inches</label>
+                      <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" />
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
+
+                  <div class="row">
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
                   
-                  <label>Aft Tank Fuel Level in Inches</label>
-                  <input type="text" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" />
+                      <label>Aft Tank Fuel Level in Inches</label>
+                      <input type="text" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" />
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
                   
+
+        
                   <label>Head down below. <br/> Which tank is the vessel running on?</label>
 
                     <select id="fuelTankActive">
@@ -116,18 +183,21 @@
                     <option value="false">No</option>
                   <!-- <input type="radio" name="fuelFilters" value="yes" id="fuelFiltersYes"><label for="fuelFiltersYes">Yes</label>
                   <input type="radio" name="fuelFilters" value="no" id="fuelFiltersNo"><label for="fuelFiltersNo">No</label> -->
-                  
-                  <!--hidden div-->
-                  <div id="fuelFiltersAdd" class="small-12 cell hide">
-                    <label>Comments</label>
-                    <textarea id="fuelFiltersAddComment" placeholder="Comments Here"></textarea>
-                  </div><!--fuelFiltersAdd-->
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  
+                      <!--hidden div-->
+                      <div id="fuelFiltersAdd" class="small-12 cell hide columns">
+                        <label>Comments</label>
+                        <textarea id="fuelFiltersAddComment" placeholder="Comments Here"></textarea>
+                      </div><!--fuelFiltersAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+  
+
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
+
 
                   <label>Is the front drive belt properly tensioned?</label>
                     <select id="beltTensioned">
@@ -143,12 +213,16 @@
                     <textarea id="beltAddComment" placeholder="Comments Here"></textarea>
                   </div><!--beltAdd-->
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
+
+                  <div class="row">
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
                   
+
                   <label>Is the engine oil at the proper level?</label>
                    <select id="oilProperLevel">
                     <option value="true">Yes</option>
@@ -176,12 +250,13 @@
                       <input type="text" id="oilAddedAmount" placeholder="Oil Added in Quarts" />
                       <label>Approximately how much oil is left on board now?</label>
                       <input type="number" id="oil-on-board" placeholder="Oil Left On Board" />
-                   
-                    </div><!--addOilAdd-->
 
-                    <!--hidden div-->
-                    <div id="noOilAdd" class="small-12 cell hide">
-                      
+                   
+                        </div><!--addOilAdd-->
+
+                        <!--hidden div-->
+                        <div id="noOilAdd" class="small-12 cell hide columns">
+
                       <label>Why not?</label>
                       <textarea id="noOilAddedComments" placeholder="Explain"></textarea>
                    
@@ -224,19 +299,21 @@
                     </select>
             <!--       <input type="radio" name="nonCritical" value="yes" id="nonCriticalYes"><label for="notCriticalYes">Yes</label>
                   <input type="radio" name="nonCritical" value="no" id="nonCriticalNo"><label for="nonCriticalNo">No</label> -->
-                  
-                  <!--hidden div-->
-                  <div id="nonCriticalAdd" class="small-12 cell hide">
-                    
-                    <textarea placeholder="Non Critical Items to Log"></textarea>
-                  
-                  </div><!--nonCriticalAdd-->
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  
+                      <!--hidden div-->
+                      <div id="nonCriticalAdd" class="small-12 cell hide columns">
+                    
+                      <textarea placeholder="Non Critical Items to Log"></textarea>
+                  
+                      </div><!--nonCriticalAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                  
+                  <div class="grid-x grid-padding-x medium-6 columns">
+                    <div class="small-12 cell">
+
 
                   <label>Are there any critical items you'd like management to be alerted on immediately?</label>
                     <select id="criticalItems">
@@ -248,92 +325,66 @@
                    -->
                   <!--hidden div-->
                   <div id="alertManagerAdd" class="small-12 cell hide">
+
                     
-                    <textarea placeholder="Critical Items to Log"></textarea>
+                        <textarea placeholder="Critical Items to Log"></textarea>
                   
-                  </div><!--alertManagerAdd-->
+                      </div><!--alertManagerAdd-->
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                  </div><!--row-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
                   
-                  <a href="#" id="captain-check-in-submit" class="expanded button hollow button">Submit</a>
+                      <a href="#" id="captain-check-in-submit" class="expanded button">Submit</a>
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-            </form><!--Captain Check In Form-->
-          
-          </div>
-        </div>
-      
-        <!--Current Location-->
-        <div class="small-12 cell">
-          <div class="callout">
+                </form><!--form captainCheckIn-->
 
-            <h3>Current Location</h3>
-            
-            <p><span id="location"></span></p>
-            
-            <p><span id="desc"></span></p>
-            
-            <p><span id="current-temp"></span></p>
-            
-            <p><span id="high-temp"></span> | <span id="low-temp"></span></p>
-          
-          </div><!--small-12 cell-->
-        </div><!--grid-x grid-padding-x-->
-        
-        <!--Map Display-->
-        <div class="small-12 cell">
-          <div class="callout">
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+        </div><!--divSet1--> 
+        </div><!--row-->
 
-            <p><span id="map-canvas"></span></p>
-         
-          </div><!--small-12 cell-->
-        </div><!--grid-x grid-padding-x-->
+        <div id="divSet2" class="hide small-12">
+          <!--Check Out-->
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
+                
+                <h3>Check Out</h3>
 
-     </div>
-
-      <!-- Checkout -->
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
-          <div class="callout">
-            
-            <h3>Captain's Log</h3>
-            
-            <h4>Check Out</h4>
+                <hr/>
            
-            <form id="captainCheckOut"><!--class="hide"-->
-             
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
-                  
-                  <label>Which vessel are you checking out of for the day?
-                    <select id="vessel-name-out">
-                      <option placeholder="select"></option>
-                      <option value="Liberty">Liberty</option>
-                      <option value="Patriot">Patriot</option>
-                    </select>
-                  </label>
+                <form id="captainCheckOut">
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
                   
-                  <label>Engine Hours</label>
-                  
-                  <input type="text" id="engine-hours-out" placeholder="Engine Hours Here" />
+                      <label>Which vessel are you checking out of for the day?
+                        <select id="vessel-name-out">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->   
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Engine Hours</label>
+                      <input type="text" id="engine-hours-out" placeholder="Engine Hours Here" />
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
 
                   <label>Which tank did you run on today?</label>
                   <select id="activeTankOut">
@@ -344,22 +395,24 @@
 
                   <!-- <input type="radio" name="tank" value="Fwd" id="tankFwd"><label for="tankFwd">Fwd</label>
                   <input type="radio" name="tank" value="Aft" id="tankAft"><label for="tankAft">Aft</label> -->
+
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
                   <label>Fuel levels of the tank you ran on</label>
                   <input type="text" id="active-tank-level-out" placeholder="Fuel Levels" />
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
-                  
+
+                      <label>Fuel levels of the tank you ran on</label>
+                      <input type="text" placeholder="Fuel Levels" />
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
                   <label>Is the boat clean?</label>
                   <select id="boatCleanOut">
                       <option placeholder="select"></option>
@@ -389,9 +442,10 @@
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
-                  
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+   
                   <label>Are all breakers off, including the 24 volt battery cutoff?</label>
                   <select id="breakersOut">
                       <option placeholder="select"></option>
@@ -422,9 +476,9 @@
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
 
+                  <div class="grid-x grid-padding-x">
+ 
                   <label>Did you do a safe drop?</label>
                     <select id="safeDropOut">
                       <option placeholder="select"></option>
@@ -440,15 +494,16 @@
                     
                     <label>How much did you drop?</label>
                     <textarea id="safe-drop-amount" placeholder="How Much Was Safe Drop"></textarea>
-                  
-                  </div><!--safeDropAdd-->
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
                   
+                      </div><!--safeDropAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+          
                   <label>Are the lines secure?</label>
                       <select id="linesSecuredOut">
                       <option placeholder="select"></option>
@@ -462,8 +517,8 @@
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
                   <label>Are there any other non critical items you'd like to add to the log?</label>
                       <select id="nonCriticalItemsOut">
@@ -474,19 +529,23 @@
 
 <!--                   <input type="radio" name="nonCritical1" value="yes" id="nonCriticalYes1"><label for="nonCriticalYes1">Yes</label>
                   <input type="radio" name="nonCritical1" value="no" id="nonCriticalNo1"><label for="nonCriticalNo1">No</label> -->
+
                   
-                  <!--hidden div-->
-                  <div id="nonCritical1Add" class="small-12 cell hide">
-                    
+                      <!--hidden div-->
+                      <div id="nonCritical1Add" class="small-12 cell hide">
+    
+
                     <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log"></textarea>
+
                   
-                  </div><!--nonCritical1Add-->
+                      </div><!--nonCritical1Add-->
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
 
                   <label>Are there any critical items you'd like management to be alerted on immediately?</label>
                       <select id="criticalItemsOut">
@@ -497,42 +556,43 @@
 
 <!--                   <input type="radio" name="criticalAlert" value="yes" id="criticalAlertYes"><label for="criticalAlertYes">Yes</label>
                   <input type="radio" name="criticalAlert" value="no" id="criticalAlertNo"><label for="criticalAlertNo">No</label> -->
+
                   
-                  <!--hidden div-->
-                  <div id="criticalAlertAdd" class="small-12 cell hide">
+                      <!--hidden div-->
+                      <div id="criticalAlertAdd" class="small-12 cell hide">
                     
+
                     <textarea id="criticalCommentsOut" placeholder="Critical Items to Log"></textarea>
+
                   
-                  </div><!--criticalAlertAdd-->
+                      </div><!--criticalAlertAdd-->
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+    
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
                   
+
                   <a href="#" id="captain-check-out-submit" class="expanded button hollow button">Submit</a>
+
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-            
-            </form><!--Captain Check Out Form-->
-          
-          </div><!--callout-->
-        </div><!--small-12 cell-->
-      </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-      <!-- Trip Manifest -->
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
-          <div class="callout">
+                </form><!--form captainCheckOut-->
 
-            <h3>Captain's Log</h3>
-            
-            <h4>Trip Manifest Log - Departure</h4>
-            
-            <form id="tripManifest"><!--class="hide"-->
-            
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-paddin-x-->
+        </div><!--divSet2-->
+      
+        <div id="divSet3" class="hide small-12">
+          <!-- Trip Manifest -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-12 cell">
+                <div class="callout">
+   
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
                   
@@ -574,10 +634,36 @@
                   <input type="radio" name="trip" value="Walnuts" id="tripWalnuts"><label for="tripWalnuts">Walnut to Walnut</label><br/>
                   <input type="radio" name="trip" value="Secrets" id="tripSecrets"><label for="tripSecrets">Secrets of the Schuykill</label><br/>
                   <input type="radio" name="trip" value="Bartrams-Garden" id="tripBartramsGarden"><label for="tripBartramsGarden">Bartrams Garden</label><br/> -->
+
                   
-                    <!--hidden div-->
-                    <div id="bartramsAdd" class="small-12 cell hide">
+                      <label>Which vessel are you checking out of for the day?
+                        <select id="vessel-check-out">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Which trip are you doing?</label>
+                      <input type="radio" name="trip" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label><br/>
+                      <input type="radio" name="trip" value="Sunset-Cruise1" id="tripSunsetCruise1"><label for="tripSunsetCruise1">Sunset Cruise</label><br/>
+                      <input type="radio" name="trip" value="City-Lights" id="tripCityLights"><label for="tripCityLights">City Lights</label><br/>
+                      <input type="radio" name="trip" value="Two-Hour" id="tripTwoHour"><label for="tripTwoHour">2 Hour Private Charter</label><br/>
+                      <input type="radio" name="trip" value="Booze-Cruise" id="tripBoozeCruise"><label for="tripBoozeCruise">Booze Cruise</label><br/>
+                      <input type="radio" name="trip" value="Penns-Schuykill" id="tripPenns"><label for="tripPenns">Penns Landing to Schuykill Banks</label><br/>
+                      <input type="radio" name="trip" value="Walnuts" id="tripWalnuts"><label for="tripWalnuts">Walnut to Walnut</label><br/>
+                      <input type="radio" name="trip" value="Secrets" id="tripSecrets"><label for="tripSecrets">Secrets of the Schuykill</label><br/>
+                      <input type="radio" name="trip" value="Bartrams-Garden" id="tripBartramsGarden"><label for="tripBartramsGarden">Bartrams Garden</label><br/>
+                  
+                      <!--hidden div-->
+                      <div id="bartramsAdd" class="small-12 cell hide">
                       
+
                       <label>Deporting Dock?</label>
                         <select id="bartramsDepartingDock">
                       <option placeholder="select"></option>
@@ -587,50 +673,53 @@
                       <!-- <input type="radio" name="tripBartram" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label>
                       <input type="radio" name="tripBartram" value="Sunset-Cruise" id="tripSunsetCruise"><label for="tripSunsetCruise">Sunset Cruise</label> -->
                     
-                    </div><!--bartramsAdd-->
+                      </div><!--bartramsAdd-->
 
                 <!--   <input type="radio" name="trip" value="Seaport-Camp" id="tripSeaportCamp"><label for="tripSeaportCamp">Seaport Museum Summer Camp</label><br/>
                   <input type="radio" name="trip" value="Other-Pass" id="tripOtherPass"><label for="tripOtherPass">Other Passenger Related Trip</label><br/>
                       
                       <!--hidden div-->
                    <!--  <div id="otherPassAdd" class="small-12 cell hide">
+
                       
-                      <input type="text" id="otherPass" placeholder="What Kind of Trip" />
+                        <input type="text" id="otherPass" placeholder="What Kind of Trip" />
                     
+
                     </div><!--otherPassAdd--> -->
  -->
                <!--    <input type="radio" name="trip" value="Other-Non" id="tripOtherNon"><label for="tripOtherNon">Other Non Revenue Trip</label><br/> -->
+
                     
-                    <!--hidden div-->
-                    <div id="otherNonAdd" class="small-12 cell hide">
+                      <!--hidden div-->
+                      <div id="otherNonAdd" class="small-12 cell hide">
                       
-                      <input type="text" id="otherNon" placeholder="What Kind of Trip" />
+                        <input type="text" id="otherNon" placeholder="What Kind of Trip" />
                     
-                    </div><!--otherNonAdd-->
+                      </div><!--otherNonAdd-->
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-                  <label>Scheduled Departure Time</label>
-                  <input type="time" id="scheduled-departure" class="form-control" placeholder="Scheduled Departure Time" />
+                      <label>Scheduled Departure Time</label>
+                      <input type="time" id="scheduled-departure" class="form-control"/>
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-                  <label>Scheduled Duration Time</label>
-                  <input type="time" id="scheduled-duration" class="form-control" placeholder="Scheduled Duration Time" />
+                      <label>Scheduled Duration Time</label>
+                      <input type="time" id="scheduled-duration" class="form-control"/>
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
                   <label>Did you leave on time?</label>
                   <select id="onTime">
@@ -640,82 +729,87 @@
                     </select>
                 <!--   <input type="radio" name="onTime" value="yes" id="onTimeYes"><label for="onTimeYes">Yes</label>
                   <input type="radio" name="onTime" value="no" id="onTimeNo"><label for="onTimeNo">No</label> -->
+
                   
-                  <!--hidden div-->
-                  <div id="onTimeAdd" class="small-12 cell hide">
-                    <label>Actual Departure Time</label>
-                    <input type="time" id="actual-departure" class="form-control" placeholder="Actual Departure Time" />
-                  </div><!--ontimeAdd-->
+                      <!--hidden div-->
+                      <div id="onTimeAdd" class="small-12 cell hide">
+                        
+                        <label>Actual Departure Time</label>
+                        <input type="time" id="actual-departure" class="form-control"/>
+                      
+                      </div><!--ontimeAdd-->
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-                  <label>Number of passengers on board</label>
-                  <input type="number" id="passenger-count" placeholder="# of Passengers" />
+                      <label>Number of passengers on board</label>
+                      <input type="number" id="passenger-count" placeholder="# of Passengers" />
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-                  <label>Number of crew members on board</label>
-                  <input type="number" id="crew-count" placeholder="# of Crew Members" />
+                      <label>Number of crew members on board</label>
+                      <input type="number" id="crew-count" placeholder="# of Crew Members" />
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-                  <label>Names of crew members on board</label>
-                  <input type="text" id="crew-names" placeholder="Captain" />
-                  <input type="text" id="crew-names1" placeholder="Bartender" />
-                  <input type="text" id="crew-names2" placeholder="Mate" />
+                      <label>Names of crew members on board</label>
+                      <input type="text" id="crew-names" placeholder="Captain" />
+                      <input type="text" id="crew-names1" placeholder="Bartender" />
+                      <input type="text" id="crew-names2" placeholder="Mate" />
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-                  <a href="#" id="manifest-submit" class="expanded button hollow button">Submit</a>
+                      <a href="#" id="manifest-submit" class="expanded  button">Submit</a>
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-            
-            </form><!--Trip Manifest - Departure-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                </form><!--form Trip Manifest Departure-->
+
+                </div><!--callout-->
+              </div><!--small-12 cell-->
+            </div><!--grid-x grid-padding-x-->
+        </div><!--divSet3-->
+
+        <div id="divSet4" class="hide">
           
-          </div><!--callout-->
-        </div><!--small-12 cell-->
-      </div><!--grid-x grid-padding-x-->
+          <!-- Trip Manifest Arrival -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
 
-      <!-- Trip Manifest Arrival -->
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
-          <div class="callout">
+              <h3>Trip Manifest <br/> Arrival</h3>
 
-            <h3>Captain's Log</h3>
+              <hr/>
 
-            <h4>Trip Manifest Log - Arrival</h4>
+                <form id="tripManifestReturn">
 
-            <!-- Would it be best to pull the outstanding arrivals out of the active trips ?  Jim -->
-            <form id="tripManifestReturn"><!--class="hide"-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
                   
-                  <label>Scheduled Arrival Time</label>
-                  <input type="time" placeholder="" />
+                      <label>Scheduled Arrival Time</label>
+                      <input type="time" />
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
                   <label>Did you arrive on time?</label>
                   <select id="arriveOnTime">
@@ -726,14 +820,14 @@
               <!--     <input type="radio" name="arriveOnTime" value="yes" id="arriveOnTimeYes"><label for="arriveOnTimeYes">Yes</label>
                   <input type="radio" name="arriveOnTime" value="no" id="arriveOnTimeNo"><label for="arriveOnTimeNo">No</label> -->
                   
-                  <!--hidden div-->
-                  <div id="arriveOnTimeAdd" class="small-12 cell hide">
+                      <!--hidden div-->
+                      <div id="arriveOnTimeAdd" class="small-12 cell hide">
                     
-                    <label>Actual Arrival Time</label>
-                    <input type="time" placeholder="" />
+                        <label>Actual Arrival Time</label>
+                        <input type="time"/>
                   
-                  </div><!--arriveOnTimeAdd-->
-                
+                      </div><!--arriveOnTimeAdd-->
+      
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
 <!-- 
@@ -748,67 +842,144 @@
                   <!--hidden div-->
                  <!--  <div id="problemsAdd" class="small-12 cell hide">
                     
-                    <textarea placeholder="Alert the Manager"></textarea>
+                        <textarea placeholder="Alert the Manager"></textarea>
                   
+
                   </div><!--problemsAdd-->
                <!--  
                 </div>small-12 cell
               </div>< --><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-                  <a href="#" class="expanded button hollow button">Submit</a>
+                      <a href="#" class="expanded button">Submit</a>
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                    
+                </form><!--form tripManifestReturn-->
 
-            </form><!--Trip Manifest - Departure-->
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x-grid-padding-x-->
+        </div><!--divSet4-->
 
-          </div><!--callout-->
-        </div><!--small-12 cell-->
-      </div><!--grid-x grid-padding-x-->
-
-      <!-- Trip Manifest Arrival -->
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
-          <div class="callout">
-
-            <h3>Captain's Log</h3>
+        <div id="divSet5" class="hide">
+          <!--Vessel Procedures-->
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
             
-            <h4>Vessel Procedures</h4>
+                <h3>Vessel Procedures</h3>
+
+                <hr/>
             
-            <form id="vesselProcedures"><!--class="hide"-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                <form id="vesselProcedures">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
                   
-                  <h5>Waste Tank Pump Out</h5>
-                  <label>Which vessel was pumped out?
-                    <select id="vessel-pumped">
-                      <option placeholder="select"></option>
-                      <option value="Liberty">Liberty</option>
-                      <option value="Patriot">Patriot</option>
-                    </select>
-                  </label>
+                      <h5>Waste Tank Pump Out</h5>
+                      <label>Which vessel was pumped out?
+                        <select id="vessel-pumped">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#" class="expanded  button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                
+                </form><!--vesselProcedures-->
+                <form id="vesselProcedures1">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <h5>Fueling</h5>
+                      <label>Which vessel was fueled?
+                        <select id="vessel-fueled1">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Was the Fwd Tank Fueled?</label>
+                      <input type="radio" name="fwdTankFueled" value="yes" id="fwdTankFueledYes"><label for="fwdTankFueledYes">Yes</label>
+                      <input type="radio" name="fwdTankFueled" value="no" id="fwdTankFueledNo"><label for="fwdTankFueledNo">No</label>
+                  
+                      <!--hidden div-->
+                      <div id="fwdTankFueledAdd" class="small-12 cell hide">
+                        <label>What was the forward tank measurement (in inches) prior to fueling?</label>
+                        <input type="text" placeholder="Tank Measurements in Inches" />
+                        <label>How many gallons were added to the forward tank?</label>
+                        <input type="number" placeholder="Gallons Added" />
+                        <label>Is the forward tank full?</label>
+                        <input type="radio" name="fwdTankFull" value="yes" id="fwdTankFullYes"><label for="fwdTankFullYes">Yes</label>
+                        <input type="radio" name="fwdTankFull" value="no" id="fwdTankFullNo"><label for="fwdTankFullNo">No</label>
+                        <input type="radio" name="fwdTankFull" value="don't know" id="fwdTankFullNs"><label for="fwdTankFullNs">Not Sure</label>
+                      </div><!--fwdTankFueledAdd-->
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Was the Aft Tank Fueled?</label>
+                      <input type="radio" name="aftTankFueled" value="yes" id="aftTankFueledYes"><label for="aftTankFueledYes">Yes</label>
+                      <input type="radio" name="aftTankFueled" value="no" id="aftTankFueledNo"><label for="aftTankFueledNo">No</label>
+                  
+                      <!--hidden div-->
+                      <div id="aftTankFueledAdd" class="small-12 cell hide">
+
+                        <label>What was the aft tank measurement (in inches) prior to fueling?</label>
+                        <input type="text" placeholder="Tank Measurements in Inches" />
+                        <label>How many gallons were added to the aft tank?</label>
+                        <input type="number" placeholder="Gallons Added" />
+                        <label>Is the aft tank full?</label>
+                        <input type="radio" name="aftTankFull" value="yes" id="aftTankFullYes"><label for="aftTankFullYes">Yes</label>
+                        <input type="radio" name="aftTankFull" value="no" id="aftTankFullNo"><label for="aftTankFullNo">No</label>
+                        <input type="radio" name="aftTankFull" value="don't know" id="aftTankFullNs"><label>Not Sure</label>
+                  
+                      </div><!--aftTankFueledAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
                   <a href="#" id="vessel-pumped-out-submit" class="expanded button hollow button">Submit</a>
+
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
 
-            </form><!--Vessel Procedures Form-->
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
-            <form id="vesselProcedures1" class="hide">
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+                      <a href="#" class="expanded  button">Submit</a>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                    
+                </form><!--vesselProcedures1-->
 
                   <h5>Fueling</h5>
                   <label>Which vessel was fueled?
@@ -924,83 +1095,128 @@
                     </select>
                   </label>
 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-              
-              <div class="grid-x grid-padding-x">
-                <div class="small-12 cell">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <h5>Fresh Water Tank Fill</h5>
+                      <label>Which water tank was filled?
+                        <select id="vessel-fueled2">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <h5>Vessel Wash</h5>
+                      <label>Which vessel was washed?
+                        <select id="vessel-fueled">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
 
                   <a href="#" id="vesselWashedSubmit" class="expanded button hollow button">Submit</a>
+
                 
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
-            </form><!--Vessel Procedures 2 -->
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                    
+                </form><!--vesselProcedures2-->
+              
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+        </div><!--divSet5-->
 
-          </div><!--callout-->
-        </div><!--small-12 cell-->
-      </div><!--grid-x grid-padding-x-->
+        <div id="divSet6" class="hide">
 
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
-          <div class="callout">
+          <div class="grid-x grid-padding-x managerDiv">
+            <div class="small-12 cell">
+              <div class="callout">
               
-            <h1>Harbor Master Manager Console</h1>
+                <h1>Harbor Master Manager Console</h1>
               
-            <p> Select a button below for a current report.</p>
+                <p> Select a button below for a current report.</p>
               
-            <div class="button-group">
+                <div class="button-group">
                 
-              <button class="button button hollow" id="patriot-status">Patriot Vessel Status</button>
+                  <button class="button" id="patriot-status">Patriot Vessel Status</button>
                 
-              <button class="button button hollow" id="liberty-status">Liberty Vessel Status</button>
+                  <button class="button" id="liberty-status">Liberty Vessel Status</button>
               
-            </div>
+                </div>
 
-          </div><!--callout-->
-        </div><!--small-12 cell-->
-      </div><!--grid-x grid-padding-x-->
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
 
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
-          <div class="callout">
+          <div class="grid-x grid-padding-x managerDiv">
+            <div class="small-12 cell">
+              <div class="callout">
         
-            <h2>Active Trips. Press the Refresh Button to Get Trips: </h2>
+                <h2>Active Trips. Press the Refresh Button to Get Trips: </h2>
 
-            <button class="button button hollow" id="active-trips-refresh">Refresh</button>
+                <button class="button button expanded" id="active-trips-refresh">Refresh</button>
         
-            <div id="active-trips" class="reportInfo"></div>
-      
-          </div>
+              <div id="active-trips" class="reportInfo"></div>
 
-            </div><!--callout-->
-        </div><!--small-12 cell-->
-      </div><!--grid-x grid-padding-x-->
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 cell">
-          <div class="callout">
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+    
+          <div class="grid-x grid-padding-x managerDiv">
+            <div class="small-12 cell">
+              <div class="callout">
 
-            <h2>Report Info</h2>
+                <h2>Report Info</h2>
         
-            <div id="report-output"></div>
+                <div id="report-output"></div>
 
-          </div><!--callout-->
-        </div><!--small-12 cell-->
-      </div><!--grid-x grid-padding-x-->
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+        </div><!--divSet6-->
 
-      
-      <!--<script src="js/vendor/jquery.js"></script> -->
+        <div class="mobile-bottom-bar">
+          <a href="#" class="footer-link">
+          <i class="fa fa-cog"></i> <span class='footer-text'>Change Roles</span>
+          </a>
+          <a href="#" class="footer-link">
+          <i class="fa fa-sign-out"></i> <span class='footer-text'>Log out</span>
+          </a>
+        </div><!--mobile-botton-bar-->
+
+          
+      </div><!--grid-container-->
+  
+    <!--script tags-->
+      <script src="https://use.fontawesome.com/8f3c3c358f.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.1/what-input.js" type="text/javascript" charset="utf-8" async defer></script>
-      <!--     <script src="js/vendor/what-input.js"></script> -->
-      <!--     <script src="js/vendor/foundation.js"></script> -->
       <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" type="text/javascript" charset="utf-8" async defer></script>
-      <!-- Google Maps API -->
+    <!-- Google Maps API -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi2Zs7n8LyknyyVYiiYfVh3XoxHmzSoIo"></script>
       <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
       <script src="assets/js/form.js"></script>
-      <script src="assets/js/weather.js"></script>
+
+      <!--script src="assets/js/manager.js"></script-->
+      <!--script src="assets/js/weather.js"></script-->
+
       <script src="assets/js/submit.js"></script>
     </body>
   </html>
+
