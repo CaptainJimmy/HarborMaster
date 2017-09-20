@@ -127,7 +127,7 @@ $(document).ready(function() {
         database.ref('/activeTrips').push(newTrip);
         tripRefresh();
         $('#formMessage').text("Trip Submitted Successfully");
-
+         $(document).scrollTop(0);
         //RESET THE FORM
 
         // RUTHIE LOOK HERE PLZ
@@ -183,13 +183,12 @@ $(document).ready(function() {
                     "actualArrivalTime": actualArrivalTime,
                     "timeStampOut": timeStampOut
                 };
-                console.log(tripArrivedObject);
                 var dbPath = "/vesselManifests/" + vesselName;
-                console.log(dbPath);
                 database.ref(dbPath).push(tripArrivedObject);
-                console.log("removing old entry");
                 database.ref(refPath).remove();
-
+                tripRefresh();
+                $('#formMessage').text("Vessel Arrived Submitted Successfully");
+                $(document).scrollTop(0);
             });
 
 
