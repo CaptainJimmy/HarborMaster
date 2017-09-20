@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="assets/images/boat-favicon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
     <link href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!--link rel="stylesheet" href="assets/css/style.css"-->
     <link rel="stylesheet" href="assets/css/app.css">
  
   </head>
@@ -93,7 +93,7 @@
                     <div class="small-12 cell">
                     
                       <label>Which vessel are you checking into for the day?
-                        <select id="vessel-name-check-in">
+                        <select id="vessel-name-check-in" class="soft">
                           <option placeholder="select"></option>
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
@@ -107,7 +107,7 @@
                     <div class="small-12 cell">
                   
                       <label>Engine Hours</label>
-                      <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" />
+                      <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -116,7 +116,7 @@
                     <div class="small-12 cell">
                   
                     <label>Is the vessel clean and orderly from the previous day?</label>
-                    <select id="vesselCleanFromPrevious">
+                    <select id="vesselCleanFromPrevious" class="soft">
                       <option placeholder="select"></option>
                       <option value="true">Yes</option>
                       <option value="false">No</option>
@@ -125,7 +125,7 @@
                     <!--hidden div-->
                     <div id="cleanAdd" class="small-12 cell hide">
                       <label>Comments</label>
-                      <textarea placeholder="Comments Here"></textarea>
+                      <textarea placeholder="Comments Here" class="soft"></textarea>
                     </div><!--cleanAdd-->
                 
                     </div><!--small-12 cell-->
@@ -135,7 +135,7 @@
                     <div class="small-12 cell">
                   
                       <label>Fwd Tank Fuel Level in Inches</label>
-                      <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" />
+                      <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -144,7 +144,7 @@
                     <div class="small-12 cell">
                   
                       <label>Aft Tank Fuel Level in Inches</label>
-                      <input type="text" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" />
+                      <input type="text" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -153,7 +153,7 @@
                     <div class="small-12 cell">
                   
                       <label>Head down below. <br/> Which tank is the vessel running on?</label>
-                      <select id="fuelTankActive">
+                      <select id="fuelTankActive" class="soft">
                         <option placeholder="select"></option>
                         <option value="Fwd">Forward</option>
                         <option value="Aft">Aft</option>
@@ -166,7 +166,7 @@
                     <div class="small-12 cell">
                   
                       <label>Do the fuel filters appear clean?</label>
-                      <select id="fuelFiltersClean">
+                      <select id="fuelFiltersClean" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -175,7 +175,7 @@
                       <!--hidden div-->
                       <div id="fuelFiltersAdd" class="small-12 cell hide">
                         <label>Comments</label>
-                        <textarea id="fuelFiltersAddComment" placeholder="Comments Here"></textarea>
+                        <textarea id="fuelFiltersAddComment" placeholder="Comments Here" class="soft"></textarea>
                       </div><!--fuelFiltersAdd-->
 
                     </div><!--small-12 cell-->
@@ -185,7 +185,7 @@
                     <div class="small-12 cell">
 
                       <label>Is the front drive belt properly tensioned?</label>
-                      <select id="beltTensioned">
+                      <select id="beltTensioned" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -194,7 +194,7 @@
                       <!--hidden div-->
                       <div id="beltAdd" class="small-12 cell hide">
                         <label>Comments</label>
-                        <textarea id="beltAddComment" placeholder="Comments Here"></textarea>
+                        <textarea id="beltAddComment" placeholder="Comments Here" class="soft"></textarea>
                       </div><!--beltAdd-->
 
                     </div><!--small-12 cell-->
@@ -204,7 +204,7 @@
                     <div class="small-12 cell">
                   
                       <label>Is the engine oil at the proper level?</label>
-                      <select id="oilProperLevel">
+                      <select id="oilProperLevel" class="soft">
                           <option placeholder="select"></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
@@ -214,7 +214,7 @@
                       <div id="engineOilAdd" class="small-12 cell hide">
 
                         <label>Did you add oil?</label>
-                        <select id="oilAdded">
+                        <select id="oilAdded" class="soft">
                           <option placeholder="select"></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
@@ -224,9 +224,9 @@
                         <div id="addOilAdd" class="small-12 cell hide">
                       
                         <label>How much oil did you add, in quarts?</label>
-                        <input id="addedOilAmount" type="text" placeholder="Oil Added in Quarts" />
+                        <input type="text" placeholder="Oil Added in Quarts" class="soft"/>
                         <label>Approximately how much oil is left on board now?</label>
-                        <input id="oilLeftOnBoard" type="number" placeholder="Oil Left On Board" />
+                        <input type="number" id="oil-on-board" placeholder="Oil Left On Board" class="soft"/>
                    
                         </div><!--addOilAdd-->
 
@@ -234,7 +234,7 @@
                         <div id="noOilAdd" class="small-12 cell hide">
                       
                           <label>Why not?</label>
-                          <textarea placeholder="Explain"></textarea>
+                          <textarea placeholder="Explain" class="soft"></textarea>
                    
                         </div><!--noOilAdd-->
                   
@@ -247,7 +247,7 @@
                     <div class="small-12 cell">
 
                       <label>Shine a flashlight at the black water tank. <br/> On a scale of 1-10, how full is it?
-                        <select id="black-water-in">
+                        <select id="black-water-in" class="soft">
                           <option placeholder="select"></option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -269,7 +269,7 @@
                     <div class="small-12 cell">
 
                       <label>Are there any other non critical items you'd like to add to the log?</label>
-                        <select id="nonCriticalItems">
+                        <select id="nonCriticalItems" class="soft">
                           <option placeholder="select"></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
@@ -289,7 +289,7 @@
                     <div class="small-12 cell">
 
                       <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                        <select id="criticalItems">
+                        <select id="criticalItems" class="soft">
                           <option placeholder="select"></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
@@ -298,7 +298,7 @@
                       <!--hidden div-->
                       <div id="alertManagerAdd" class="small-12 cell hide">
                     
-                        <textarea placeholder="Critical Items to Log"></textarea>
+                        <textarea placeholder="Critical Items to Log" class="soft"></textarea>
                   
                       </div><!--alertManagerAdd-->
                 
@@ -334,7 +334,7 @@
                     <div class="small-12 cell">
                   
                       <label>Which vessel are you checking out of for the day?
-                        <select id="vessel-name-out">
+                        <select id="vessel-name-out" class="soft">
                           <option placeholder="select"></option>
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
@@ -348,7 +348,7 @@
                     <div class="small-12 cell">
                   
                       <label>Engine Hours</label>
-                      <input type="text" id="engine-hours-out" placeholder="Engine Hours Here" />
+                      <input type="text" id="engine-hours-out" placeholder="Engine Hours Here" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -357,7 +357,7 @@
                     <div class="small-12 cell">
 
                       <label>Which tank did you run on today?</label>
-                      <select id="activeTankOut">
+                      <select id="activeTankOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="Fwd">Fwd</option>
                         <option value="Aft">Aft</option>
@@ -370,7 +370,7 @@
                     <div class="small-12 cell">
 
                       <label>Fuel levels of the tank you ran on</label>
-                      <input id="active-tank-level-out" type="text" placeholder="Fuel Levels" />
+                      <input id="active-tank-level-out" type="text" placeholder="Fuel Levels" class="soft"/>
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -379,7 +379,7 @@
                     <div class="small-12 cell">
                   
                       <label>Is the boat clean?</label>
-                      <select id="boatCleanOut">
+                      <select id="boatCleanOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -392,7 +392,7 @@
                     <div class="small-12 cell">
                   
                       <label>Did the bartender restock?</label>
-                      <select id="barStockOut">
+                      <select id="barStockOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -405,7 +405,7 @@
                     <div class="small-12 cell">
                   
                       <label>Are all breakers off, including the 24 volt battery cutoff?</label>
-                      <select id="breakersOut">
+                      <select id="breakersOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -418,7 +418,7 @@
                     <div class="small-12 cell">
                   
                       <label>Are the wheelhouse and cash register locked?</label>
-                      <select id="lockedOut">
+                      <select id="lockedOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -431,7 +431,7 @@
                     <div class="small-12 cell">
 
                       <label>Did you do a safe drop?</label>
-                      <select id="safeDropOut">
+                      <select id="safeDropOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -441,7 +441,7 @@
                       <div class="small-12 cell hide">
                     
                         <label>How much did you drop?</label>
-                        <textarea id="safeDropAdd" placeholder="How Much Was Safe Drop"></textarea>
+                        <textarea id="safeDropAdd" placeholder="How Much Was Safe Drop" class="soft"></textarea>
                   
                       </div><!--safeDropAdd-->
 
@@ -452,7 +452,7 @@
                     <div class="small-12 cell">
                   
                       <label>Are the lines secure?</label>
-                      <select id="linesSecuredOut">
+                      <select id="linesSecuredOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -465,7 +465,7 @@
                     <div class="small-12 cell">
 
                       <label>Are there any other non critical items you'd like to add to the log?</label>
-                      <select id="nonCriticalItemsOut">
+                      <select id="nonCriticalItemsOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -474,7 +474,7 @@
                       <!--hidden div-->
                       <div class="small-12 cell hide">
                     
-                        <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log"></textarea>
+                        <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log" class="soft"></textarea>
                   
                       </div><!--nonCritical1Add-->
                 
@@ -485,7 +485,7 @@
                     <div class="small-12 cell">
 
                       <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                      <select id="criticalItemsOut">
+                      <select id="criticalItemsOut" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -494,7 +494,7 @@
                       <!--hidden div-->
                       <div id="criticalAlertAdd" class="small-12 cell hide">
                     
-                        <textarea id="criticalCommentsOut" placeholder="Critical Items to Log"></textarea>
+                        <textarea id="criticalCommentsOut" placeholder="Critical Items to Log" class="soft"></textarea>
                   
                       </div><!--criticalAlertAdd-->
                 
@@ -504,10 +504,8 @@
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
                   
-
                       <a href="#" id="captain-check-out-submit" class="orange expanded button">Submit</a>
 
-                
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
 
@@ -533,7 +531,7 @@
                     <div class="small-12 cell">
                   
                       <label>Which vessel are you using
-                        <select id="vesselActiveForTrip">
+                        <select id="vesselActiveForTrip" class="soft">
                           <option placeholder="select"></option>
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
@@ -547,6 +545,7 @@
                     <div class="small-12 cell">
 
                       <label>Which trip are you doing?</label>
+
                       <select id="tripName">
                         <option placeholder="select"></option>
                         <option value="HarborTour">Harbor Tour</option>
@@ -561,12 +560,13 @@
                         <option value="Bartrams">Bartrams Garden</option>
                         <option value="NonRev">Non Revenue trip</option>
                       </select>
+
                   
                         <!--hidden div-->
                         <!-- <div id="bartramsAdd" class="small-12 cell hide">
                       
                           <label>Deporting Dock?</label>
-                          <select id="bartramsDepartingDock">
+                          <select id="bartramsDepartingDock" class="soft">
                             <option placeholder="select"></option>
                             <option value="Walnut">Walnut</option>
                             <option value="Bartrams">Bartrams</option>
@@ -577,14 +577,14 @@
                         <!--hidden div-->
                        <!--  <div id="otherPassAdd" class="small-12 cell hide">
                       
-                          <input type="text" id="otherPass" placeholder="What Kind of Trip" />
+                          <input type="text" id="otherPass" placeholder="What Kind of Trip" class="soft"/>
                     
                         </div> --><!--otherPassAdd-->
                     
                         <!--hidden div-->
                         <div id="otherNonAdd" class="small-12 cell hide">
                       
-                          <input type="text" id="otherNon" placeholder="What Kind of Trip" />
+                          <input type="text" id="otherNon" placeholder="What Kind of Trip" class="soft"/>
                     
                         </div><!--otherNonAdd-->
 
@@ -595,7 +595,7 @@
                     <div class="small-12 cell">
 
                       <label>Scheduled Departure Time</label>
-                      <input type="time" id="scheduled-departure" class="form-control"/>
+                      <input type="time" id="scheduled-departure" class="form-control soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -604,7 +604,7 @@
                     <div class="small-12 cell">
 
                       <label>Did you leave on time?</label>
-                      <select id="onTime">
+                      <select id="onTime" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -614,7 +614,7 @@
                       <div id="onTimeAdd" class="small-12 cell hide">
                         
                         <label>Actual Departure Time</label>
-                        <input type="time" id="actual-departure" class="form-control"/>
+                        <input type="time" id="actual-departure" class="form-control soft"/>
                       
                       </div><!--ontimeAdd-->
 
@@ -625,7 +625,7 @@
                     <div class="small-12 cell">
 
                       <label>Number of passengers on board</label>
-                      <input type="number" id="passenger-count" placeholder="# of Passengers" />
+                      <input type="number" id="passenger-count" placeholder="# of Passengers" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -634,7 +634,7 @@
                     <div class="small-12 cell">
 
                       <label>Number of crew members on board</label>
-                      <input type="number" id="crew-count" placeholder="# of Crew Members" />
+                      <input type="number" id="crew-count" placeholder="# of Crew Members" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -642,8 +642,10 @@
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
 
+
                        <label>Names of crew members on board</label>
                       <input type="text" id="crew-names" placeholder="Names" />
+
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -695,8 +697,10 @@
                     <div class="small-12 cell">
                   
                       <label>Scheduled Arrival Time</label>
-                      <input type="time" id="scheduledArrivalTime"/>
-                
+
+                      <input type="time" id="scheduledArrivalTime class="soft"/>
+
+           
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
 
@@ -704,7 +708,7 @@
                     <div class="small-12 cell">
 
                       <label>Did you arrive on time?</label>
-                      <select id="arriveOnTime">
+                      <select id="arriveOnTime" class="soft">
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -714,7 +718,7 @@
                       <div id="arriveOnTimeAdd" class="small-12 cell hide">
                     
                         <label>Actual Arrival Time</label>
-                        <input type="time"/>
+                        <input type="time" class="soft"/>
                   
                       </div><!--arriveOnTimeAdd-->
                 
@@ -751,7 +755,7 @@
                   
                       <h5>Waste Tank Pump Out</h5>
                       <label>Which vessel was pumped out?
-                        <select id="vessel-pumped">
+                        <select id="vessel-pumped" class="soft">
                           <option placeholder="select"></option>
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
@@ -777,7 +781,7 @@
 
                       <h5>Fueling</h5>
                       <label>Which vessel was fueled?
-                        <select id="vessel-fueled1">
+                        <select id="vessel-fueled1" class="soft">
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
                         </select>
@@ -790,7 +794,7 @@
                     <div class="small-12 cell">
 
                       <label>How many gallons were added to the forward tank?</label>
-                      <input type="number" placeholder="gallonsAddedFwd" />
+                      <input type="number" placeholder="gallonsAddedFwd" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -799,7 +803,7 @@
                     <div class="small-12 cell">
 
                       <label>Was the Aft Tank Fueled?</label>
-                      <input type="number" placeholder="gallonsAddedAft" />
+                      <input type="number" placeholder="gallonsAddedAft" class="soft"/>
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -808,7 +812,7 @@
                     <div class="small-12 cell">
 
                       <label>What was the total amount spent?</label>
-                      <input type="number" id="fuelAmountSpent"/>
+                      <input type="number" id="fuelAmountSpent" class="soft"/>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -830,7 +834,7 @@
 
                       <h5>Fresh Water Tank Fill</h5>
                       <label>Which water tank was filled?
-                        <select id="vessel-watered">
+                        <select id="vessel-watered" class="soft">
                           <option placeholder="select"></option>
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
@@ -853,7 +857,7 @@
 
                       <h5>Vessel Wash</h5>
                       <label>Which vessel was washed?
-                        <select id="vessel-washed">
+                        <select id="vessel-washed" class="soft">
                           <option placeholder="select"></option>
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
