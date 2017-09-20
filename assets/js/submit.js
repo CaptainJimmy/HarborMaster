@@ -407,6 +407,12 @@ $(document).ready(function() {
         tripRefresh();
 
     });
+
+    $('#active-trips-refresh2').on('click', function() {
+
+        tripRefresh();
+
+    });
     //submit new manifest
 
     $('body').on("click", "#manifest-submit", function(event) {
