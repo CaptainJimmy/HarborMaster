@@ -86,12 +86,12 @@ If the items get to low levels, the manager is emailed a check in report of stoc
 *Manager can log in and see fuel consumption of vessels per hour and create ad-hoc reports *(future versions)*
 
 ###Technologies Used:
-*Google Authentication
-*Foundation front end
-*Javascript/jquery
-*JSON
-*AJAX
-*Firebase
-*Email of reports via server GMail API
-*Openweather API for weather reports
-*GitHub for VCS and Collaboration
+* Google Authentication
+* Foundation front end
+* Javascript/jquery
+* JSON
+* AJAX
+* Firebase
+* Emailed reports via server GMail API
+* Openweather API for weather reports
+* GitHub for VCS and Collaboration
