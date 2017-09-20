@@ -1,14 +1,13 @@
 # Harbor Master Tasks
 	
 - [ ]Integration of Gmail API to send --William
-- [ ]Fix Logic Issues in captain.html forms, submit.js --James/Ruthie
-- [ ]Vessel Trip Submit, Trip Tracking, Select Active Trip to Checkout --James
 - [ ]HTML Pages Fully Polished --Ruthie
 - [ ]Reposition Google Maps -- Will
 - [ ]Bug Checking --All
 
 
-
+- [X]Fix Logic Issues in captain.html forms, submit.js --James/Ruthie
+- [X]Vessel Trip Submit, Trip Tracking, Select Active Trip to Checkout --James
 - [X]Creation of emailed report/Objects --JAmes 
 - [X]Google Authentication for firebase and gmail -- William
 - [X]Creation of ajax queries and JSON data parsing --James
