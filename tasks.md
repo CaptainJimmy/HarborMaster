@@ -1,6 +1,7 @@
 # Harbor Master Tasks
 	
-- [ ]Integration of Gmail API to send --William
+- [ ]Log Out Buttons --Will
+   	- [ ]Integration of Gmail API to send --William *secondary task*
 - [ ]HTML Pages Fully Polished --Ruthie
 - [ ]Reposition Google Maps -- Will
 - [ ]Bug Checking --All
