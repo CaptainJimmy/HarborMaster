@@ -1,6 +1,6 @@
 //Captain Check In Form
-$("body").on("change", ":radio", function() {
-    var radioChoice = (this.id)
+$("body").on("change", ":selected", function() {
+   // var radioChoice = (this.id)
     //console.log(radioChoice);
     //Is vessel clean and orderly from the previous day?
     var vesselClean=$('#vesselCleanFromPrevious').val();
@@ -75,11 +75,11 @@ $("body").on("change", ":radio", function() {
     	//console.log("close new div")
     	$("#alertManagerAdd").removeClass("show").addClass("hide");
     };
-});
+//});
 
 //Captain Check Out Form
-$("body").on("change", ":radio", function() {
-    var radioChoice = (this.id)
+//$("body").on("change", ":radio", function() {
+  //  var radioChoice = (this.id)
     //console.log(radioChoice);
     //How much was the safe drop?
     var safeDrop=$('#safeDropOut').val();
@@ -89,7 +89,7 @@ $("body").on("change", ":radio", function() {
     } else if (safeDrop) {
     	//console.log("close new div")
     	$("#safeDropAdd").removeClass("show").addClass("hide");
-    };
+    }
     var nonCriticalItemsOut=$('#nonCriticalItemsOut').val();
     //Are there any non critical items to add to the log? 
     if (nonCriticalItemsOut) {
@@ -109,87 +109,118 @@ $("body").on("change", ":radio", function() {
     	//console.log("close new div")
     	$("#criticalAlertAdd").removeClass("show").addClass("hide");
     };
-});
+//});
 
 //Trip Manifest Log - Departure Form
-$("body").on("change", ":radio", function() {
-    var radioChoice = (this.id)
+//$("body").on("change", ":radio", function() {
+  //  var radioChoice = (this.id)
     //console.log(radioChoice);
     //Bartrams Gardens Departure Point
-    if (radioChoice === "tripBartramsGarden") {
+    var tripName=$('#tripName').val();
+
+    if (tripName === "tripBartrams") {
     	//console.log("open new div")
     	$("#bartramsAdd").removeClass("hide").addClass("show");
     	//PROBLEM: DIV CLOSES ONCE RADIOS ARE CHOSEN
-    } else if (radioChoice !== "tripBartramsGarden") {
+    }
+     else if (tripName !== "tripBartrams") {
     	//console.log("close new div")
     	$("#bartramsAdd").removeClass("show").addClass("hide");
+    }
+    else if (tripName === "tripNonRev"){
+        $("#otherNonAdd").removeClass("hide").addClass("show");
+    }
+    else if (tripName !== "tripNonRev"){
+                $("#otherNonAdd").removeClass("show").addClass("hide");
     };
-    //Other Passenger Trip
-    if (radioChoice === "tripOtherPass") {
-    	//console.log("open new div")
-    	$("#otherPassAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice !== "tripOtherPass") {
-    	//console.log("close new div")
-    	$("#otherPassAdd").removeClass("show").addClass("hide");
-    };
+
+    // if (radioChoice === "tripOtherPass") {
+    // 	//console.log("open new div")
+    // 	$("#otherPassAdd").removeClass("hide").addClass("show");
+    // } else if (radioChoice !== "tripOtherPass") {
+    // 	//console.log("close new div")
+    // 	$("#otherPassAdd").removeClass("show").addClass("hide");
+    // };
     //Other Non Passenger Trip
-    if (radioChoice === "tripOtherNon") {
-    	//console.log("open new div")
-    	$("#otherNonAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice !== "tripOtherNon") {
-    	//console.log("close new div")
-    	$("#otherNonAdd").removeClass("show").addClass("hide");
-    };
+   
+    // if (nonRevTrip === "tripNonRev") {
+    // 	//console.log("open new div")
+    // 	$("#otherNonAdd").removeClass("hide").addClass("show");
+    // } else if (nonRev !== "tripOtherNon") {
+    // 	//console.log("close new div")
+    // 	$("#otherNonAdd").removeClass("show").addClass("hide");
+    // };
+    
     //Did you leave on time?
-    if (radioChoice === "onTimeYes") {
-    	//console.log("open new div")
-    	$("#onTimeAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "onTimeNo") {
-    	//console.log("close new div")
-    	$("#onTimeAdd").removeClass("show").addClass("hide");
-    };
-});
+
+    var onTime=$('#onTime').val();
+    if (!onTime) {
+        $("#onTimeAdd").removeClass("hide").addClass("show");
+    }
+    else if (onTime) {
+            $("#onTimeAdd").removeClass("show").addClass("hide");
+        };
+    // if (radioChoice === "onTimeYes") {
+    // 	//console.log("open new div")
+    // 	$("#onTimeAdd").removeClass("hide").addClass("show");
+    // } else if (radioChoice === "onTimeNo") {
+    // 	//console.log("close new div")
+    // 	$("#onTimeAdd").removeClass("show").addClass("hide");
+    // };
+//});
 
 //Captain Trip Manifest - Arrival
-$("body").on("change", ":radio", function() {
-    var radioChoice = (this.id)
-    console.log(radioChoice);
+//$("body").on("change", ":radio", function() {
+  //  var radioChoice = (this.id)
+  //  console.log(radioChoice);
+    
+
+
     //Did you arrive on time?
-    if (radioChoice === "arriveOnTimeNo") {
-    	//console.log("open new div")
-    	$("#arriveOnTimeAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "arriveOnTimeYes") {
-    	//console.log("close new div")
-    	$("#arriveOnTimeAdd").removeClass("show").addClass("hide");
-    };
-    //Did you arrive on time?
-    if (radioChoice === "problemsYes") {
-    	//console.log("open new div")
-    	$("#problemsAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "problemsNo") {
-    	//console.log("close new div")
-    	$("#problemsAdd").removeClass("show").addClass("hide");
-    };
-});
+
+
+var arriveOnTime=$('#arriveOnTime').val();
+if (!arriveOnTime){
+    $("#arriveOnTimeAdd").removeClass("hide").addClass("show");
+}
+else if (arriveOnTime){
+    $("#arriveOnTimeAdd").removeClass("show").addClass("hide");
+}
+    // if (radioChoice === "arriveOnTimeNo") {
+    // 	//console.log("open new div")
+    // 	$("#arriveOnTimeAdd").removeClass("hide").addClass("show");
+    // } else if (radioChoice === "arriveOnTimeYes") {
+    // 	//console.log("close new div")
+    // 	$("#arriveOnTimeAdd").removeClass("show").addClass("hide");
+    // };
+    // //Did you arrive on time?
+    // if (radioChoice === "problemsYes") {
+    // 	//console.log("open new div")
+    // 	$("#problemsAdd").removeClass("hide").addClass("show");
+    // } else if (radioChoice === "problemsNo") {
+    // 	//console.log("close new div")
+    // 	$("#problemsAdd").removeClass("show").addClass("hide");
+    // };
+//});
 
 //Vessel Procedures
-$("body").on("change", ":radio", function() {
-    var radioChoice = (this.id)
-    console.log(radioChoice);
+//$("body").on("change", ":radio", function() {
+  //  var radioChoice = (this.id)
+    //console.log(radioChoice);
     //Was the fwd tank fueled?
-    if (radioChoice === "fwdTankFueledYes") {
-    	//console.log("open new div")
-    	$("#fwdTankFueledAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "fwdTankFueledNo") {
-    	//console.log("close new div")
-    	$("#fwdTankFueledAdd").removeClass("show").addClass("hide");
-    };
-    //Was the aft tank fueled?
-    if (radioChoice === "aftTankFueledYes") {
-    	//console.log("open new div")
-    	$("#aftTankFueledAdd").removeClass("hide").addClass("show");
-    } else if (radioChoice === "aftTankFueledNo") {
-    	//console.log("close new div")
-    	$("#aftTankFueledAdd").removeClass("show").addClass("hide");
-    };
+    // if (radioChoice === "fwdTankFueledYes") {
+    // 	//console.log("open new div")
+    // 	$("#fwdTankFueledAdd").removeClass("hide").addClass("show");
+    // } else if (radioChoice === "fwdTankFueledNo") {
+    // 	//console.log("close new div")
+    // 	$("#fwdTankFueledAdd").removeClass("show").addClass("hide");
+    // };
+    // //Was the aft tank fueled?
+    // if (radioChoice === "aftTankFueledYes") {
+    // 	//console.log("open new div")
+    // 	$("#aftTankFueledAdd").removeClass("hide").addClass("show");
+    // } else if (radioChoice === "aftTankFueledNo") {
+    // 	//console.log("close new div")
+    // 	$("#aftTankFueledAdd").removeClass("show").addClass("hide");
+    // };
 });

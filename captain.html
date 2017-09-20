@@ -537,7 +537,7 @@
                 <div class="small-12 cell">
                   
                   <label>Which vessel are you checking out of for the day?
-                    <select id="vessel-check-out">
+                    <select id="vesselActiveForTrip">
                       <option placeholder="select"></option>
                       <option value="Liberty">Liberty</option>
                       <option value="Patriot">Patriot</option>
@@ -549,9 +549,23 @@
 
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
-
                   <label>Which trip are you doing?</label>
-                  <input type="radio" name="trip" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label><br/>
+                  <select id="tripName">
+                      <option placeholder="select"></option>
+                      <option value="tripHarborTour">Harbor Tour</option>
+                      <option value="tripSunsetCruise">Sunset Cruise</option>
+                      <option value="tripCityLights">City Lights</option>
+                      <option value="tripPrivateCharter">2 Hour Private Charter</option>
+                      <option value="tripBoozeCruise">Booze Cruise</option>
+                      <option value="tripSchuylkillBanks">Penns Landing to Schuylkill Banks</option>
+                      <option value="tripWalnuttoWalnut">Walnut To Walnut</option>
+                      <option value="tripSecrets">Secrets of the Schuylkill</option>
+                         <option value="tripSeaportCamp">Seaport Kids Campers</option>
+                      <option value="tripBartrams">Bartrams Garden</option>
+                      <option value="tripNonRev">Non Revenue trip</option>
+
+                    </select>
+                  <!-- <input type="radio" name="trip" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label><br/>
                   <input type="radio" name="trip" value="Sunset-Cruise" id="tripSunsetCruise"><label for="tripSunsetCruise">Sunset Cruise</label><br/>
                   <input type="radio" name="trip" value="City-Lights" id="tripCityLights"><label for="tripCityLights">City Lights</label><br/>
                   <input type="radio" name="trip" value="Two-Hour" id="tripTwoHour"><label for="tripTwoHour">2 Hour Private Charter</label><br/>
@@ -559,28 +573,33 @@
                   <input type="radio" name="trip" value="Penns-Schuykill" id="tripPenns"><label for="tripPenns">Penns Landing to Schuykill Banks</label><br/>
                   <input type="radio" name="trip" value="Walnuts" id="tripWalnuts"><label for="tripWalnuts">Walnut to Walnut</label><br/>
                   <input type="radio" name="trip" value="Secrets" id="tripSecrets"><label for="tripSecrets">Secrets of the Schuykill</label><br/>
-                  <input type="radio" name="trip" value="Bartrams-Garden" id="tripBartramsGarden"><label for="tripBartramsGarden">Bartrams Garden</label><br/>
+                  <input type="radio" name="trip" value="Bartrams-Garden" id="tripBartramsGarden"><label for="tripBartramsGarden">Bartrams Garden</label><br/> -->
                   
                     <!--hidden div-->
                     <div id="bartramsAdd" class="small-12 cell hide">
                       
                       <label>Deporting Dock?</label>
-                      <input type="radio" name="tripBartram" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label>
-                      <input type="radio" name="tripBartram" value="Sunset-Cruise" id="tripSunsetCruise"><label for="tripSunsetCruise">Sunset Cruise</label>
+                        <select id="bartramsDepartingDock">
+                      <option placeholder="select"></option>
+                      <option value="Walnut">Walnut</option>
+                      <option value="Bartrams">Bartrams</option>
+                    </select>
+                      <!-- <input type="radio" name="tripBartram" value="Harbor-Tour" id="tripHarborTour"><label for="tripHarborTour">Harbor Tour</label>
+                      <input type="radio" name="tripBartram" value="Sunset-Cruise" id="tripSunsetCruise"><label for="tripSunsetCruise">Sunset Cruise</label> -->
                     
                     </div><!--bartramsAdd-->
 
-                  <input type="radio" name="trip" value="Seaport-Camp" id="tripSeaportCamp"><label for="tripSeaportCamp">Seaport Museum Summer Camp</label><br/>
+                <!--   <input type="radio" name="trip" value="Seaport-Camp" id="tripSeaportCamp"><label for="tripSeaportCamp">Seaport Museum Summer Camp</label><br/>
                   <input type="radio" name="trip" value="Other-Pass" id="tripOtherPass"><label for="tripOtherPass">Other Passenger Related Trip</label><br/>
                       
                       <!--hidden div-->
-                    <div id="otherPassAdd" class="small-12 cell hide">
+                   <!--  <div id="otherPassAdd" class="small-12 cell hide">
                       
                       <input type="text" id="otherPass" placeholder="What Kind of Trip" />
                     
-                    </div><!--otherPassAdd-->
-
-                  <input type="radio" name="trip" value="Other-Non" id="tripOtherNon"><label for="tripOtherNon">Other Non Revenue Trip</label><br/>
+                    </div><!--otherPassAdd--> -->
+ -->
+               <!--    <input type="radio" name="trip" value="Other-Non" id="tripOtherNon"><label for="tripOtherNon">Other Non Revenue Trip</label><br/> -->
                     
                     <!--hidden div-->
                     <div id="otherNonAdd" class="small-12 cell hide">
@@ -614,8 +633,13 @@
                 <div class="small-12 cell">
 
                   <label>Did you leave on time?</label>
-                  <input type="radio" name="onTime" value="yes" id="onTimeYes"><label for="onTimeYes">Yes</label>
-                  <input type="radio" name="onTime" value="no" id="onTimeNo"><label for="onTimeNo">No</label>
+                  <select id="onTime">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+                <!--   <input type="radio" name="onTime" value="yes" id="onTimeYes"><label for="onTimeYes">Yes</label>
+                  <input type="radio" name="onTime" value="no" id="onTimeNo"><label for="onTimeNo">No</label> -->
                   
                   <!--hidden div-->
                   <div id="onTimeAdd" class="small-12 cell hide">
@@ -694,8 +718,13 @@
                 <div class="small-12 cell">
 
                   <label>Did you arrive on time?</label>
-                  <input type="radio" name="arriveOnTime" value="yes" id="arriveOnTimeYes"><label for="arriveOnTimeYes">Yes</label>
-                  <input type="radio" name="arriveOnTime" value="no" id="arriveOnTimeNo"><label for="arriveOnTimeNo">No</label>
+                  <select id="arriveOnTime">
+                      <option placeholder="select"></option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+              <!--     <input type="radio" name="arriveOnTime" value="yes" id="arriveOnTimeYes"><label for="arriveOnTimeYes">Yes</label>
+                  <input type="radio" name="arriveOnTime" value="no" id="arriveOnTimeNo"><label for="arriveOnTimeNo">No</label> -->
                   
                   <!--hidden div-->
                   <div id="arriveOnTimeAdd" class="small-12 cell hide">
@@ -707,23 +736,24 @@
                 
                 </div><!--small-12 cell-->
               </div><!--grid-x grid-padding-x-->
-
+<!-- 
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
+ -->
+           <!--        <label>Are there any problems that management needs to be alerted about?</label> -->
 
-                  <label>Are there any problems that management needs to be alerted about?</label>
-                  <input type="radio" name="problems" value="yes" id="problemsYes"><label for="problemsYes">Yes</label>
+             <!--      <input type="radio" name="problems" value="yes" id="problemsYes"><label for="problemsYes">Yes</label>
                   <input type="radio" name="problems" value="no" id="problemsNo"><label for="problemsNo">No</label>
-                  
+                   -->
                   <!--hidden div-->
-                  <div id="problemsAdd" class="small-12 cell hide">
+                 <!--  <div id="problemsAdd" class="small-12 cell hide">
                     
                     <textarea placeholder="Alert the Manager"></textarea>
                   
                   </div><!--problemsAdd-->
-                
-                </div><!--small-12 cell-->
-              </div><!--grid-x grid-padding-x-->
+               <!--  
+                </div>small-12 cell
+              </div>< --><!--grid-x grid-padding-x-->
 
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
@@ -794,13 +824,15 @@
 
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
+<!-- 
+                  <label>Was the Fwd Tank Fueled?</label> -->
+                    
 
-                  <label>Was the Fwd Tank Fueled?</label>
-                  <input type="radio" name="fwdTankFueled" value="yes" id="fwdTankFueledYes"><label for="fwdTankFueledYes">Yes</label>
-                  <input type="radio" name="fwdTankFueled" value="no" id="fwdTankFueledNo"><label for="fwdTankFueledNo">No</label>
+<!--                   <input type="radio" name="fwdTankFueled" value="yes" id="fwdTankFueledYes"><label for="fwdTankFueledYes">Yes</label>
+                  <input type="radio" name="fwdTankFueled" value="no" id="fwdTankFueledNo"><label for="fwdTankFueledNo">No</label> -->
                   
                   <!--hidden div-->
-                  <div id="fwdTankFueledAdd" class="small-12 cell hide">
+                  <div id="fwdTankFueledAdd" class="small-12 cell">
                    <!--  <label>What was the forward tank measurement (in inches) prior to fueling?</label>
                     <input type="text" placeholder="Tank Measurements in Inches" /> -->
                     <label>How many gallons were added to the forward tank?</label>
@@ -816,13 +848,13 @@
 
               <div class="grid-x grid-padding-x">
                 <div class="small-12 cell">
-
-                  <label>Was the Aft Tank Fueled?</label>
-                  <input type="radio" name="aftTankFueled" value="yes" id="aftTankFueledYes"><label for="aftTankFueledYes">Yes</label>
+<!-- 
+                  <label>Was the Aft Tank Fueled?</label> -->
+                 <!--  <input type="radio" name="aftTankFueled" value="yes" id="aftTankFueledYes"><label for="aftTankFueledYes">Yes</label>
                   <input type="radio" name="aftTankFueled" value="no" id="aftTankFueledNo"><label for="aftTankFueledNo">No</label>
-                  
+                   -->
                   <!--hidden div-->
-                  <div id="aftTankFueledAdd" class="small-12 cell hide">
+                  <div id="aftTankFueledAdd" class="small-12 cell">
 
                   <!--   <label>What was the aft tank measurement (in inches) prior to fueling?</label>
                     <input type="text" placeholder="Tank Measurements in Inches" /> -->
