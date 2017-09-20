@@ -24,13 +24,13 @@
                 <h3>Trip Manifest <br/> Departure</h3>
 
                 <hr/>
-
+				<div id="formMessage"></div>
                 <form id="tripManifest">
 
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
                   
-                      <label>Which vessel are you checking out of for the day?
+                      <label>Which vessel are you using?
                         <select id="vesselActiveForTrip">
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
@@ -59,8 +59,10 @@
                           <option value="tripNonRev">Non Revenue trip</option>
                         </select>
                   
+	<!-- Commented Out, Not Necessary ...Jim -->
+
                         <!--hidden div-->
-                        <div id="bartramsAdd" class="small-12 cell hide">
+                        <!-- <div id="bartramsAdd" class="small-12 cell hide">
                       
                           <label>Deporting Dock?</label>
                           <select id="bartramsDepartingDock">
@@ -71,11 +73,11 @@
                         </div><!--bartramsAdd-->
                       
                         <!--hidden div-->
-                        <div id="otherPassAdd" class="small-12 cell hide">
+                       <!--  <div id="otherPassAdd" class="small-12 cell hide">
                       
                           <input type="text" id="otherPass" placeholder="What Kind of Trip" />
                     
-                        </div><!--otherPassAdd-->
+                        </div> --><!--otherPassAdd--> 
                     
                         <!--hidden div-->
                         <div id="otherNonAdd" class="small-12 cell hide">
