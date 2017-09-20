@@ -34,7 +34,7 @@ function toggleSignIn() {
           document.getElementById('quickstart-sign-in').app = false;
           // [END_EXCLUDE]
         }).then(function(){
-            location.replace("https://captainjimmy.github.io/HarborMaster/manager.html");
+            location.replace("https://captainjimmy.github.io/HarborMaster/captain.html");
         });
         // [END authwithemail]
       }
@@ -99,7 +99,7 @@ function toggleSignIn() {
           var credential = error.credential;
           
         }).then(function(){
-            location.replace("https://captainjimmy.github.io/HarborMaster/manager.html");
+            location.replace("https://captainjimmy.github.io/HarborMaster/captain.html");
         });
         // [END signin]
       } else {
@@ -110,13 +110,12 @@ function toggleSignIn() {
       
     }
 
+    function signOut(){
+        firebase.auth().signOut().then(function(){
+            location.replace("https://captainjimmy.github.io/HarborMaster/index.html");
+        });
+    }
 
-
-    /**
-     * initApp handles setting up UI event listeners and registering Firebase auth listeners:
-     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
-     *    out, and that is where we update the UI.
-     */
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
@@ -136,14 +135,12 @@ function toggleSignIn() {
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       document.getElementById('quickstart-sign-in-with-google').addEventListener('click', signInWithGoogle, false);
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-
+      document.getElementById('signout').addEventListener('click', signOut, false);
     }
 
     window.onload = function() {
       initApp();
     };
-
-
 
 });
 

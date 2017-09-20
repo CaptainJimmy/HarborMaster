@@ -228,6 +228,7 @@ button:active {
 #map-canvas{
   min-height: 100px;
   min-width: 100px;
+
 }
 
 .homeLink{
@@ -241,3 +242,14 @@ button:active {
 .homeLink:hover{
     text-decoration: none;
 }
+
+.small-4{
+  display: inline-block;
+  margin-right: 0px;
+  margin-left: 0px;
+
+
+}
+
+
+

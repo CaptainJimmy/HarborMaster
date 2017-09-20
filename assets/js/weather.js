@@ -36,6 +36,7 @@ function getWeather(lat, lon) {
 	.done(function(result) {
       $("#location").text(result.city.name + ", " + result.city.country);
       $("#desc").html("Current Forecast: " + titleCase(result.list[0].weather[0].description));
+      $("#icon").html('<img src=' + "http://openweathermap.org/img/w/" + result.list[0].weather[0].icon + ".png" + ">");
       $("#current-temp").text("Current Temperature: " + result.list[0].main.temp + "°");
       $("#high-temp").text("High: " + result.list[0].main.temp_max + "°");
       $("#low-temp").text("Low: " + result.list[0].main.temp_min + "°");
@@ -45,13 +46,20 @@ function getWeather(lat, lon) {
 
 // setup initial map
 function initializeMap(lat, lon) {
-    var myLatlng = new google.maps.LatLng(lat, lon);
-    var myOptions = {
-      zoom: 8,
-      center: myLatlng,
-      mapTypeId:'satellite'
-    }
-    var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+    
+    var myLocation = {lat: lat, lng: lon};
+   
+    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    mapTypeId: 'satellite',  
+    zoom: 10,
+    center: myLocation
+    // mapTypeId:'roadmap'
+    });
+
+    var marker = new google.maps.Marker({
+    position: myLocation,
+    map: map
+    });
   };
 
 
