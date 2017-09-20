@@ -19,7 +19,7 @@ $("body").on("change", function() {
     //console.log(radioChoice);
     //Is vessel clean and orderly from the previous day?
     var vesselClean=$('#vesselCleanFromPrevious').val();
-    console.log(vesselClean);
+  //  console.log(vesselClean);
     if (vesselClean==="false") {
     	//console.log("vessel is dirty");
     	$("#cleanAdd").removeClass("hide").addClass("show");
@@ -131,23 +131,27 @@ $("body").on("change", function() {
   //  var radioChoice = (this.id)
     //console.log(radioChoice);
     //Bartrams Gardens Departure Point
-    var tripName=$('#tripName').val();
 
-    if (tripName === "tripBartrams") {
-    	//console.log("open new div")
-    	$("#bartramsAdd").removeClass("hide").addClass("show");
-    	//PROBLEM: DIV CLOSES ONCE RADIOS ARE CHOSEN
-    }
-     else if (tripName !== "tripBartrams") {
-    	//console.log("close new div")
-    	$("#bartramsAdd").removeClass("show").addClass("hide");
-    }
-    else if (tripName === "tripNonRev"){
-        $("#otherNonAdd").removeClass("hide").addClass("show");
-    }
-    else if (tripName !== "tripNonRev"){
-                $("#otherNonAdd").removeClass("show").addClass("hide");
-    };
+
+///NOT CURRENTLY NEEDED.  WILL BE NEEDED IN FUTURE VERSIONS
+
+    // var tripName=$('#tripName').val();
+
+    // if (tripName === "tripBartrams") {
+    // 	//console.log("open new div")
+    // 	$("#bartramsAdd").removeClass("hide").addClass("show");
+    // 	//PROBLEM: DIV CLOSES ONCE RADIOS ARE CHOSEN
+    // }
+    //  else if (tripName !== "tripBartrams") {
+    // 	//console.log("close new div")
+    // 	$("#bartramsAdd").removeClass("show").addClass("hide");
+    // }
+    // else if (tripName === "tripNonRev"){
+    //     $("#otherNonAdd").removeClass("hide").addClass("show");
+    // }
+    // else if (tripName !== "tripNonRev"){
+    //             $("#otherNonAdd").removeClass("show").addClass("hide");
+    // };
 
     // if (radioChoice === "tripOtherPass") {
     // 	//console.log("open new div")
@@ -169,13 +173,13 @@ $("body").on("change", function() {
     //Did you leave on time?
 
     var onTime=$('#onTime').val();
-    console.log(onTime);
+   // console.log(onTime);
     if (onTime === "false") {
-        console.log("NOT ON TIME");
+     //   console.log("NOT ON TIME");
         $("#onTimeAdd").removeClass("hide").addClass("show");
     }
     else if (onTime === "true") {
-            console.log("ON TIME");
+        //    console.log("ON TIME");
             $("#onTimeAdd").removeClass("show").addClass("hide");
         };
     // if (radioChoice === "onTimeYes") {
