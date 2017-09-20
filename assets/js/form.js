@@ -24,41 +24,41 @@ $("body").on("change", function() {
     //Is vessel clean and orderly from the previous day?
     var vesselClean=$('#vesselCleanFromPrevious').val();
     console.log(vesselClean);
-    if (!vesselClean) {
-    	console.log("vessel is dirty");
+    if (vesselClean==="false") {
+    	//console.log("vessel is dirty");
     	$("#cleanAdd").removeClass("hide").addClass("show");
-    } else if (vesselClean) {
-    	console.log("vessel is clean");
+    } else if (vesselClean==="true") {
+    	//console.log("vessel is clean");
     	$("#cleanAdd").removeClass("show").addClass("hide");
     };
 
     //Do fuel filters appear clean?
     var filtersClean=$('#fuelFiltersClean').val();
 
-    if (!filtersClean) {
+    if (filtersClean==="false") {
     	//console.log("open new div")
     	$("#fuelFiltersAdd").removeClass("hide").addClass("show");
-    } else if (filtersClean) {
+    } else if (filtersClean==="true") {
     	//console.log("close new div")
     	$("#fuelFiltersAdd").removeClass("show").addClass("hide");
     };
 
     var beltTensioned=$('#beltTensioned').val();
     //Is the front belt properly tentioned?
-    if (!beltTensioned) {
+    if (beltTensioned==="false") {
     	//console.log("open new div")
     	$("#beltAdd").removeClass("hide").addClass("show");
-    } else if (beltTensioned) {
+    } else if (beltTensioned==="true") {
     	//console.log("close new div")
     	$("#beltAdd").removeClass("show").addClass("hide");
     };
 
     var oilProperLevel=$('#oilProperLevel').val();
     //Is the engine oil at the proper level?
-    if (!oilProperLevel) {
+    if (oilProperLevel==="false") {
     	//console.log("open new div")
     	$("#engineOilAdd").removeClass("hide").addClass("show");
-    } else if (oilProperLevel) {
+    } else if (oilProperLevel==="true") {
     	//console.log("close new div")
     	$("#engineOilAdd").removeClass("show").addClass("hide");
     };
@@ -66,11 +66,11 @@ $("body").on("change", function() {
     //How much oil did you add in quarts?
 
     var oilAdded=$('oilAdded').val();    
-    if (oilAdded) {
+    if (oilAdded==="true") {
     	//console.log("open new div")
     	$("#addOilAdd").removeClass("hide").addClass("show");
     	$("#noOilAdd").removeClass("show").addClass("hide");
-    } else if (!oilAdded) {
+    } else if (oilAdded==="false") {
     	//console.log("close new div")
     	$("#addOilAdd").removeClass("show").addClass("hide");
     	$("#noOilAdd").removeClass("hide").addClass("show");
@@ -78,19 +78,19 @@ $("body").on("change", function() {
 
     var nonCriticalIems=$('#nonCriticalItems').val();
     //Is there any other Non Critical items you'd like to log?
-    if (nonCriticalIems) {
+    if (nonCriticalIems==="true") {
     	//console.log("open new div")
     	$("#nonCriticalAdd").removeClass("hide").addClass("show");
-    }else if (!nonCriticalIems) {
+    }else if (nonCriticalIems==="false") {
     	//console.log("close new div")
     	$("#nonCriticalAdd").removeClass("show").addClass("hide");
     };
     //Is there anything you'd like management to be alerted on immediately?
     var criticalItems=$('#criticalItems').val();
-    if (criticalItems) {
+    if (criticalItems==="true") {
     	//console.log("open new div")
     	$("#alertManagerAdd").removeClass("hide").addClass("show");
-    }else if (!criticalItems) {
+    }else if (criticalItems==="false") {
     	//console.log("close new div")
     	$("#alertManagerAdd").removeClass("show").addClass("hide");
     };
@@ -102,29 +102,29 @@ $("body").on("change", function() {
     //console.log(radioChoice);
     //How much was the safe drop?
     var safeDrop=$('#safeDropOut').val();
-    if (!safeDrop) {
+    if (safeDrop==="false") {
     	//console.log("open new div")
     	$("#safeDropAdd").removeClass("hide").addClass("show");
-    } else if (safeDrop) {
+    } else if (safeDrop==="true") {
     	//console.log("close new div")
     	$("#safeDropAdd").removeClass("show").addClass("hide");
     }
     var nonCriticalItemsOut=$('#nonCriticalItemsOut').val();
     //Are there any non critical items to add to the log? 
-    if (nonCriticalItemsOut) {
+    if (nonCriticalItemsOut==="true") {
     	//console.log("open new div")
     	$("#nonCritical1Add").removeClass("hide").addClass("show");
-    } else if (!nonCriticalItemsOut) {
+    } else if (nonCriticalItemsOut==="false") {
     	//console.log("close new div")
     	$("#nonCriticalAdd").removeClass("show").addClass("hide");
     };
 
     var criticalItemsOut=$('#criticalItemsOut').val();
     //Are there any critical items to alert manager?
-    if (criticalItemsOut) {
+    if (criticalItemsOut==="true") {
     	//console.log("open new div")
     	$("#criticalAlertAdd").removeClass("hide").addClass("show");
-    } else if (!criticalItemsOut) {
+    } else if (criticalItemsOut==="false") {
     	//console.log("close new div")
     	$("#criticalAlertAdd").removeClass("show").addClass("hide");
     };
@@ -173,10 +173,13 @@ $("body").on("change", function() {
     //Did you leave on time?
 
     var onTime=$('#onTime').val();
-    if (!onTime) {
+    console.log(onTime);
+    if (onTime === "false") {
+        console.log("NOT ON TIME");
         $("#onTimeAdd").removeClass("hide").addClass("show");
     }
-    else if (onTime) {
+    else if (onTime === "true") {
+            console.log("ON TIME");
             $("#onTimeAdd").removeClass("show").addClass("hide");
         };
     // if (radioChoice === "onTimeYes") {
@@ -199,10 +202,10 @@ $("body").on("change", function() {
 
 
 var arriveOnTime=$('#arriveOnTime').val();
-if (!arriveOnTime){
+if (arriveOnTime==="true"){
     $("#arriveOnTimeAdd").removeClass("hide").addClass("show");
 }
-else if (arriveOnTime){
+else if (arriveOnTime==="false"){
     $("#arriveOnTimeAdd").removeClass("show").addClass("hide");
 }
     // if (radioChoice === "arriveOnTimeNo") {

@@ -14,6 +14,149 @@
 	</head>
 	<body>
 		<h1> TESTING PURPOSES ONLY </h1>
+
+		<div id="divSet3" class="small-12">
+          <!-- Trip Manifest -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-12 cell">
+                <div class="callout">
+            
+                <h3>Trip Manifest <br/> Departure</h3>
+
+                <hr/>
+
+                <form id="tripManifest">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Which vessel are you checking out of for the day?
+                        <select id="vesselActiveForTrip">
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Which trip are you doing?</label>
+                        <select id="tripName">
+                          <option placeholder="select"></option>
+                          <option value="tripHarborTour">Harbor Tour</option>
+                          <option value="tripSunsetCruise">Sunset Cruise</option>
+                          <option value="tripCityLights">City Lights</option>
+                          <option value="tripPrivateCharter">2 Hour Private Charter</option>
+                          <option value="tripBoozeCruise">Booze Cruise</option>
+                          <option value="tripSchuylkillBanks">Penns Landing to Schuylkill Banks</option>
+                          <option value="tripWalnuttoWalnut">Walnut To Walnut</option>
+                          <option value="tripSecrets">Secrets of the Schuylkill</option>
+                          <option value="tripSeaportCamp">Seaport KidsCampers</option>
+                          <option value="tripBartrams">Bartrams Garden</option>
+                          <option value="tripNonRev">Non Revenue trip</option>
+                        </select>
+                  
+                        <!--hidden div-->
+                        <div id="bartramsAdd" class="small-12 cell hide">
+                      
+                          <label>Deporting Dock?</label>
+                          <select id="bartramsDepartingDock">
+                            <option value="Walnut">Walnut</option>
+                            <option value="Bartrams">Bartrams</option>
+                          </select>
+                    
+                        </div><!--bartramsAdd-->
+                      
+                        <!--hidden div-->
+                        <div id="otherPassAdd" class="small-12 cell hide">
+                      
+                          <input type="text" id="otherPass" placeholder="What Kind of Trip" />
+                    
+                        </div><!--otherPassAdd-->
+                    
+                        <!--hidden div-->
+                        <div id="otherNonAdd" class="small-12 cell hide">
+                      
+                          <input type="text" id="otherNon" placeholder="What Kind of Trip" />
+                    
+                        </div><!--otherNonAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Scheduled Departure Time</label>
+                      <input type="time" id="scheduled-departure" class="form-control"/>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Did you leave on time?</label>
+                      <select id="onTime">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div id="onTimeAdd" class="small-12 cell hide">
+                        
+                        <label>Actual Departure Time</label>
+                        <input type="time" id="actual-departure" class="form-control"/>
+                      
+                      </div><!--ontimeAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Number of passengers on board</label>
+                      <input type="number" id="passenger-count" placeholder="# of Passengers" />
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Number of crew members on board</label>
+                      <input type="number" id="crew-count" placeholder="# of Crew Members" />
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Names of crew members on board</label>
+                      <input type="text" id="crew-names" placeholder="Names" />
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#" id="manifest-submit" class="expanded  button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                </form><!--form Trip Manifest Departure-->
+
+                </div><!--callout-->
+              </div><!--small-12 cell-->
+            </div><!--grid-x grid-padding-x-->
+        </div><!--divSet3-->
 		<div class="grid-x grid-padding-x">
         		
         		<div class="small-12 cell">
@@ -60,5 +203,7 @@
 		<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
 
 		<script src="assets/js/trips.js"></script>
+		      <script src="assets/js/form.js"></script>
+
 	</body>
 </html>	
