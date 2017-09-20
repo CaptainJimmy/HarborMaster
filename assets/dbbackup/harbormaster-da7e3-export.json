@@ -1,0 +1,233 @@
+{
+  "checkinReports" : {
+    "vessel" : {
+      "liberty" : {
+        "-KuVF8DYxCh4nA2njMHr" : {
+          "addedOil" : "true",
+          "addedOilAmount" : "",
+          "aftTankLevel" : "37",
+          "blackTankLevel" : "4",
+          "cleanComments" : "",
+          "criticalComments" : "",
+          "currentActiveTank" : "Aft",
+          "date" : "2017-09-20T13:05:41-04:00",
+          "engineHours" : "3444",
+          "engineOilLevel" : "true",
+          "frontDriveBelt" : "true",
+          "frontDriveComments" : "",
+          "fuelFiltersClean" : "true",
+          "fuelFiltersComments" : "",
+          "fwdTankLevel" : "19",
+          "nonCriticalComments" : "",
+          "oilOnBoard" : "",
+          "vesselClean" : "true",
+          "vesselName" : "Liberty"
+        },
+        "-KuVfTMxJVeE2QlY7344" : {
+          "addedOil" : "",
+          "addedOilAmount" : "",
+          "aftTankLevel" : "22",
+          "blackTankLevel" : "5",
+          "cleanComments" : "",
+          "criticalComments" : "",
+          "currentActiveTank" : "Fwd",
+          "date" : "2017-09-20T15:05:05-04:00",
+          "engineHours" : "2222",
+          "engineOilLevel" : "true",
+          "frontDriveBelt" : "true",
+          "frontDriveComments" : "",
+          "fuelFiltersClean" : "true",
+          "fuelFiltersComments" : "",
+          "fwdTankLevel" : "12",
+          "nonCriticalComments" : "",
+          "oilOnBoard" : "",
+          "vesselClean" : "true",
+          "vesselName" : "Liberty"
+        },
+        "records" : "go here"
+      },
+      "patriot" : {
+        "records" : "go here"
+      }
+    }
+  },
+  "checkoutReports" : {
+    "vessel" : {
+      "liberty" : {
+        "test" : "test"
+      },
+      "patriot" : {
+        "-KuVJfAllUaE8XFcrxGN" : {
+          "activeTank" : "Fwd",
+          "activeTankLevel" : "22",
+          "barStocked" : "true",
+          "breakersOff" : "true",
+          "criticalComments" : "",
+          "currentActiveTank" : "Fwd",
+          "date" : "2017-09-20T13:25:28-04:00",
+          "engineHours" : "2222",
+          "linesSecure" : "true",
+          "nonCriticalComments" : "",
+          "safeDrop" : "true",
+          "safeDropAmount" : "",
+          "vesselClean" : "true",
+          "vesselName" : "Patriot"
+        },
+        "test" : "test"
+      }
+    }
+  },
+  "fuelingReports" : {
+    "liberty" : {
+      "records" : "go here"
+    },
+    "patriot" : {
+      "records" : "go here"
+    }
+  },
+  "loggedIn" : {
+    "loginTokens" : "go here"
+  },
+  "outgoingEmails" : {
+    "-KuVJfAq3xedBeSNS_1J" : {
+      "Message" : "You are receiving a checkout alert from your Captain, submitted at 2017-09-20T13:25:28-04:00 on vessel Patriot. [object Object]",
+      "Subject" : "Vessel Check Out Report: Patriot",
+      "To" : "james.reinknecht@gmail.com"
+    }
+  },
+  "persistentData" : {
+    "liberty" : {
+      "blackTank" : {
+        "currentLevel" : "5"
+      },
+      "engineHours" : "2222",
+      "freshWater" : {
+        "captainName" : "Walt",
+        "date" : "9/10/2017",
+        "vesselName" : "Liberty"
+      },
+      "fuel" : {
+        "currentFuel" : {
+          "aft" : "22",
+          "fwd" : "12",
+          "tankRunningOn" : "Fwd"
+        }
+      },
+      "lastWashed" : {
+        "captainName" : "Walt",
+        "date" : "9/08/2017"
+      },
+      "oil" : {
+        "NOT IN USE" : "YET",
+        "amountOnBoard" : 20,
+        "lastAdded" : {
+          "captainName" : "walt",
+          "date" : "9/07/2017",
+          "howMuch" : 3
+        }
+      }
+    },
+    "patriot" : {
+      "blackTank" : {
+        "currentLevel" : 5,
+        "lastPumpedOut" : {
+          "captainName" : "Walt",
+          "date" : "9/04/2017"
+        }
+      },
+      "freshWater" : {
+        "captainName" : "Walt",
+        "date" : "9/17/2017",
+        "vesselName" : "Patriot"
+      },
+      "fuel" : {
+        "currentFuel" : {
+          "aft" : 34,
+          "fwd" : 11,
+          "tankRunningOn" : "aft"
+        },
+        "lastFueled" : {
+          "aftTankGals" : 60,
+          "captainName" : "harry",
+          "date" : "9/02/2017",
+          "fwdTankGals" : 10
+        },
+        "lastMeasured" : {
+          "captainName" : "Harry",
+          "date" : "9/09/2017"
+        }
+      },
+      "lastWashed" : {
+        "captainName" : "Jim",
+        "date" : "9/09/2017"
+      },
+      "oil" : {
+        "NOT IN USE" : "YET",
+        "amountOnBoard" : 25,
+        "lastAdded" : {
+          "captainName" : "Jim",
+          "date" : "9/04/2017",
+          "howMuch" : 2
+        }
+      }
+    }
+  },
+  "pumpOutReports" : {
+    "liberty" : {
+      "records" : "go here"
+    },
+    "patriot" : {
+      "records" : "go here"
+    }
+  },
+  "vesselManifests" : {
+    "Patriot" : {
+      "-KuV_H5q7KdGm83I2gNx" : {
+        "actualArrivalTime" : "14:00",
+        "actualDepart" : "13:01",
+        "arrivedOnTime" : "true",
+        "crewCount" : "2",
+        "crewNames" : "jim chandra",
+        "onTime" : "true",
+        "paxCount" : "22",
+        "scheduledArrival" : "14:00",
+        "scheduledTime" : "13:01",
+        "timeStampIn" : "2017-09-20T13:33:31-04:00",
+        "timeStampOut" : "2017-09-20T14:38:02-04:00",
+        "tripName" : "SunsetCruise",
+        "vesselName" : "Patriot"
+      },
+      "-KuVaMrLe6utoxez_4To" : {
+        "actualArrivalTime" : "15:00",
+        "actualDepart" : "13:01",
+        "arrivedOnTime" : "true",
+        "crewCount" : "2",
+        "crewNames" : "chandra jim",
+        "onTime" : "true",
+        "paxCount" : "22",
+        "scheduledArrival" : "15:00",
+        "scheduledTime" : "13:01",
+        "timeStampIn" : "2017-09-20T13:34:28-04:00",
+        "timeStampOut" : "2017-09-20T14:42:48-04:00",
+        "tripName" : "HarborTour",
+        "vesselName" : "Patriot"
+      }
+    },
+    "liberty" : {
+      "records" : "go here"
+    }
+  },
+  "vesselWashing" : {
+    "-KuVvASUPnN4EAmnGM28" : {
+      "captainName" : "PlaceHolderCaptain",
+      "date" : "2017-09-20T16:13:42-04:00",
+      "vesselName" : ""
+    },
+    "liberty" : {
+      "record" : "goes here"
+    },
+    "patriot" : {
+      "record" : "goes here"
+    }
+  }
+}
