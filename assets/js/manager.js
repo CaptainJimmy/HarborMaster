@@ -1,3 +1,7 @@
+
+// THIS FILE IS DEPRECATED AND NO LONGER NEEDED
+
+
 $(document).ready(function() {
 
             var config = {
