@@ -91,7 +91,7 @@ function toggleSignIn() {
           // var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE]
-          location.replace("http://www.google.com")
+          location.replace("https://captainjimmy.github.io/HarborMaster/manager.html")
 
           
             }
