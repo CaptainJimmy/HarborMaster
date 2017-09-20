@@ -5,12 +5,30 @@ $('#iAmCaptain, #iAmManager').click(function () {
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet1").removeClass("hide").addClass("show");
       $("#bar").removeClass("hide").addClass("show");
+      $("#li1").addClass("active");
+      $("#li2").removeClass("active");
    }
    else if (this.id == "iAmManager") {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet2").removeClass("hide").addClass("show");
       $("#bar").removeClass("hide").addClass("show");
+      $("#li1").removeClass("active");
+      $("#li2").addClass("active");
+   }
+});
+
+$('#captainRole, #managerRole').click(function () {
+   if (this.id == "captainRole") {
+      $("#li1").addClass("active");
+      $("#li2").removeClass("active");
+      $("#divSet1").addClass("show").removeClass("hide");
+   }
+     else if (this.id == "managerRole") {
+      $("#li1").removeClass("active");
+      $("#li2").addClass("active");
+      $("#divSet1").removeClass("show").addClass("hide");
+      $("#divSet2").addClass("show").removeClass("hide");
    }
 });
 
