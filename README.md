@@ -1,14 +1,18 @@
 # Harbor Master
 
-_**Concept:**_ There is a possible need in the small passenger vessel industry for management of the vessel(s) in the fleet, consumables such as engine oil, fuel levels, trip manifest logging. alcohol and beverages, as well as  alcohol, beverages, consumable supplies on hand. Ideally there will be three different consoles, one for captain, one for bartender, and one for manager.  The consoles will be mobile-friendly, and mobile-first. They each perform different functions, but they are easily done with the users phone, as they are written with Mobile First idealogy.
+_**Concept:**_ There is a need in the small passenger vessel industry for management of the vessel(s) in the fleet, fuel levels, trip manifest logging,  consumables such as engine oil, alcohol, beverages, consumable supplies on hand. Ideally there will are three different consoles for different roles,  captain, bartender, and manager.  The consoles will be mobile-friendly, and mobile-first. They each perform different functions, but they are easily done with the users phone, as they are written with Mobile First idealogy.
 
-Each function will store the data in a database (google firebase) as a record, and kept forever. The program will then update certain important parameters in tables that are only relevant at the current time (current fuel levels, engine hours, black water tank levels, etc), allowing the manager to easily within a couple of clicks find out exactly what he needs to know - such as when the last time the vessel was pumped out, how much ice is in the freezer, etc..
+Each function/task will store the data in a database (google firebase) as a record, and kept forever. The program will then update certain important parameters in persistent tables that are only relevant at the current time (current fuel levels, engine hours, fresh and black water tank levels, etc), allowing the manager to easily within a couple of clicks find out exactly what he needs to know - such as when the last time the vessel was pumped out, how much ice is in the freezer, fuel on board.
+
+## Contributors
+* James Reinknecht - Overall Product Design, JavaScript, Database Schema Design, Database Integration, AJAX Calls
+* Ruthie Campiz - Front End Design, Form Interactions, JavaScript, UI/UX Design, Database Integration
+* William Rainaud - Google Authentication, API Interaction, JavaScript, Database Integration
+
+## *Authentication Done With Google Auth*
 
 ## Captain's Console:
 Captain Logs in and is presented with a menu of tasks
-
-**Reports**
-Captain is able to view a report of the previous vessel check in and check out, last time the boat was fueled, last date the black tank was pumped, last time the fresh water was filled.
 
 **Weather Reports**
 Uses OpenWeatherAPI to get a weather report for the geolocation returned by the mobile
@@ -17,31 +21,29 @@ Uses OpenWeatherAPI to get a weather report for the geolocation returned by the 
 
 _selects the vessel he is ‘checking out’ for the day:_
 
-He then goes through the checkout process:
+He then goes through the checkout process, for examples:
 
-* Fuel levels
+* Fuel levels for each tank
 * Oil Level
-	* Did You Add Oil? How much? How Much is left on board?
-* Transmission Oil Level
 	* Did You Add Oil? How much? How Much is left on board?
 * Is the alternator belt tensioned?
 * Black water tank level
 * Are there any critical items the manager needs to know about?
 
-Submit the check in procedure.  The Manager is emailed an HTML report.
+Submit the check in procedure.  The Manager is emailed an HTML report if there are critical items, otherwise they don't need.
 
 **Vessel Check Out (End Of Day)**
 
-Vessel shutdown procedures are stepped through one by one.  If there are critical items the manager or next captain needs to know about, There is a spot for it.
+Vessel shutdown procedures are stepped through one by one.  If there are critical items the manager or next captain needs to know about, There is a spot for it.  The manager is emailed an end of day report.
 
 **Vessel Trip Manifests**
 
 _USCG Regulations Require a passenger manifest to be stored off the vessel, whether it be paper or electronic._
 
-_**Depart:**_ Captain is prompted with the type of trip (sunset cruise, booze cruise, harbor tour, etc, expected duration, number of passengers on board, number of crew on board, names of crew,   departure time(departure time is not necessarily the time of submission). An email is generated automatically upon submission of departure.
+_**Depart:**_ Captain is prompted with the type of trip (sunset cruise, booze cruise, harbor tour, etc, expected duration, number of passengers on board, number of crew on board, names of crew,  departure time(departure time is not necessarily the time of submission). An email is generated automatically upon submission of departure.
 
 **Arrive:**
- Captain is prompted with the arrival time. (as the arrival time is not necessarily the time of submission) The trip is cleared and logged upon submission.   An email is generated automatically upon submission.
+ Captain clicks on the active trips - and is prompted with the arrival time. (as the arrival time is not necessarily the time of submission) The trip is cleared and logged upon submission.   An email is generated automatically upon submission of arrival.
 
 **Vessel Procedures:**
 These Are Sometimes Weekly or Daily Tasks.  This is an Excellent way To Log
@@ -51,6 +53,10 @@ These Are Sometimes Weekly or Daily Tasks.  This is an Excellent way To Log
 * Fresh Water Tank is Filled
 * Boat is washed/scrubbed
 
+A copy of the report is generated, and persistent data fields are update.
+
+**Reports** (Future Versions)
+Captain is able to view a report of the previous vessel check in and check out, last time the boat was fueled, last date the black tank was pumped, last time the fresh water was filled.
 
 
 ## Bartender (Future Versions)
@@ -75,19 +81,17 @@ If the items get to low levels, the manager is emailed a check in report of stoc
 ## Manager
 
 *Manager can log in and view reports of the vessels, fuel levels, etc
-*Manager can log in and see fuel consumption of vessels per hour
-*Manager can see stocks of beverages, ice, etc
-
+*Manager can see any active trips
+*Manager can see stocks of beverages, ice, etc *(future versions)*
+*Manager can log in and see fuel consumption of vessels per hour and create ad-hoc reports *(future versions)*
 
 ###Technologies Used:
-
+*Google Authentication
 *Foundation front end
 *Javascript/jquery
 *JSON
 *AJAX
 *Firebase
-*Email of reports via server side script
+*Email of reports via server GMail API
 *Openweather API for weather reports
-*Pexels API for pictures added to reports and pages
-
-
+*GitHub for VCS and Collaboration
