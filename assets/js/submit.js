@@ -23,31 +23,28 @@ $(document).ready(function() {
         var engineHours = $('#engine-hours-in').val();
         var fwdTankLevel = $('#fwd-fuel-in').val();
         var aftTankLevel = $('#aft-fuel-in').val();
-        var currentActiveTank = $('#runningAft').val();
+        var currentActiveTank = $('#fuelTankActive').val();
         var blackTankLevel = $('#black-water-in').val();
         var criticalComments = $('#alertManagerAdd').val();
         var currentTimeStamp = moment().format();
 
         var newCheckInSubmit = {
             "vesselName": vesselName,
-            //"date": currentTimeStamp,
+            "date": currentTimeStamp,
             "engineHours": $('#engine-hours-in').val(),
-            "vesselClean": $('#cleanYes').val(),
-            "vesselDirty": $('#cleanNo').val(),
-            //needs logic change
+            "vesselClean": $('#vesselCleanFromPrevious').val(),
             "cleanComments": $('#cleanAdd').val(),
             "fwdTankLevel": fwdTankLevel,
             "aftTankLevel": aftTankLevel,
-            //needs ID / logic change
             "currentActiveTank": currentActiveTank,
-            "fuelFiltersClean": $('#fuelFiltersYes').val(),
-            "fuelFiltersComments": $('#fuelFiltersAddComment').val(),
-            "frontDriveBelt": $('#beltYes').val(),
-            "frontDriveComments": $('#beltAddComment').val(),
-            "engineOilLevel": $('#engineOilYes').val(),
-            //"addedOil": $('#addOilYes').val(),
-            //"addedOilAmount": $('#oilAddedAmount').val(),
-            //"oilOnBoard": $('#oil-on-board').val(),
+            "fuelFiltersClean": $('#fuelFiltersClean').val(),
+            "fuelFiltersComments": $('#fuelFiltersAdd').val().trim(),
+            "frontDriveBelt": $('#beltTensioned').val(),
+            "frontDriveComments": $('#beltAddComment').val().trim(),
+            "engineOilLevel": $('#oilProperLevel').val(),
+            "addedOil": $('#oilAdded').val(),
+            "addedOilAmount": $('#addedOilAmount').val(),
+            "oilOnBoard": $('#oilLeftOnBoard').val(),
             "blackTankLevel": blackTankLevel,
             "nonCriticalComments": $('#nonCriticalAdd').val(),
             "criticalComments": criticalComments
@@ -138,7 +135,7 @@ $(document).ready(function() {
 
         var newCheckOutSubmit = {
             "vesselName": vesselName,
-            //"date": currentTimeStamp,
+            "date": currentTimeStamp,
             "engineHours": engineHours,
             "vesselClean": boatCleaned,
             "activeTankLevel": activeTankLevel,
@@ -147,7 +144,6 @@ $(document).ready(function() {
             "safeDrop": safeDrop,
             "safeDropAmount": safeDropAmount,
             "linesSecure": linesSecure,
-            //needs ID / logic change
             "currentActiveTank": activeTank,
             "nonCriticalComments": nonCriticalComments,
             "criticalComments": criticalComments

@@ -32,30 +32,26 @@ database.ref('/activeTrips').once("value").then(function(snapshot) {
                             tripDiv.empty();
                             tripDiv.html($('<tr>').addClass("reportInfo"));
                             tripDiv.append(
-                                $('<th>').text('Trip Name'),
                                 $('<th>').text('Vessel'),
-                                $('<th>').text('Captain'),
+                                $('<th>').text('Trip Name'),
                                 $('<th>').text('Sched. Depart.'),
                                 $('<th>').text('Actual Depart.'),
                                 $('<th>').text('Sched Return'),
                                 $('<th>').text('Pax Count'),
                                 $('<th>').text('Crew Count'),
-                                $('<th>').text('Total Souls')
+                                $('<th>').text('Crew Names')
                             );
 
 
-                                console.log(snapshot.val());
-                                console.log("testing");
-
 
                             snapshot.forEach(function(childSnapshot) {
+                                var tripKey = childSnapshot.val().key;
                                 var tripName = childSnapshot.val().tripName;
                                 var vessel = childSnapshot.val().vesselName;
                                 var schedDepart = childSnapshot.val().scheduledTime;
                                 var actualDepart = childSnapshot.val().actualDepart;
                                 var paxCount = childSnapshot.val().paxCount;
                                 var crewCount = childSnapshot.val().crewCount;
-                                var totalSouls = childSnapshot.val().totalSouls;
                                 var crewNames = childSnapshot.val().crewNames;
                                 var newRow = $('<tr>');
 
@@ -66,9 +62,11 @@ database.ref('/activeTrips').once("value").then(function(snapshot) {
                                     $('<td>').text(actualDepart),
                                     $('<td>').text(paxCount),
                                     $('<td>').text(crewCount),
-                                    $('<td>').text(totalSouls),
-                                    $('<td>').text(crewNames)
-                                    $('<a href="#">').addClass("button radius activeTrips").attr("id", tripName).text("Return")
+                                    $('<td>').text(crewNames),
+                                    $('<a href="#">').addClass("button radius activeTrips").attr({
+                                        "id": tripName,
+                                        "data-value": tripKey
+                                        }).text("Returned to Port")
                                 );
                                 tripDiv.append(newRow);
 
@@ -96,8 +94,8 @@ database.ref('/activeTrips').once("value").then(function(snapshot) {
                                     //grab variables
                 var vesselName=$('#vesselActiveForTrip').val()
                 var tripName=$('#tripName').val();
-                var bartramsDepartingDock=$('#bartramsDepartingDock').val();
-                var otherTripAdd=$('#otherNonAdd').val();
+                //var bartramsDepartingDock=$('#bartramsDepartingDock').val();
+                //var otherTripAdd=$('#otherNonAdd').val();
                 var scheduledTime=$('#scheduled-departure').val();
                 var onTime=$('#onTime').val();
                 if (onTime === "true"){
@@ -111,7 +109,6 @@ database.ref('/activeTrips').once("value").then(function(snapshot) {
                 var crewCount=$('#crew-count').val();
                 var crewNames=$('#crew-names').val();
                 var timeStamp=moment().format();
-                var totalSouls=paxCount+crewCount;
                                     //build object
 
                 var newTrip={
@@ -122,8 +119,8 @@ database.ref('/activeTrips').once("value").then(function(snapshot) {
                     "actualDepart": actualDepart,
                     "paxCount": paxCount,
                     "crewCount": crewCount,
-                    "totalSouls": totalSouls,
-                    "timeStamp": timeStamp
+                    "timeStamp": timeStamp,
+                    "crewNames": crewNames
                 }
 
 
@@ -133,6 +130,12 @@ database.ref('/activeTrips').once("value").then(function(snapshot) {
                     tripRefresh();
                     $('#formMessage').text("Trip Submitted Successfully");
 
+                    //RESET THE FORM
+
+                    // RUTHIE LOOK HERE PLZ
+
+                    //$('#tripManifest').foundation('resetForm');
+                  // document.getElementById("#tripManifest").reset();
             });
 
 
