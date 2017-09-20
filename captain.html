@@ -523,7 +523,8 @@
                 <h3>Trip Manifest <br/> Departure</h3>
 
                 <hr/>
-
+                <!-- ADDED BY JIM FOR FEEDBACK AFTER SUBMIT -->
+                <div id="formMessage"></div>
                 <form id="tripManifest">
 
                   <div class="grid-x grid-padding-x">
@@ -544,39 +545,41 @@
                     <div class="small-12 cell">
 
                       <label>Which trip are you doing?</label>
-                        <select id="tripName" class="soft">
-                          <option placeholder="select"></option>
-                          <option value="tripHarborTour">Harbor Tour</option>
-                          <option value="tripSunsetCruise">Sunset Cruise</option>
-                          <option value="tripCityLights">City Lights</option>
-                          <option value="tripPrivateCharter">2 Hour Private Charter</option>
-                          <option value="tripBoozeCruise">Booze Cruise</option>
-                          <option value="tripSchuylkillBanks">Penns Landing to Schuylkill Banks</option>
-                          <option value="tripWalnuttoWalnut">Walnut To Walnut</option>
-                          <option value="tripSecrets">Secrets of the Schuylkill</option>
-                          <option value="tripSeaportCamp">Seaport KidsCampers</option>
-                          <option value="tripBartrams">Bartrams Garden</option>
-                          <option value="tripNonRev">Non Revenue trip</option>
-                        </select>
+
+                      <select id="tripName">
+                        <option placeholder="select"></option>
+                        <option value="HarborTour">Harbor Tour</option>
+                        <option value="SunsetCruise">Sunset Cruise</option>
+                        <option value="CityLights">City Lights</option>
+                        <option value="PrivateCharter">2 Hour Private Charter</option>
+                        <option value="BoozeCruise">Booze Cruise</option>
+                        <option value="SchuylkillBanks">Penns Landing to Schuylkill Banks</option>
+                        <option value="WalnutToWalnut">Walnut To Walnut</option>
+                        <option value="Secrets">Secrets of the Schuylkill</option>
+                        <option value="SeaportCamp">Seaport KidsCampers</option>
+                        <option value="Bartrams">Bartrams Garden</option>
+                        <option value="NonRev">Non Revenue trip</option>
+                      </select>
+
                   
                         <!--hidden div-->
-                        <div id="bartramsAdd" class="small-12 cell hide">
+                        <!-- <div id="bartramsAdd" class="small-12 cell hide">
                       
                           <label>Deporting Dock?</label>
                           <select id="bartramsDepartingDock" class="soft">
                             <option placeholder="select"></option>
                             <option value="Walnut">Walnut</option>
                             <option value="Bartrams">Bartrams</option>
-                          </select>
+                          </select> -->
                     
-                        </div><!--bartramsAdd-->
+                        <!-- </div> --><!--bartramsAdd-->
                       
                         <!--hidden div-->
-                        <div id="otherPassAdd" class="small-12 cell hide">
+                       <!--  <div id="otherPassAdd" class="small-12 cell hide">
                       
                           <input type="text" id="otherPass" placeholder="What Kind of Trip" class="soft"/>
                     
-                        </div><!--otherPassAdd-->
+                        </div> --><!--otherPassAdd-->
                     
                         <!--hidden div-->
                         <div id="otherNonAdd" class="small-12 cell hide">
@@ -639,10 +642,10 @@
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
 
-                      <label>Names of crew members on board</label>
-                      <input type="text" id="crew-names" placeholder="Captain" class="soft"/>
-                      <input type="text" id="crew-names1" placeholder="Bartender" class="soft"/>
-                      <input type="text" id="crew-names2" placeholder="Mate" class="soft"/>
+
+                       <label>Names of crew members on board</label>
+                      <input type="text" id="crew-names" placeholder="Names" />
+
 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -650,7 +653,7 @@
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
 
-                      <a href="#" id="manifest-submit" class=" orange expanded button">Submit</a>
+                      <a href="#formMessage" id="manifest-submit" class=" orange expanded button">Submit</a>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -662,6 +665,24 @@
             </div><!--grid-x grid-padding-x-->
           
           <!-- Trip Manifest Arrival -->
+
+                                <div class="grid-x grid-padding-x">
+                                                        
+                                                        <div class="small-12 cell">
+                                                          
+                                                          <div class="callout">
+                                                            
+                                                            <h2>Active Trips. Press the Refresh Button to Get Trips: </h2>
+                                                            <button class="button button hollow" id="active-trips-refresh">Refresh</button>
+                                                            
+                                                            <div id="active-trips" class="reportInfo"></div>
+                                                            
+                                                          </div>
+                                                        </div>
+                                                        
+                                                      </div>
+                                                    </div>
+
           <div class="grid-x grid-padding-x">
             <div class="small-12 cell">
               <div class="callout">
@@ -676,8 +697,10 @@
                     <div class="small-12 cell">
                   
                       <label>Scheduled Arrival Time</label>
-                      <input type="time" class="soft"/>
-                
+
+                      <input type="time" id="scheduledArrivalTime class="soft"/>
+
+           
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
 
@@ -705,7 +728,7 @@
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
 
-                      <a href="#" class="orange expanded button">Submit</a>
+                      <a href="#" id="tripArrivalSubmit" class="orange expanded button">Submit</a>
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -887,7 +910,7 @@
         
                 <h2>Active Trips. Press the Refresh Button to Get Trips: </h2>
 
-                <button class="orange button button expanded" id="active-trips-refresh">Refresh</button>
+                <button class="orange button button expanded" id="active-trips-refresh2">Refresh</button>
         
               <div id="active-trips" class="reportInfo"></div>
 
