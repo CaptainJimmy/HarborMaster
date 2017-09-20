@@ -143,7 +143,7 @@ $(document).ready(function() {
     $("body").on("click", ".activeTrips", function(event) {
         event.preventDefault();
         var tripKey = $(this).attr('data-value');
-        console.log(tripKey);
+        //console.log(tripKey);
         var refPath = '/activeTrips/' + tripKey;
         //pull the data of the trip from FB, href sends you to arrival submit
         database.ref(refPath).once("value", function(snapshot) {
@@ -187,11 +187,17 @@ $(document).ready(function() {
                 };
 
 
+                     //create finished trip and push
 
                 var dbPath = "/vesselManifests/" + vesselName;
                 database.ref(dbPath).push(tripArrivedObject);
+                    //remove active trip
+
                 database.ref(refPath).remove();
+
+                //refresh the active trips
                 tripRefresh();
+
                 $('#formMessage').text("Vessel Arrived Submitted Successfully");
                 $(document).scrollTop(0);
             });
@@ -201,12 +207,6 @@ $(document).ready(function() {
 
     });
 
-    //build object
-
-
-    //create finished trip and push
-
-    //remove active trip
 
 
 });
