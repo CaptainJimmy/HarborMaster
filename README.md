@@ -5,9 +5,9 @@ _**Concept:**_ There is a need in the small passenger vessel industry for manage
 Each function/task will store the data in a database (google firebase) as a record, and kept forever. The program will then update certain important parameters in persistent tables that are only relevant at the current time (current fuel levels, engine hours, fresh and black water tank levels, etc), allowing the manager to easily within a couple of clicks find out exactly what he needs to know - such as when the last time the vessel was pumped out, how much ice is in the freezer, fuel on board.
 
 ## Contributors
-* James Reinknecht - Overall Product Design, JavaScript, Database Schema Design, Database Integration, AJAX Calls
+* James Reinknecht - Overall Product Design, Project Manager, JavaScript, Database Schema Design, Database Queries/Updates/Integration, AJAX, Report Creation
 * Ruthie Campiz - Front End Design, Form Interactions, JavaScript, UI/UX Design, Database Integration
-* William Rainaud - Google Authentication, API Interaction, JavaScript, Database Integration
+* William Rainaud - Google Authentication, API Interaction, JavaScript, Database Integration, AJAX, Email Delivery
 
 ## *Authentication Done With Google Auth*
 
