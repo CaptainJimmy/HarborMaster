@@ -201,11 +201,11 @@ $("body").on("change", function() {
     //Did you arrive on time?
 
 
-var arriveOnTime=$('#arriveOnTime').val();
-if (arriveOnTime==="true"){
+var arrivedOnTime=$('#arriveOnTime').val();
+if (arrivedOnTime==="true"){
     $("#arriveOnTimeAdd").removeClass("hide").addClass("show");
 }
-else if (arriveOnTime==="false"){
+else if (arrivedOnTime==="false"){
     $("#arriveOnTimeAdd").removeClass("show").addClass("hide");
 }
     // if (radioChoice === "arriveOnTimeNo") {
