@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" href="assets/images/boat-favicon.png" />
 
     <!-- Firebase Reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -29,11 +30,11 @@
       };
       firebase.initializeApp(config);
     </script>
-    <script src="assets/js/scripts.js"></script>
+   
     <script src="/__/firebase/4.3.0/firebase-app.js"></script>
     <script src="/__/firebase/4.3.0/firebase-auth.js"></script>
-    <script src="/__/firebase/4.3.0/firebase-database.js"></script>
     <script src="/__/firebase/init.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
    	<!-- Foundation Compressed CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
@@ -60,11 +61,11 @@
 	<div class="page-container">
         <h2>Login</h2>
         
-        <form action="" method="post" id="app">
+        <form id="app">
             <input type="text" id="email" name="email" placeholder="Email">
             <input type="password" id="password" name="password" placeholder="Password">
-            <button id="quickstart-sign-in" name="signin">Sign in</button>
-            <button id="quickstart-sign-up" name="signup">Register</button>
+            <button type="button" id="quickstart-sign-in" name="signin">Sign in</button>
+            <button type="button" id="quickstart-sign-up" name="signup">Register</button>
             
         </form>
 
@@ -90,7 +91,7 @@
     </div>
 
 <!-- Javascript -->
-<script src="assets/js/jquery-1.8.2.min.js"></script>
+
 <script src="https://use.fontawesome.com/cd53706be4.js"></script>
 <!-- <script src="assets/js/harbormaster.js"></script> -->
 
