@@ -665,31 +665,32 @@
             </div><!--grid-x grid-padding-x-->
           
           <!-- Trip Manifest Arrival -->
+            
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
+        
+                <h3>Active Trips</h3>
 
-                                <div class="grid-x grid-padding-x">
-                                                        
-                                                        <div class="small-12 cell">
-                                                          
-                                                          <div class="callout">
-                                                            
-                                                            <h2>Active Trips. Press the Refresh Button to Get Trips: </h2>
-                                                            <button class="button button hollow" id="active-trips-refresh">Refresh</button>
-                                                            
-                                                            <div id="active-trips" class="reportInfo"></div>
-                                                            
-                                                          </div>
-                                                        </div>
-                                                        
-                                                      </div>
-                                                    </div>
+                <hr/>
+
+                <p>Press the refresh button to get trips.</p>
+
+                <button class="orange button button expanded" id="active-trips-refresh">Refresh</button>
+        
+                <div id="active-trips" class="reportInfo"></div>
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->  
 
           <div class="grid-x grid-padding-x">
             <div class="small-12 cell">
               <div class="callout">
 
-              <h3>Trip Manifest <br/> Arrival</h3>
+                <h3>Trip Manifest <br/> Arrival</h3>
 
-              <hr/>
+                <hr/>
 
                 <form id="tripManifestReturn">
 
@@ -698,8 +699,7 @@
                   
                       <label>Scheduled Arrival Time</label>
 
-                      <input type="time" id="scheduledArrivalTime class="soft"/>
-
+                      <input type="time" id=""scheduledArrivalTime" class="soft"/>
            
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -718,7 +718,7 @@
                       <div id="arriveOnTimeAdd" class="small-12 cell hide">
                     
                         <label>Actual Arrival Time</label>
-                        <input type="time" class="soft"/>
+                        <input type="time" class="orange expanded button soft"/>
                   
                       </div><!--arriveOnTimeAdd-->
                 
@@ -908,11 +908,11 @@
             <div class="small-12 cell">
               <div class="callout">
         
-                <h2>Active Trips. Press the Refresh Button to Get Trips: </h2>
+                <h2>Active Trips. <br/> Press the Refresh Button to Get Trips: </h2>
 
                 <button class="orange button button expanded" id="active-trips-refresh2">Refresh</button>
         
-              <div id="active-trips" class="reportInfo"></div>
+                <div id="active-trips" class="reportInfo"></div>
 
               </div><!--callout-->
             </div><!--small-12 cell-->
@@ -931,14 +931,13 @@
           </div><!--grid-x grid-padding-x-->
         </div><!--divSet2-->
 
-        <div class="mobile-bottom-bar">
-          <a href="#" class="footer-link">
-          <i class="fa fa-cog"></i> <span class='footer-text'>Change Roles</span>
-          </a>
-          <a href="#" class="footer-link">
-          <i class="fa fa-sign-out"></i> <span class='footer-text'>Log out</span>
-          </a>
-        </div><!--mobile-botton-bar-->
+        <div id ="bar" class="hide">
+          <div class="mobile-bottom-bar">
+            <a href="#" class="footer-link">
+            <i class="fa fa-sign-out"></i> <span class='footer-text'>Log out</span>
+            </a>
+          </div><!--mobile-botton-bar-->
+        </div><!--bar-->
           
       </div><!--grid-container-->
   

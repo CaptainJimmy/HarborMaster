@@ -4,11 +4,13 @@ $('#iAmCaptain, #iAmManager').click(function () {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet1").removeClass("hide").addClass("show");
+      $("#bar").removeClass("hide").addClass("show");
    }
    else if (this.id == "iAmManager") {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet2").removeClass("hide").addClass("show");
+      $("#bar").removeClass("hide").addClass("show");
    }
 });
 
