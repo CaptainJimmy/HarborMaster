@@ -31,8 +31,10 @@ function toggleSignIn() {
             alert(errorMessage);
           }
           console.log(error);
-          document.getElementById('quickstart-sign-in').disabled = false;
+          document.getElementById('quickstart-sign-in').app = false;
           // [END_EXCLUDE]
+        }).then(function(){
+            location.replace("https://captainjimmy.github.io/HarborMaster/manager.html");
         });
         // [END authwithemail]
       }
@@ -73,6 +75,49 @@ function toggleSignIn() {
       // [END createwithemail]
     }
 
+    function signInWithGoogle() {
+    if (!firebase.auth().currentUser) {
+        // [START createprovider]
+        var provider = new firebase.auth.GoogleAuthProvider();
+        // [END createprovider]
+        // [START addscopes]
+        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        // [END addscopes]
+        // [START signin]
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+          // The signed-in user info.
+          var user = result.user;
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/account-exists-with-different-credential') {
+            alert('You have already signed up with a different auth provider for that email.');
+            // If you are using multiple auth providers on your app you should handle linking
+            // the user's accounts here.
+          } else {
+            console.error(error);
+          }
+          // [END_EXCLUDE]
+        });
+        // [END signin]
+      } else {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      }
+      
+    }
+
+
+
     /**
      * initApp handles setting up UI event listeners and registering Firebase auth listeners:
      *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
@@ -90,15 +135,12 @@ function toggleSignIn() {
           var photoURL = user.photoURL;
           // var uid = user.uid;
           var providerData = user.providerData;
-          // [START_EXCLUDE]
-          location.replace("https://captainjimmy.github.io/HarborMaster/manager.html")
-
-          
             }
       });
       // [END authstatelistener]
 
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('quickstart-sign-in-with-google').addEventListener('click', signInWithGoogle, false);
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
 
     }
