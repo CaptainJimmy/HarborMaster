@@ -263,9 +263,8 @@ $(document).ready(function() {
     });
     //vessel Fueled
     $("body").on("click", "#vesselFueledSubmit", function(event) {
-        var vesselName = $('#vessel-name-out').val().trim();
-        var vesselNameLC = vesselName.toLowerCase();
-        var dbPath = '/fuelingReports/' + vesselNameLC;
+        var vesselName = $('#vessel-fueled').val();
+        var dbPath = '/fuelingReports/'+vesselName;
         var dateStamp = moment().format();
         var captainName = "PlaceHolderCaptain"
         var newFueled = {
@@ -277,12 +276,30 @@ $(document).ready(function() {
             "amountSpent": $('#fuelAmountSpent').val().trim(),
         }
         database.ref(dbPath).push(newFueled);
-    });
+    }); 
 
     $("body").on("click", "#vesselWashedSubmit", function(event) {
-        var vesselName = $('#vessel-watered').val().trim();
+        var vesselName = $('#vessel-washed').val();
         var vesselNameLC = vesselName.toLowerCase();
-        var dbPath = '/vesselWashing/' + vesselNameLC;
+        var dbPath = '/vesselWashing/'+vesselName;
+        var dateStamp = moment().format();
+        var captainName = "PlaceHolderCaptain"
+        var newWashed = {
+            "captainName": captainName,
+            "date": dateStamp,
+            "vesselName": vesselName,
+        };
+        database.ref(dbPath).push(newWashed);
+        var persistentDataUpdatePath='/persistentData/'+vesselNameLC+'/lastWashed/'
+        database.ref(persistentDataUpdatePath).update(newWashed);
+
+
+
+    });
+        $("body").on("click", "#waterTankFilledSubmit", function(event) {
+        var vesselName = $('#vessel-watered').val();
+        var vesselNameLC = vesselName.toLowerCase();
+        var dbPath = '/vesselWatering/'+vesselName;
         var dateStamp = moment().format();
         var captainName = "PlaceHolderCaptain"
         var newWatered = {
@@ -291,13 +308,12 @@ $(document).ready(function() {
             "vesselName": vesselName,
         };
         database.ref(dbPath).push(newWatered);
-
-
-    });
-
-    $("body").on("click", "#vesselWashedSubmit", function(event) {
+        var persistentDataUpdatePath='/persistentData/'+vesselNameLC+'/freshWater/'
+        database.ref(persistentDataUpdatePath).update(newWatered);
 
     });
+
+   
 
     $('#patriot-status').on('click', function() {
         database.ref('/persistentData/patriot').once("value").then(function(snapshot) {
