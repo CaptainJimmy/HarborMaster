@@ -180,10 +180,10 @@ $("body").on("change", function() {
     //Did you arrive on time?
 
     var arriveOnTime=$('#arriveOnTime').val();
-    if (arriveOnTime==="true"){
+    if (arriveOnTime==="false"){
         $("#arriveOnTimeAdd").removeClass("hide").addClass("show");
     }
-    else if (arriveOnTime==="false"){
+    else if (arriveOnTime==="true"){
         $("#arriveOnTimeAdd").removeClass("show").addClass("hide");
     }
 

@@ -66,6 +66,7 @@ $(document).ready(function() {
 
         });
         $('#formMessage').text("Trips Refreshed");
+        
 
     };
 
@@ -169,6 +170,7 @@ $(document).ready(function() {
             };
             database.ref("/outgoingEmails").push(newEmail);
         }
+                        $(document).scrollTop(0);
 
     });
 
@@ -239,6 +241,7 @@ $(document).ready(function() {
             "Message": "You are receiving a checkout alert from your Captain, submitted at " + currentTimeStamp + " on vessel " + vesselName + ". " + messageBody
         };
         database.ref("/outgoingEmails").push(newEmail);
+                        $(document).scrollTop(0);
 
         // update persistent data 
            // FFuture versions if necessary
@@ -269,6 +272,8 @@ $(document).ready(function() {
                 }
             }   
         });
+                        $(document).scrollTop(0);
+
     });
     //vessel Fueled
     $("body").on("click", "#vesselFueledSubmit", function(event) {
@@ -286,6 +291,8 @@ $(document).ready(function() {
             "amountSpent": $('#fuelAmountSpent').val().trim(),
         }
         database.ref(dbPath).push(newFueled);
+                        $(document).scrollTop(0);
+
     }); 
 
 
@@ -305,6 +312,7 @@ $(document).ready(function() {
         database.ref(dbPath).push(newWashed);
         var persistentDataUpdatePath='/persistentData/'+vesselNameLC+'/lastWashed/'
         database.ref(persistentDataUpdatePath).update(newWashed);
+                        $(document).scrollTop(0);
 
 
 
@@ -324,6 +332,7 @@ $(document).ready(function() {
         database.ref(dbPath).push(newWatered);
         var persistentDataUpdatePath='/persistentData/'+vesselNameLC+'/freshWater/'
         database.ref(persistentDataUpdatePath).update(newWatered);
+                        $(document).scrollTop(0);
 
     });
 
@@ -332,7 +341,7 @@ $(document).ready(function() {
     $('#patriot-status').on('click', function() {
         database.ref('/persistentData/patriot').once("value").then(function(snapshot) {
             //pull info from firebase
-            console.log(snapshot.val());
+            //console.log(snapshot.val());
             var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
             var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
             var currentFuelActive = snapshot.val().fuel.currentFuel.tankRunningOn;
