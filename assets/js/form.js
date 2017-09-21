@@ -179,11 +179,11 @@ $("body").on("change", function() {
 
     //Did you arrive on time?
 
-    var arrivedOnTime=$('#arriveOnTime').val();
-    if (arrivedOnTime==="true"){
+    var arriveOnTime=$('#arriveOnTime').val();
+    if (arriveOnTime==="true"){
         $("#arriveOnTimeAdd").removeClass("hide").addClass("show");
     }
-    else if (arrivedOnTime==="false"){
+    else if (arriveOnTime==="false"){
         $("#arriveOnTimeAdd").removeClass("show").addClass("hide");
     }
 

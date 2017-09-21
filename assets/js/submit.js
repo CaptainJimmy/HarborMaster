@@ -397,7 +397,7 @@ $(document).ready(function() {
             //build report info into #report-output
 
             var fuelDiv = $('<div>');
-            fuelDiv.addClass("small-6");
+            fuelDiv.addClass("small-12");
             fuelDiv.append(
                 $('<div>').text('Current Fuel in Aft Tank: ' + currentFuelAft),
                 $('<div>').text('Current Fuel in Fwd Tank: ' + currentFuelFwd),
@@ -408,7 +408,7 @@ $(document).ready(function() {
             vesselReport.append(fuelDiv);
 
             var miscInfoDiv = $('<div>');
-            miscInfoDiv.addClass('small-6');
+            miscInfoDiv.addClass('small-12');
             miscInfoDiv.append(
                 $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
                 $('<div>').text('Current Blacktank Level (1-10): ' + blackWaterTankLevel),
@@ -512,9 +512,9 @@ $(document).ready(function() {
             $("body").on("click", "#tripArrivalSubmit", function(event) {
                 event.preventDefault();
                 var scheduledArrival = $('#scheduledArrivalTime').val();
-                var arrivedOnTime = $('#arrivedOnTime').val();
+                var arriveOnTime = $('#arriveOnTime').val();
                 var timeStampOut = moment().format();
-                if (arrivedOnTime === "true") {
+                if (arriveOnTime === "true") {
                     var actualArrivalTime = scheduledArrival;
                 } else {
                     var actualArrivalTime = $("#arriveOnTimeAdd").val();
@@ -531,7 +531,7 @@ $(document).ready(function() {
                     "crewNames": crewNames,
                     "timeStampIn": timeStampIn,
                     "scheduledArrival": scheduledArrival,
-                    "arrivedOnTime": arrivedOnTime,
+                    "arriveOnTime": arriveOnTime,
                     "actualArrivalTime": actualArrivalTime,
                     "timeStampOut": timeStampOut
                 };
