@@ -14,6 +14,7 @@ $('#iAmCaptain, #iAmManager').click(function () {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet2").removeClass("hide").addClass("show");
+      console.log("bug");
       $("#bar").removeClass("hide").addClass("show");
       $("#li1").removeClass("active");
       $("#li2").addClass("active");
@@ -25,6 +26,7 @@ $('#captainRole, #managerRole').click(function () {
       $("#li1").addClass("active");
       $("#li2").removeClass("active");
       $("#divSet1").addClass("show").removeClass("hide");
+      $("#divSet2").removeClass("show").addClass("hide");
    }
      else if (this.id == "managerRole") {
       $("#li1").removeClass("active");
