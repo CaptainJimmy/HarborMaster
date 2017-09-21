@@ -3,7 +3,8 @@
 - [ ]Log Out Buttons --Will
    	- [ ]Integration of Gmail API to send --William *secondary task*
 - [ ]HTML Pages Fully Polished --Ruthie
-- [ ]Reposition Google Maps -- Will
+- [ ]Reposition Google Maps/Weather API -- Will
+- [ ]Manager Console - Reports Look a little off - submit.js creation needs tweaking --Ruthie & Jim
 - [ ]Bug Checking --All
 
 
