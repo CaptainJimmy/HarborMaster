@@ -37,12 +37,12 @@
             <div class="row medium-unstack">
               <div class="columns">
                 <i class="fa fa-ship" aria-hidden="true"></i>
-                <h4 class="marketing-site-two-up-title">Insert Clever Captain Quote Here.</h4>
+                <h4 class="marketing-site-two-up-title">Look at me. <br/>I'm your captain now.</h4>
                 <a href="#" id="iAmCaptain" class="orange peel button button hollow marketing-site-two-up-desc">Captain</a>
               </div><!--columns-->
               <div class="columns">
                 <i class="fa fa-user-o" aria-hidden="true"></i>
-                <h4 class="marketing-site-two-up-title">Insert Clever Manager Quote Here.</h4>
+                <h4 class="marketing-site-two-up-title">Yea, I'm gonna need you to come in on Saturday.</h4>
                 <a href="#" id="iAmManager" class="orange button button hollow marketing-site-two-up-desc">Manager</a>
               </div><!--columns-->
             </div><!--row medium-unstack-->
@@ -687,8 +687,40 @@
                 <p>Press the refresh button to get trips.</p>
 
                 <button class="orange button button expanded" id="active-trips-refresh">Refresh</button>
-        
-                <div id="active-trips" class="reportInfo"></div>
+      
+                <div id="active-trips" class="reportInfo small-12">
+                  <table class="hover">
+                    <thead>
+                      <th>Vessel</th>
+                      <th>Trip Name</th>
+                      <th>Sched. Depart.</th>
+                      <th>Actual Depart.</th>
+                      <th>Pax Count</th>
+                      <th>Crew Count</th>
+                      <th>Crew Names</th>
+                    </thead>
+                    <tr>
+                      <td>dog</td>
+                      <td>cat</td>
+                      <td>dog</td>
+                      <td>cat</td>
+                      <td>dog</td>
+                      <td>cat</td>
+                      <td>dog</td>
+                    </tr>
+                    <tr>
+                      <td>dog</td>
+                      <td>cat</td>
+                      <td>dog</td>
+                      <td>cat</td>
+                      <td>dog</td>
+                      <td>cat</td>
+                      <td>dog</td>
+                    </tr>
+
+                    
+                  </table>
+                </div>
 
               </div><!--callout-->
             </div><!--small-12 cell-->
@@ -792,6 +824,7 @@
                       <h5>Fueling</h5>
                       <label>Which vessel was fueled?
                         <select id="vessel-fueled" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
                           <option value="Liberty">Liberty</option>
                           <option value="Patriot">Patriot</option>
                         </select>
