@@ -332,7 +332,6 @@ $(document).ready(function() {
             var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
             var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
             var currentFuelActive = snapshot.val().fuel.currentFuel.tankRunningOn;
-            var fuelLastMeasuredDate = snapshot.val().fuel.lastMeasured.date;
             var lastWashedDate = snapshot.val().lastWashed.date;
             var lastWashedBy = snapshot.val().lastWashed.captainName;
             var lastPumpedOut = snapshot.val().blackTank.lastPumpedOut.date;
@@ -352,7 +351,6 @@ $(document).ready(function() {
                 $('<div>').text('Current Fuel in Aft Tank: ' + currentFuelAft),
                 $('<div>').text('Current Fuel in Fwd Tank: ' + currentFuelFwd),
                 $('<div>').text('Active Tank: ' + currentFuelActive),
-                $('<div>').text('Fuel Last Measured: ' + fuelLastMeasuredDate),
                 $('<div>').text('Vessel Last Washed: ' + lastWashedDate + ' By: ' + lastWashedBy)
 
             );
@@ -381,7 +379,6 @@ $(document).ready(function() {
             var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
             var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
             var currentFuelActive = snapshot.val().fuel.currentFuel.tankRunningOn;
-            var fuelLastMeasuredDate = snapshot.val().fuel.lastMeasured.date;
             var lastWashedDate = snapshot.val().lastWashed.date;
             var lastWashedBy = snapshot.val().lastWashed.captainName;
             var lastPumpedOut = snapshot.val().blackTank.lastPumpedOut.date;
@@ -401,7 +398,6 @@ $(document).ready(function() {
                 $('<div>').text('Current Fuel in Aft Tank: ' + currentFuelAft),
                 $('<div>').text('Current Fuel in Fwd Tank: ' + currentFuelFwd),
                 $('<div>').text('Active Tank: ' + currentFuelActive),
-                $('<div>').text('Fuel Last Measured: ' + fuelLastMeasuredDate),
                 $('<div>').text('Vessel Last Washed: ' + lastWashedDate + ' By: ' + lastWashedBy)
 
             );
