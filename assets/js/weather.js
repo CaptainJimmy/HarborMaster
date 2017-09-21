@@ -48,7 +48,7 @@ function getWeather(lat, lon) {
 function getWeatherAlerts(lat, lon) {
 
   // var darkSkyAPI = "https://api.darksky.net/forecast/bdc349b290c747ad495af46a95dee4b4/" + lat + "," + lon + "?exclude=currently,minutely,hourly,flags?lang=x-pig-latin";
-    var wuAPI = "http://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/" + lat + "," + lon + ".json";
+    var wuAPI = "https://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/" + lat + "," + lon + ".json";
     // var wuAPI = "https://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/25.7617,-80.1918.json"
 
   $.ajax({
