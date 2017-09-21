@@ -394,7 +394,7 @@ $(document).ready(function() {
             var currentFuelActive = snapshot.val().fuel.currentFuel.tankRunningOn;
             var lastWashedDate = snapshot.val().lastWashed.date;
             var lastWashedBy = snapshot.val().lastWashed.captainName;
-            var lastPumpedOut = snapshot.val().blackTank.lastPumpedOut.date;
+          //  var lastPumpedOut = snapshot.val().blackTank.lastPumpedOut.date;
             var blackWaterTankLevel = snapshot.val().blackTank.currentLevel;
             var oilAmountOnBoard = snapshot.val().oil.amountOnBoard;
             var oilLastAddedDate = snapshot.val().oil.lastAdded.date;
