@@ -211,8 +211,9 @@ button:active {
 }
 
 .callout{
-    margin-right: 40px;
-    margin-left: 40px;
+    background-color: #cccccc;
+    text-align: center;
+    
 }
 
 .navBer{
@@ -225,12 +226,6 @@ button:active {
     font-weight: bold;
   }
 
-#map-canvas{
-  min-height: 100px;
-  min-width: 100px;
-
-}
-
 .homeLink{
     color: #fff;
     font-family: 'Kaushan Script', cursive;
@@ -239,17 +234,18 @@ button:active {
     text-shadow: 0 1px 4px rgba(0,0,0,.2);
     text-decoration: none;
 }
+
 .homeLink:hover{
     text-decoration: none;
 }
 
-.small-4{
-  display: inline-block;
-  margin-right: 0px;
-  margin-left: 0px;
-
-
+#map_container{
+  position: relative;
 }
 
-
-
+#map-canvas{
+  min-height: 100px;
+  min-width: 100px;
+  overflow: hidden;
+  position: relative;
+}
