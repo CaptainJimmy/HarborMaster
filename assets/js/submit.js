@@ -75,7 +75,7 @@ $(document).ready(function() {
     $("body").on("click", "#captain-check-in-submit", function(event) {
         event.preventDefault();
         //grab the vesselname for the correct DB push
-        var vesselName = $('#vessel-name-check-in').val();
+        var vesselName = $('#vessel-name-in').val();
 
         //variables here will be needed for the object and the persistant DB push
 
