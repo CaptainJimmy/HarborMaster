@@ -32,6 +32,7 @@ function getWeather(lat, lon) {
 	})
 
 	.done(function(result) {
+      console.log(result);
       $("#location").html("<b>" + result.city.name + ", " + result.city.country + "</b>");
       $("#desc").html("<b>Current Forecast: </b>" + titleCase(result.list[0].weather[0].description));
       $("#icon").html('<img src=' + "https://openweathermap.org/img/w/" + result.list[0].weather[0].icon + ".png" + ">");
@@ -46,18 +47,27 @@ function getWeather(lat, lon) {
 // Get Weather Alerts Function
 function getWeatherAlerts(lat, lon) {
 
-  var darkSkyAPI = "https://api.darksky.net/forecast/bdc349b290c747ad495af46a95dee4b4/" + lat + "," + lon + "?exclude=currently,minutely,hourly,flags?lang=x-pig-latin";
+  // var darkSkyAPI = "https://api.darksky.net/forecast/bdc349b290c747ad495af46a95dee4b4/" + lat + "," + lon + "?exclude=currently,minutely,hourly,flags?lang=x-pig-latin";
+    var wuAPI = "http://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/" + lat + "," + lon + ".json";
+    // var wuAPI = "https://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/25.7617,-80.1918.json"
 
   $.ajax({
-    url: darkSkyAPI,
+    url: wuAPI,
     dataType: "json",
     type: "GET", 
   })
 
-  .done(function(darkSky) {
-      console.log(darkSky);
-      $("#alert-title").html("<h3 style='color: red;'>" + darkSky.alerts[0].title + "</h3>");
-      $("#alert-summary").text(darkSky.alerts[0].description);
+  .done(function(newAlert) {
+      console.log(newAlert);
+
+      if (newAlert.response.features.alerts === 1) {
+        $("#alert-title").text("No New Alerts");
+      } else{
+      $("#alert-title").html("<h3 style='color: red;'>" + newAlert.alerts[0].description + "</h3>");
+      $("#alert-start-date").html("<b>Date:  </b>" + newAlert.alerts[0].date);
+      $("#alert-exp-date").html("<b>Effective until: </b>" + newAlert.alerts[0].expires);
+      $("#alert-summary").text(newAlert.alerts[0].message);
+    }
     })
 };
 
