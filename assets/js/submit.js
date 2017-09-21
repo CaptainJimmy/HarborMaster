@@ -75,10 +75,8 @@ $(document).ready(function() {
     $("body").on("click", "#captain-check-in-submit", function(event) {
         event.preventDefault();
         //grab the vesselname for the correct DB push
-        var vesselName = $('#vessel-name-check-in').val();
-
+        var vesselName = $('#vessel-name-in').val();
         //variables here will be needed for the object and the persistant DB push
-
         var engineHours = $('#engine-hours-in').val();
         var fwdTankLevel = $('#fwd-fuel-in').val();
         var aftTankLevel = $('#aft-fuel-in').val();
@@ -103,26 +101,27 @@ $(document).ready(function() {
             "engineOilLevel": $('#oilProperLevel').val(),
             "addedOil": $('#oilAdded').val(),
             "addedOilAmount": $('#addedOilAmount').val(),
-            "oilOnBoard": $('#oilLeftOnBoard').val(),
+            "oilOnBoard": $('#oil-on-board').val(),
             "blackTankLevel": blackTankLevel,
             "nonCriticalComments": $('#nonCriticalAdd').val(),
             "criticalComments": criticalComments
         };
 
         //path for liberty
-        if (vesselName === "Liberty") {
+        if (vesselName === "Liberty" || vesselName === "liberty"){
             var dbPath = "/checkinReports/vessel/liberty"
             database.ref(dbPath).push(newCheckInSubmit);
             database.ref("/persistentData/liberty").update({
                 "blackTank": {
                     "currentLevel": blackTankLevel
                 },
-                "engineHours": engineHours,
+                "engineHours": engineHours, 
                 "fuel": {
                     "currentFuel": {
                         "aft": aftTankLevel,
                         "fwd": fwdTankLevel,
-                        "tankRunningOn": currentActiveTank
+                        "tankRunningOn": currentActiveTank,
+                        "lastMeasured": currentTimeStamp
                     }
                 }
 
@@ -131,7 +130,7 @@ $(document).ready(function() {
 
         }
         //path for Patriot
-        else if (vesselName === "Patriot") {
+        else if (vesselName === "Patriot" || vesselName === "patriot") {
             var dbPath = "/checkinReports/vessel/patriot"
             database.ref(dbPath).push(newCheckInSubmit);
             database.ref("/persistentData/patriot").update({
@@ -143,7 +142,9 @@ $(document).ready(function() {
                     "currentFuel": {
                         "aft": aftTankLevel,
                         "fwd": fwdTankLevel,
-                        "tankRunningOn": currentActiveTank
+                        "tankRunningOn": currentActiveTank,
+                        "lastMeasured": currentTimeStamp
+
                     }
                 }
 
@@ -174,6 +175,7 @@ $(document).ready(function() {
     $("body").on("click", "#captain-check-out-submit", function(event) {
         event.preventDefault();
         var vesselName = $('#vessel-name-out').val();
+        var vesselNameLC = vesselName.toLowerCase();
         var engineHours = $('#engine-hours-out').val();
 
         var activeTankLevel = $('#active-tank-level-out').val();
@@ -210,7 +212,6 @@ $(document).ready(function() {
 
         if (vesselName === "Liberty") {
             var dbPath = "/checkoutReports/vessel/liberty";
-            console.log("checkingOutLiberty");
             database.ref(dbPath).push(newCheckOutSubmit);
         } else if (vesselName === "Patriot") {
             var dbPath = "/checkoutReports/vessel/patriot";
@@ -238,6 +239,9 @@ $(document).ready(function() {
             "Message": "You are receiving a checkout alert from your Captain, submitted at " + currentTimeStamp + " on vessel " + vesselName + ". " + messageBody
         };
         database.ref("/outgoingEmails").push(newEmail);
+
+        // update persistent data 
+           // FFuture versions if necessary
     });
 
     //vessel pump out
@@ -393,7 +397,7 @@ $(document).ready(function() {
             //build report info into #report-output
 
             var fuelDiv = $('<div>');
-            fuelDiv.addClass("small-6");
+            fuelDiv.addClass("small-12");
             fuelDiv.append(
                 $('<div>').text('Current Fuel in Aft Tank: ' + currentFuelAft),
                 $('<div>').text('Current Fuel in Fwd Tank: ' + currentFuelFwd),
@@ -404,7 +408,7 @@ $(document).ready(function() {
             vesselReport.append(fuelDiv);
 
             var miscInfoDiv = $('<div>');
-            miscInfoDiv.addClass('small-6');
+            miscInfoDiv.addClass('small-12');
             miscInfoDiv.append(
                 $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
                 $('<div>').text('Current Blacktank Level (1-10): ' + blackWaterTankLevel),
@@ -508,9 +512,9 @@ $(document).ready(function() {
             $("body").on("click", "#tripArrivalSubmit", function(event) {
                 event.preventDefault();
                 var scheduledArrival = $('#scheduledArrivalTime').val();
-                var arrivedOnTime = $('#arrivedOnTime').val();
+                var arriveOnTime = $('#arriveOnTime').val();
                 var timeStampOut = moment().format();
-                if (arrivedOnTime === "true") {
+                if (arriveOnTime === "true") {
                     var actualArrivalTime = scheduledArrival;
                 } else {
                     var actualArrivalTime = $("#arriveOnTimeAdd").val();
@@ -527,7 +531,7 @@ $(document).ready(function() {
                     "crewNames": crewNames,
                     "timeStampIn": timeStampIn,
                     "scheduledArrival": scheduledArrival,
-                    "arrivedOnTime": arrivedOnTime,
+                    "arriveOnTime": arriveOnTime,
                     "actualArrivalTime": actualArrivalTime,
                     "timeStampOut": timeStampOut
                 };

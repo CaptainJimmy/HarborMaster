@@ -34,7 +34,7 @@ function getWeather(lat, lon) {
 	.done(function(result) {
       $("#location").html("<b>" + result.city.name + ", " + result.city.country + "</b>");
       $("#desc").html("<b>Current Forecast: </b>" + titleCase(result.list[0].weather[0].description));
-      $("#icon").html('<img src=' + "http://openweathermap.org/img/w/" + result.list[0].weather[0].icon + ".png" + ">");
+      $("#icon").html('<img src=' + "https://openweathermap.org/img/w/" + result.list[0].weather[0].icon + ".png" + ">");
       $("#current-temp").html("<b>Current Temperature: </b>" + result.list[0].main.temp + "°");
       $("#high-temp").html("<b>High: </b>" + result.list[0].main.temp_max + "°");
       $("#low-temp").html("<b>Low: </b>" + result.list[0].main.temp_min + "°");
@@ -64,7 +64,7 @@ function getWeatherAlerts(lat, lon) {
 // Get Marine Forecast Function
 function getMarineLayer(lat, lon) {
 
-  var wuLayAPI = "http://api.wunderground.com/api/641846fdf40b615e/animatedradar/image.gif?centerlat=" + lat + "&centerlon=" + lon + "&radius=100&width=280&height=280&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50";
+  var wuLayAPI = "https://api.wunderground.com/api/641846fdf40b615e/animatedradar/image.gif?centerlat=" + lat + "&centerlon=" + lon + "&radius=100&width=280&height=280&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50";
 
     $("#marine-layer").html('<img src=' + wuLayAPI + '>');
   
