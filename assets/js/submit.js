@@ -110,7 +110,7 @@ console.log(vesselName);
         };
 
         //path for liberty
-        if (vesselName === "Liberty") || (vesselName === "liberty"){
+        if (vesselName === "Liberty" || vesselName === "liberty"){
             var dbPath = "/checkinReports/vessel/liberty"
             database.ref(dbPath).push(newCheckInSubmit);
             database.ref("/persistentData/liberty").update({
@@ -132,7 +132,7 @@ console.log(vesselName);
 
         }
         //path for Patriot
-        else if (vesselName === "Patriot") || (vesselName === "patriot") {
+        else if (vesselName === "Patriot" || vesselName === "patriot") {
             var dbPath = "/checkinReports/vessel/patriot"
             database.ref(dbPath).push(newCheckInSubmit);
             database.ref("/persistentData/patriot").update({
