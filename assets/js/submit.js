@@ -76,7 +76,7 @@ $(document).ready(function() {
         event.preventDefault();
         //grab the vesselname for the correct DB push
         var vesselName = $('#vessel-name-in').val();
-
+console.log(vesselName);
         //variables here will be needed for the object and the persistant DB push
 
         var engineHours = $('#engine-hours-in').val();
@@ -110,7 +110,7 @@ $(document).ready(function() {
         };
 
         //path for liberty
-        if (vesselName === "Liberty") {
+        if (vesselName === "Liberty") || (vesselName === "liberty"){
             var dbPath = "/checkinReports/vessel/liberty"
             database.ref(dbPath).push(newCheckInSubmit);
             database.ref("/persistentData/liberty").update({
@@ -122,7 +122,8 @@ $(document).ready(function() {
                     "currentFuel": {
                         "aft": aftTankLevel,
                         "fwd": fwdTankLevel,
-                        "tankRunningOn": currentActiveTank
+                        "tankRunningOn": currentActiveTank,
+                        "lastMeasured": date
                     }
                 }
 
@@ -131,7 +132,7 @@ $(document).ready(function() {
 
         }
         //path for Patriot
-        else if (vesselName === "Patriot") {
+        else if (vesselName === "Patriot") || (vesselName === "patriot") {
             var dbPath = "/checkinReports/vessel/patriot"
             database.ref(dbPath).push(newCheckInSubmit);
             database.ref("/persistentData/patriot").update({
@@ -143,7 +144,9 @@ $(document).ready(function() {
                     "currentFuel": {
                         "aft": aftTankLevel,
                         "fwd": fwdTankLevel,
-                        "tankRunningOn": currentActiveTank
+                        "tankRunningOn": currentActiveTank,
+                        "lastMeasured": date
+
                     }
                 }
 
