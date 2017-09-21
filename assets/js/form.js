@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 //Role Call
 $('#iAmCaptain, #iAmManager').click(function () {
    if (this.id == "iAmCaptain") {
@@ -31,7 +33,6 @@ $('#captainRole, #managerRole').click(function () {
       $("#divSet2").addClass("show").removeClass("hide");
    }
 });
-
 
 //Captain Check In Form
 $("body").on("change", function() {
@@ -173,16 +174,18 @@ $("body").on("change", function() {
         };
 
 
-//Captain Trip Manifest - Arrival
+    //Captain Trip Manifest - Arrival
 
     //Did you arrive on time?
 
-var arrivedOnTime=$('#arriveOnTime').val();
-if (arrivedOnTime==="true"){
-    $("#arriveOnTimeAdd").removeClass("hide").addClass("show");
-}
-else if (arrivedOnTime==="false"){
-    $("#arriveOnTimeAdd").removeClass("show").addClass("hide");
-}
+    var arrivedOnTime=$('#arriveOnTime').val();
+    if (arrivedOnTime==="true"){
+        $("#arriveOnTimeAdd").removeClass("hide").addClass("show");
+    }
+    else if (arrivedOnTime==="false"){
+        $("#arriveOnTimeAdd").removeClass("show").addClass("hide");
+    }
+
+});
 
 });
