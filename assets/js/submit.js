@@ -108,6 +108,7 @@ $(document).ready(function() {
             "nonCriticalComments": $('#nonCriticalAdd').val(),
             "criticalComments": criticalComments
         };
+
         //path for liberty
         if (vesselName === "Liberty") {
             var dbPath = "/checkinReports/vessel/liberty"
@@ -149,7 +150,7 @@ $(document).ready(function() {
             });
 
 
-
+            
 
 
         } else {
