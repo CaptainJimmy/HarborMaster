@@ -123,7 +123,7 @@ console.log(vesselName);
                         "aft": aftTankLevel,
                         "fwd": fwdTankLevel,
                         "tankRunningOn": currentActiveTank,
-                        "lastMeasured": date
+                        "lastMeasured": currentTimeStamp
                     }
                 }
 
@@ -145,7 +145,7 @@ console.log(vesselName);
                         "aft": aftTankLevel,
                         "fwd": fwdTankLevel,
                         "tankRunningOn": currentActiveTank,
-                        "lastMeasured": date
+                        "lastMeasured": currentTimeStamp
 
                     }
                 }
