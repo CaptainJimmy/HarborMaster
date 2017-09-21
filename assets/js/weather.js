@@ -32,7 +32,7 @@ function getWeather(lat, lon) {
 	})
 
 	.done(function(result) {
-      console.log(result);
+      // console.log(result);
       $("#location").html("<b>" + result.city.name + ", " + result.city.country + "</b>");
       $("#desc").html("<b>Current Forecast: </b>" + titleCase(result.list[0].weather[0].description));
       $("#icon").html('<img src=' + "https://openweathermap.org/img/w/" + result.list[0].weather[0].icon + ".png" + ">");
@@ -48,8 +48,8 @@ function getWeather(lat, lon) {
 function getWeatherAlerts(lat, lon) {
 
   // var darkSkyAPI = "https://api.darksky.net/forecast/bdc349b290c747ad495af46a95dee4b4/" + lat + "," + lon + "?exclude=currently,minutely,hourly,flags?lang=x-pig-latin";
-    var wuAPI = "https://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/" + lat + "," + lon + ".json";
-    // var wuAPI = "https://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/25.7617,-80.1918.json"
+    // var wuAPI = "https://api.wunderground.com/api/641846fdf40b615e/alerts/q/" + lat + "," + lon + ".json";
+    var wuAPI = "https://api.wunderground.com/api/641846fdf40b615e/alerts/geolookup/q/25.7617,-80.1918.json"
 
   $.ajax({
     url: wuAPI,
@@ -58,9 +58,9 @@ function getWeatherAlerts(lat, lon) {
   })
 
   .done(function(newAlert) {
-      console.log(newAlert);
+      // console.log(newAlert);
 
-      if (newAlert.response.features.alerts === 1) {
+      if (newAlert.response.features.alerts === 0) {
         $("#alert-title").text("No New Alerts");
       } else{
       $("#alert-title").html("<h3 style='color: red;'>" + newAlert.alerts[0].description + "</h3>");
