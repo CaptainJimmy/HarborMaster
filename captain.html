@@ -49,35 +49,59 @@
           </section>
         </div><!--roleCall-->
 
-        <!--Current Location-->
-        <!--div class="small-12 cell">
-          <div class="callout">
+      <div id="divSet1" class="hide small-12">
 
-            <h3>Current Location</h3>
+        <!--Current Forecast-->
+        <div class="row">
+          <div class="small-12 cell">
+            <div class="callout">
 
-            <hr/>
+              <h3>Current Forecast</h3>
+
+              <hr/>
+              
+              <p><span id="location"></span></p>
+              <p><span id="desc"></span><div id="icon"></div></p>
+              <p><span id="current-temp"></span></p>
+              <p><span id="high-temp"></span> | <span id="low-temp"></span></p>
             
-            <p><span id="location"></span></p>
-            
-            <p><span id="desc"></span></p>
-            
-            <p><span id="current-temp"></span></p>
-            
-            <p><span id="high-temp"></span> | <span id="low-temp"></span></p>
+            </div><!--callout-->
+          </div><!--small-12 cell-->
           
-          </div--><!--callout-->
-        <!--/div--><!--small-12 cell--><!--Current Location-->
 
-        <!--Map Display-->
-        <!--div class="small-12 cell">
-          <div class="callout">
+          <!--Marine Forecast-->
+          <div class="small-12 cell">
+            <div class="callout">
+              
+              <h3>Weather Alerts</h3>
 
-            <p><span id="map-canvas"></span></p>
-         
-          <!/div--><!--small-12 cell-->
-        <!--/div--><!--grid-x grid-padding-x--><!--Map Display-->
+              <hr/>
+
+              <p><span id="summary"></span></p>
+              <p><span id="alert-title"></span></p>
+              <p><span id="alert-summary"></span></p>
+            
+            </div><!--callout-->
+          </div><!--small-12 cell-->
+
+          <!--Current Location-->
+          <div class="small-12 cell">
+            <div class="callout">
+              
+              <h3>Current Radar</h3>
+
+              <hr/>
+
+                <div class="grid-container">
+                  
+                <div id="map-container"></div>
+                  
+                <p><span id="marine-layer"></span></p>
+
+              </div>
+            </div><!--callout-->
+          </div><!--small-12 cell-->
         
-        <div id="divSet1" class="hide small-12">
           <!--Check In-->
           <div class="grid-x grid-padding-x">
             <div class="small-12 cell">
