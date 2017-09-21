@@ -514,7 +514,7 @@ $(document).ready(function() {
                 var scheduledArrival = $('#scheduledArrivalTime').val();
                 var arriveOnTime = $('#arriveOnTime').val();
                 var timeStampOut = moment().format();
-                if (arrivedOnTime === "true") {
+                if (arriveOnTime === "true") {
                     var actualArrivalTime = scheduledArrival;
                 } else {
                     var actualArrivalTime = $("#arriveOnTimeAdd").val();
@@ -531,7 +531,7 @@ $(document).ready(function() {
                     "crewNames": crewNames,
                     "timeStampIn": timeStampIn,
                     "scheduledArrival": scheduledArrival,
-                    "arrivedOnTime": arrivedOnTime,
+                    "arriveOnTime": arriveOnTime,
                     "actualArrivalTime": actualArrivalTime,
                     "timeStampOut": timeStampOut
                 };
