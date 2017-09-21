@@ -13,19 +13,17 @@ if (navigator.geolocation) {
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
       getWeather(lat, lon);
-      initializeMap(lat, lon);
+      getMarineLayer(lat, lon);
+      getWeatherAlerts(lat, lon);
     });
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
 
 // Get Weather Function
-
 function getWeather(lat, lon) {
 
-	// var darkSkyAPI = "https://api.darksky.net/forecast/c302a50d97629336f69dbb53384f75fb/" + lat + "," + lon;
-
-	var owAPIurl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=4e0ae26b68029fdb4141d49a573c0b8f";
+	var owAPIurl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=4e0ae26b68029fdb4141d49a573c0b8f";
 
 	$.ajax({
     url: owAPIurl,
@@ -34,33 +32,43 @@ function getWeather(lat, lon) {
 	})
 
 	.done(function(result) {
-      $("#location").text(result.city.name + ", " + result.city.country);
-      $("#desc").html("Current Forecast: " + titleCase(result.list[0].weather[0].description));
+      $("#location").html("<b>" + result.city.name + ", " + result.city.country + "</b>");
+      $("#desc").html("<b>Current Forecast: </b>" + titleCase(result.list[0].weather[0].description));
       $("#icon").html('<img src=' + "http://openweathermap.org/img/w/" + result.list[0].weather[0].icon + ".png" + ">");
-      $("#current-temp").text("Current Temperature: " + result.list[0].main.temp + "°");
-      $("#high-temp").text("High: " + result.list[0].main.temp_max + "°");
-      $("#low-temp").text("Low: " + result.list[0].main.temp_min + "°");
+      $("#current-temp").html("<b>Current Temperature: </b>" + result.list[0].main.temp + "°");
+      $("#high-temp").html("<b>High: </b>" + result.list[0].main.temp_max + "°");
+      $("#low-temp").html("<b>Low: </b>" + result.list[0].main.temp_min + "°");
     
     })
 };
 
-// setup initial map
-function initializeMap(lat, lon) {
-    
-    var myLocation = {lat: lat, lng: lon};
-   
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-    mapTypeId: 'satellite',  
-    zoom: 10,
-    center: myLocation
-    // mapTypeId:'roadmap'
-    });
 
-    var marker = new google.maps.Marker({
-    position: myLocation,
-    map: map
-    });
-  };
+// Get Weather Alerts Function
+function getWeatherAlerts(lat, lon) {
+
+  var darkSkyAPI = "https://api.darksky.net/forecast/bdc349b290c747ad495af46a95dee4b4/" + lat + "," + lon + "?exclude=currently,minutely,hourly,flags?lang=x-pig-latin";
+
+  $.ajax({
+    url: darkSkyAPI,
+    dataType: "json",
+    type: "GET", 
+  })
+
+  .done(function(darkSky) {
+      console.log(darkSky);
+      $("#alert-title").html("<h3 style='color: red;'>" + darkSky.alerts[0].title + "</h3>");
+      $("#alert-summary").text(darkSky.alerts[0].description);
+    })
+};
+
+// Get Marine Forecast Function
+function getMarineLayer(lat, lon) {
+
+  var wuLayAPI = "http://api.wunderground.com/api/641846fdf40b615e/animatedradar/image.gif?centerlat=" + lat + "&centerlon=" + lon + "&radius=100&width=280&height=280&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50";
+
+    $("#marine-layer").html('<img src=' + wuLayAPI + '>');
+  
+};
 
 
 // Function to Title Case Weather Description
