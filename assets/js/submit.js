@@ -241,6 +241,7 @@ $(document).ready(function() {
 
     //vessel pump out
     $("body").on("click", "#vessel-pumped-out-submit", function(event) {
+        //WORKING
         event.preventDefault();
         var vesselName = $('#vessel-pumped').val().trim();
         var vesselNameLC = vesselName.toLowerCase();
@@ -253,16 +254,20 @@ $(document).ready(function() {
             "captainName:": captainName
         }
         database.ref(dbPath).push(newPumpOut);
-        dbPath = '/persistentData/' + vesselNameLC + '/blackTank'
+        dbPath = '/persistentData/' + vesselNameLC;
         database.ref(dbPath).update({
-            "lastPumpedOut": {
-                "captainName": captainName,
-                "date": dateStamp
-            }
+            "blackTank": {
+                "currentLevel": 1,
+                "lastPumpedOut": {
+                    "captainName": captainName,
+                    "date": dateStamp
+                }
+            }   
         });
     });
     //vessel Fueled
     $("body").on("click", "#vesselFueledSubmit", function(event) {
+        //WORKING
         var vesselName = $('#vessel-fueled').val();
         var dbPath = '/fuelingReports/'+vesselName;
         var dateStamp = moment().format();
@@ -278,7 +283,10 @@ $(document).ready(function() {
         database.ref(dbPath).push(newFueled);
     }); 
 
+
+//vessel washed, updates persistent data and sends a record into the folder
     $("body").on("click", "#vesselWashedSubmit", function(event) {
+        //WORKING
         var vesselName = $('#vessel-washed').val();
         var vesselNameLC = vesselName.toLowerCase();
         var dbPath = '/vesselWashing/'+vesselName;
@@ -297,6 +305,7 @@ $(document).ready(function() {
 
     });
         $("body").on("click", "#waterTankFilledSubmit", function(event) {
+        //WORKING
         var vesselName = $('#vessel-watered').val();
         var vesselNameLC = vesselName.toLowerCase();
         var dbPath = '/vesselWatering/'+vesselName;
@@ -318,10 +327,10 @@ $(document).ready(function() {
     $('#patriot-status').on('click', function() {
         database.ref('/persistentData/patriot').once("value").then(function(snapshot) {
             //pull info from firebase
+            console.log(snapshot.val());
             var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
             var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
             var currentFuelActive = snapshot.val().fuel.currentFuel.tankRunningOn;
-            var fuelLastMeasuredBy = snapshot.val().fuel.lastMeasured.captainName;
             var fuelLastMeasuredDate = snapshot.val().fuel.lastMeasured.date;
             var lastWashedDate = snapshot.val().lastWashed.date;
             var lastWashedBy = snapshot.val().lastWashed.captainName;
@@ -337,25 +346,25 @@ $(document).ready(function() {
             //build report info into #report-output
 
             var fuelDiv = $('<div>');
-            fuelDiv.addClass("col-xs-6");
+            fuelDiv.addClass("small-6");
             fuelDiv.append(
                 $('<div>').text('Current Fuel in Aft Tank: ' + currentFuelAft),
                 $('<div>').text('Current Fuel in Fwd Tank: ' + currentFuelFwd),
                 $('<div>').text('Active Tank: ' + currentFuelActive),
                 $('<div>').text('Fuel Last Measured: ' + fuelLastMeasuredDate),
-                $('<div>').text('Fuel Measured By: ' + fuelLastMeasuredBy)
+                $('<div>').text('Vessel Last Washed: ' + lastWashedDate + ' By: ' + lastWashedBy)
+
             );
             vesselReport.append(fuelDiv);
 
             var miscInfoDiv = $('<div>');
-            miscInfoDiv.addClass('col-xs-6');
+            miscInfoDiv.addClass('small-6');
             miscInfoDiv.append(
                 $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
                 $('<div>').text('Current Blacktank Level (1-10): ' + blackWaterTankLevel),
                 $('<div>').text('Last Time Engine Oil Added: ' + oilLastAddedDate),
                 $('<div>').text('Added By: ' + oilLastAddedName + ' Amount: ' + oilLastAddedAmount),
                 $('<div>').text('Oil on board (QTs): ' + oilAmountOnBoard),
-                $('<div>').text('Vessel Last Washed: ' + lastWashedDate + ' By: ' + lastWashedBy),
             );
 
             vesselReport.append(miscInfoDiv);
@@ -371,7 +380,6 @@ $(document).ready(function() {
             var currentFuelAft = snapshot.val().fuel.currentFuel.aft;
             var currentFuelFwd = snapshot.val().fuel.currentFuel.fwd;
             var currentFuelActive = snapshot.val().fuel.currentFuel.tankRunningOn;
-            var fuelLastMeasuredBy = snapshot.val().fuel.lastMeasured.captainName;
             var fuelLastMeasuredDate = snapshot.val().fuel.lastMeasured.date;
             var lastWashedDate = snapshot.val().lastWashed.date;
             var lastWashedBy = snapshot.val().lastWashed.captainName;
@@ -387,25 +395,25 @@ $(document).ready(function() {
             //build report info into #report-output
 
             var fuelDiv = $('<div>');
-            fuelDiv.addClass("col-xs-5");
+            fuelDiv.addClass("small-6");
             fuelDiv.append(
                 $('<div>').text('Current Fuel in Aft Tank: ' + currentFuelAft),
                 $('<div>').text('Current Fuel in Fwd Tank: ' + currentFuelFwd),
                 $('<div>').text('Active Tank: ' + currentFuelActive),
                 $('<div>').text('Fuel Last Measured: ' + fuelLastMeasuredDate),
-                $('<div>').text('Fuel Measured By: ' + fuelLastMeasuredBy)
+                $('<div>').text('Vessel Last Washed: ' + lastWashedDate + ' By: ' + lastWashedBy)
+
             );
             vesselReport.append(fuelDiv);
 
             var miscInfoDiv = $('<div>');
-            miscInfoDiv.addClass('col-xs-5');
+            miscInfoDiv.addClass('small-6');
             miscInfoDiv.append(
                 $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
                 $('<div>').text('Current Blacktank Level (1-10): ' + blackWaterTankLevel),
                 $('<div>').text('Last Time Engine Oil Added: ' + oilLastAddedDate),
                 $('<div>').text('Added By: ' + oilLastAddedName + ' Amount: ' + oilLastAddedAmount),
-                $('<div>').text('Oil on board (QTs): ' + oilAmountOnBoard),
-                $('<div>').text('Vessel Last Washed: ' + lastWashedDate + ' By: ' + lastWashedBy),
+                $('<div>').text('Oil on board (QTs): ' + oilAmountOnBoard)
             );
 
             vesselReport.append(miscInfoDiv);
