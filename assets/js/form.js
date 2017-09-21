@@ -25,6 +25,7 @@ $('#captainRole, #managerRole').click(function () {
       $("#li1").addClass("active");
       $("#li2").removeClass("active");
       $("#divSet1").addClass("show").removeClass("hide");
+      $("#divSet2").removeClass("show").addClass("hide");
    }
      else if (this.id == "managerRole") {
       $("#li1").removeClass("active");
