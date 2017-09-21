@@ -103,7 +103,7 @@ console.log(vesselName);
             "engineOilLevel": $('#oilProperLevel').val(),
             "addedOil": $('#oilAdded').val(),
             "addedOilAmount": $('#addedOilAmount').val(),
-            "oilOnBoard": $('#oilLeftOnBoard').val(),
+            "oilOnBoard": $('#oilOnBoard').val(),
             "blackTankLevel": blackTankLevel,
             "nonCriticalComments": $('#nonCriticalAdd').val(),
             "criticalComments": criticalComments
