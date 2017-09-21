@@ -64,7 +64,7 @@ function getWeatherAlerts(lat, lon) {
 // Get Marine Forecast Function
 function getMarineLayer(lat, lon) {
 
-  var wuLayAPI = "http://api.wunderground.com/api/641846fdf40b615e/animatedradar/image.gif?centerlat=" + lat + "&centerlon=" + lon + "&radius=100&width=280&height=280&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50";
+  var wuLayAPI = "https://api.wunderground.com/api/641846fdf40b615e/animatedradar/image.gif?centerlat=" + lat + "&centerlon=" + lon + "&radius=100&width=280&height=280&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50";
 
     $("#marine-layer").html('<img src=' + wuLayAPI + '>');
   
