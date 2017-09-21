@@ -117,7 +117,7 @@ console.log(vesselName);
                 "blackTank": {
                     "currentLevel": blackTankLevel
                 },
-                "engineHours": engineHours,
+                "engineHours": engineHours, 
                 "fuel": {
                     "currentFuel": {
                         "aft": aftTankLevel,
