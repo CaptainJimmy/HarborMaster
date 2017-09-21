@@ -90,24 +90,13 @@
                 <form id="captainCheckIn">
                     
                   <div class="grid-x grid-padding-x">
-                    <div class="small-12 cell">
-                    
-                      <label>Which vessel are you checking into for the day?
-                        <select id="vessel-name-check-in" class="soft">
-                          <option placeholder="select"></option>
-                          <option value="Liberty">Liberty</option>
-                          <option value="Patriot">Patriot</option>
-                        </select>
-                      </label>
-
-                    </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
 
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
                   
                       <label>Engine Hours</label>
-                      <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" class="soft"/>
+                      <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" class="soft" />
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -116,7 +105,7 @@
                     <div class="small-12 cell">
                   
                     <label>Is the vessel clean and orderly from the previous day?</label>
-                    <select id="vesselCleanFromPrevious" class="soft">
+                    <select id="vesselCleanFromPrevious" class="soft" >
                       <option placeholder="select"></option>
                       <option value="true">Yes</option>
                       <option value="false">No</option>
@@ -125,7 +114,7 @@
                     <!--hidden div-->
                     <div id="cleanAdd" class="small-12 cell hide">
                       <label>Comments</label>
-                      <textarea placeholder="Comments Here" class="soft"></textarea>
+                      <textarea placeholder="Comments Here" class="soft" ></textarea>
                     </div><!--cleanAdd-->
                 
                     </div><!--small-12 cell-->
@@ -135,7 +124,7 @@
                     <div class="small-12 cell">
                   
                       <label>Fwd Tank Fuel Level in Inches</label>
-                      <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" class="soft"/>
+                      <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" class="soft" />
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -144,7 +133,7 @@
                     <div class="small-12 cell">
                   
                       <label>Aft Tank Fuel Level in Inches</label>
-                      <input type="text" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" class="soft"/>
+                      <input type="number" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" class="soft" />
                 
                     </div><!--small-12 cell-->
                   </div><!--grid-x grid-padding-x-->
@@ -153,7 +142,7 @@
                     <div class="small-12 cell">
                   
                       <label>Head down below. <br/> Which tank is the vessel running on?</label>
-                      <select id="fuelTankActive" class="soft">
+                      <select id="fuelTankActive" class="soft" >
                         <option placeholder="select"></option>
                         <option value="Fwd">Forward</option>
                         <option value="Aft">Aft</option>
@@ -166,7 +155,7 @@
                     <div class="small-12 cell">
                   
                       <label>Do the fuel filters appear clean?</label>
-                      <select id="fuelFiltersClean" class="soft">
+                      <select id="fuelFiltersClean" class="soft" >
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -175,7 +164,7 @@
                       <!--hidden div-->
                       <div id="fuelFiltersAdd" class="small-12 cell hide">
                         <label>Comments</label>
-                        <textarea id="fuelFiltersAddComment" placeholder="Comments Here" class="soft"></textarea>
+                        <textarea id="fuelFiltersAddComment" placeholder="Comments Here" class="soft" ></textarea>
                       </div><!--fuelFiltersAdd-->
 
                     </div><!--small-12 cell-->
@@ -185,7 +174,7 @@
                     <div class="small-12 cell">
 
                       <label>Is the front drive belt properly tensioned?</label>
-                      <select id="beltTensioned" class="soft">
+                      <select id="beltTensioned" class="soft" >
                         <option placeholder="select"></option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -194,7 +183,7 @@
                       <!--hidden div-->
                       <div id="beltAdd" class="small-12 cell hide">
                         <label>Comments</label>
-                        <textarea id="beltAddComment" placeholder="Comments Here" class="soft"></textarea>
+                        <textarea id="beltAddComment" placeholder="Comments Here" class="soft" ></textarea>
                       </div><!--beltAdd-->
 
                     </div><!--small-12 cell-->
@@ -204,7 +193,7 @@
                     <div class="small-12 cell">
                   
                       <label>Is the engine oil at the proper level?</label>
-                      <select id="oilProperLevel" class="soft">
+                      <select id="oilProperLevel" class="soft" >
                           <option placeholder="select"></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
@@ -214,8 +203,8 @@
                       <div id="engineOilAdd" class="small-12 cell hide">
 
                         <label>Did you add oil?</label>
-                        <select id="oilAdded" class="soft">
-                          <option placeholder="select"></option>
+                        <select id="oilAdded" class="soft" >
+                          <option placeholder="select" ></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
                         </select>
@@ -224,9 +213,9 @@
                         <div id="addOilAdd" class="small-12 cell hide">
                       
                         <label>How much oil did you add, in quarts?</label>
-                        <input type="text" placeholder="Oil Added in Quarts" class="soft"/>
+                        <input type="text" placeholder="Oil Added in Quarts" class="soft" />
                         <label>Approximately how much oil is left on board now?</label>
-                        <input type="number" id="oil-on-board" placeholder="Oil Left On Board" class="soft"/>
+                        <input type="number" id="oil-on-board" placeholder="Oil Left On Board" class="soft" />
                    
                         </div><!--addOilAdd-->
 
@@ -234,7 +223,7 @@
                         <div id="noOilAdd" class="small-12 cell hide">
                       
                           <label>Why not?</label>
-                          <textarea placeholder="Explain" class="soft"></textarea>
+                          <textarea placeholder="Explain" class="soft" ></textarea>
                    
                         </div><!--noOilAdd-->
                   
@@ -247,7 +236,7 @@
                     <div class="small-12 cell">
 
                       <label>Shine a flashlight at the black water tank. <br/> On a scale of 1-10, how full is it?
-                        <select id="black-water-in" class="soft">
+                        <select id="black-water-in" class="soft" >
                           <option placeholder="select"></option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -269,7 +258,7 @@
                     <div class="small-12 cell">
 
                       <label>Are there any other non critical items you'd like to add to the log?</label>
-                        <select id="nonCriticalItems" class="soft">
+                        <select id="nonCriticalItems" class="soft" >
                           <option placeholder="select"></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
@@ -278,7 +267,7 @@
                       <!--hidden div-->
                       <div id="nonCriticalAdd" class="small-12 cell hide">
                     
-                        <textarea placeholder="Non Critical Items to Log"></textarea>
+                        <textarea placeholder="Non Critical Items to Log" ></textarea>
                   
                       </div><!--nonCriticalAdd-->
                 
@@ -289,7 +278,7 @@
                     <div class="small-12 cell">
 
                       <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                        <select id="criticalItems" class="soft">
+                        <select id="criticalItems" class="soft" >
                           <option placeholder="select"></option>
                           <option value="true">Yes</option>
                           <option value="false">No</option>
@@ -298,7 +287,7 @@
                       <!--hidden div-->
                       <div id="alertManagerAdd" class="small-12 cell hide">
                     
-                        <textarea placeholder="Critical Items to Log" class="soft"></textarea>
+                        <textarea placeholder="Critical Items to Log" class="soft" ></textarea>
                   
                       </div><!--alertManagerAdd-->
                 
