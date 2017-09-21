@@ -512,7 +512,7 @@ $(document).ready(function() {
             $("body").on("click", "#tripArrivalSubmit", function(event) {
                 event.preventDefault();
                 var scheduledArrival = $('#scheduledArrivalTime').val();
-                var arrivedOnTime = $('#arrivedOnTime').val();
+                var arriveOnTime = $('#arriveOnTime').val();
                 var timeStampOut = moment().format();
                 if (arrivedOnTime === "true") {
                     var actualArrivalTime = scheduledArrival;
