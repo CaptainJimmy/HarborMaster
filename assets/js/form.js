@@ -14,7 +14,6 @@ $('#iAmCaptain, #iAmManager').click(function () {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet2").removeClass("hide").addClass("show");
-      console.log("bug");
       $("#bar").removeClass("hide").addClass("show");
       $("#li1").removeClass("active");
       $("#li2").addClass("active");
