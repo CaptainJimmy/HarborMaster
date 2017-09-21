@@ -268,7 +268,7 @@ $(document).ready(function() {
                 "currentLevel": 1,
                 "lastPumpedOut": {
                     "captainName": captainName,
-                    "date": dateStamp
+                   // "date": dateStamp
                 }
             }
         });
@@ -347,7 +347,7 @@ $(document).ready(function() {
             var currentFuelActive = snapshot.val().fuel.currentFuel.tankRunningOn;
             var lastWashedDate = snapshot.val().lastWashed.date;
             var lastWashedBy = snapshot.val().lastWashed.captainName;
-            var lastPumpedOut = snapshot.val().blackTank.lastPumpedOut.date;
+            //var lastPumpedOut = snapshot.val().blackTank.lastPumpedOut.date;
             var blackWaterTankLevel = snapshot.val().blackTank.currentLevel;
             var oilAmountOnBoard = snapshot.val().oil.amountOnBoard;
             var oilLastAddedDate = snapshot.val().oil.lastAdded.date;
@@ -372,7 +372,7 @@ $(document).ready(function() {
             var miscInfoDiv = $('<div>');
             miscInfoDiv.addClass('small-12');
             miscInfoDiv.append(
-                $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
+              //  $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
                 $('<div>').text('Current Blacktank Level (1-10): ' + blackWaterTankLevel),
                 $('<div>').text('Last Time Engine Oil Added: ' + oilLastAddedDate),
                 $('<div>').text('Added By: ' + oilLastAddedName + ' Amount: ' + oilLastAddedAmount),
@@ -419,7 +419,7 @@ $(document).ready(function() {
             var miscInfoDiv = $('<div>');
             miscInfoDiv.addClass('small-12');
             miscInfoDiv.append(
-                $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
+              //  $('<div>').text('Blacktank Last Pumped Out: ' + lastPumpedOut),
                 $('<div>').text('Current Blacktank Level (1-10): ' + blackWaterTankLevel),
                 $('<div>').text('Last Time Engine Oil Added: ' + oilLastAddedDate),
                 $('<div>').text('Added By: ' + oilLastAddedName + ' Amount: ' + oilLastAddedAmount),
