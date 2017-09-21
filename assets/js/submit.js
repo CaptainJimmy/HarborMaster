@@ -76,9 +76,7 @@ $(document).ready(function() {
         event.preventDefault();
         //grab the vesselname for the correct DB push
         var vesselName = $('#vessel-name-in').val();
-console.log(vesselName);
         //variables here will be needed for the object and the persistant DB push
-
         var engineHours = $('#engine-hours-in').val();
         var fwdTankLevel = $('#fwd-fuel-in').val();
         var aftTankLevel = $('#aft-fuel-in').val();
@@ -177,6 +175,7 @@ console.log(vesselName);
     $("body").on("click", "#captain-check-out-submit", function(event) {
         event.preventDefault();
         var vesselName = $('#vessel-name-out').val();
+        var vesselNameLC = vesselName.toLowerCase();
         var engineHours = $('#engine-hours-out').val();
 
         var activeTankLevel = $('#active-tank-level-out').val();
@@ -213,7 +212,6 @@ console.log(vesselName);
 
         if (vesselName === "Liberty") {
             var dbPath = "/checkoutReports/vessel/liberty";
-            console.log("checkingOutLiberty");
             database.ref(dbPath).push(newCheckOutSubmit);
         } else if (vesselName === "Patriot") {
             var dbPath = "/checkoutReports/vessel/patriot";
@@ -241,6 +239,9 @@ console.log(vesselName);
             "Message": "You are receiving a checkout alert from your Captain, submitted at " + currentTimeStamp + " on vessel " + vesselName + ". " + messageBody
         };
         database.ref("/outgoingEmails").push(newEmail);
+
+        // update persistent data 
+           // FFuture versions if necessary
     });
 
     //vessel pump out
