@@ -273,4 +273,9 @@ p, label {
     padding:20px;
 }*/
 
+.small-4{
+  width: 32.333%;
+  display: inline-flex;
+  justify-content: center;
+}
 

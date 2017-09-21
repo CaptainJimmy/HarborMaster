@@ -135,7 +135,7 @@ function toggleSignIn() {
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       document.getElementById('quickstart-sign-in-with-google').addEventListener('click', signInWithGoogle, false);
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-      document.getElementById('signout').addEventListener('click', signOut, false);
+      document.getElementById('signout').addEventListener('click', signOut, true);
     }
 
     window.onload = function() {
