@@ -17,16 +17,17 @@
       <link rel="stylesheet" href="assets/css/appnew.css">
    </head>
    <body>
-      <nav class="navbar navbar-fixed-top navBer">
-         <div class="navbar-header">
-            <a class="navbar-brand" href="">
-               <img src="assets/images/boat-logo.png" class="boat"> 
-               <h1>HarborMaster</h1>
-            </a>
+    
+
+      <nav class="navbar navbar-default navBer">
+        <div class="container-fluid">
+            <span class="navbar-brand"><i class="fa fa-ship" aria-hidden="true"></i>HarborMaster</span>
          </div>
       </nav>
+    </div>
+
       <div class="container hide" id="navMenu">
-         <div class="jumbotron">
+         <div class="panel">
             <button class="btn-lg btn-warning button btn" id="captainRole">Captain</button><button class="btn btn-lg btn-warning button" id="managerRole">Manager</button><button class="btn button btn-lg btn-warning disabled" id="bartenderRole">Bartender (Coming Soon)</button><button class="btn button btn-lg btn-warning" id="signout">Sign Out</button>
          </div>
       </div>
@@ -773,9 +774,49 @@
       </div>
       <!-- modal-dialog -->
       </div>  <!-- modal -->
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-4">
+            <div class="panel managerDiv">
+
+              <h3>Current Forecast</h3>
+
+              <hr/>
+              <p><span id="location"></span></p>
+              <p><span id="desc"></span><div id="icon"></div></p>
+              <p><span id="current-temp"></span></p>
+              <p><span id="high-temp"></span> | <span id="low-temp"></span></p>
+            
+            <h3>Weather Alerts</h3>
+
+              <hr/>
+              <p><span id="alert-title"></span></p>
+              <p><span id="alert-start-date"></span></p>
+              <p><span id="alert-exp-date"></span></p>
+              <p><span id="alert-summary"></span></p>
+            </div><!--panel-->
+          </div><!--col-xs-4-->
+
+          <!--Current Location-->
+          <div class="col-xs-4">
+            <div class="panel managerDiv">
+              
+              <h3>Current Radar</h3>
+
+              <hr/>
+
+                  
+                <div id="map-container"></div>
+                  
+                <p><span id="marine-layer"></span></p>
+
+            </div><!--panel-->
+          </div><!--col-xs-4-->
+          <div class="col-xs-2"></div>
+</div><!-- row -->
   
       <!-- Footer -->
-      <div class="footer navbar-fixed-bottom navBer">
+      <div class="footer navbar navBer">
          <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
                <div class="navbar-brand">
@@ -784,6 +825,7 @@
             </div>
          </div>
       </div>
+
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

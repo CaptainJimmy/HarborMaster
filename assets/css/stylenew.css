@@ -170,8 +170,11 @@ input:focus {
 
 .navbar-brand{
     color: #ffffff;
-    font-size: 20px;
+    font-size: 35px;
+    line-height: 17px;
     font-weight: bold;
+        font-family: 'Kaushan Script', cursive;
+    font-weight: 700;
   }
 
 .homeLink{
