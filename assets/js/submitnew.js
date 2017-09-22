@@ -170,7 +170,7 @@ $(document).ready(function() {
             };
             database.ref("/outgoingEmails").push(newEmail);
         }
-        $(document).scrollTop(0);
+        //$(document).scrollTop(0);
                 $('#formMessage').text("Submitted Successfully");
 
 
@@ -244,7 +244,7 @@ $(document).ready(function() {
         };
         database.ref("/outgoingEmails").push(newEmail);
         
-        $(document).scrollTop(0);
+        //$(document).scrollTop(0);
                         $('#formMessage').text("Submitted Successfully");
 
         // update persistent data 
@@ -276,7 +276,7 @@ $(document).ready(function() {
                 }
             }
         });
-        $(document).scrollTop(0);
+        //$(document).scrollTop(0);
                         $('#formMessage').text("Pumpout Submitted Successfully");
 
     });
@@ -296,7 +296,7 @@ $(document).ready(function() {
             "amountSpent": $('#fuelAmountSpent').val().trim(),
         }
         database.ref(dbPath).push(newFueled);
-        $(document).scrollTop(0);
+        //$(document).scrollTop(0);
                         $('#formMessage').text("Fuel Submitted Successfully");
 
 
@@ -319,7 +319,7 @@ $(document).ready(function() {
         database.ref(dbPath).push(newWashed);
         var persistentDataUpdatePath = '/persistentData/' + vesselNameLC + '/lastWashed/'
         database.ref(persistentDataUpdatePath).update(newWashed);
-        $(document).scrollTop(0);
+        //$(document).scrollTop(0);
                         $('#formMessage').text("Wash Record Submitted Successfully");
 
 
@@ -341,7 +341,7 @@ $(document).ready(function() {
         database.ref(dbPath).push(newWatered);
         var persistentDataUpdatePath = '/persistentData/' + vesselNameLC + '/freshWater/'
         database.ref(persistentDataUpdatePath).update(newWatered);
-        $(document).scrollTop(0);
+        //$(document).scrollTop(0);
                                 $('#formMessage').text("Water Tank Fill Submitted Successfully");
 
 
@@ -499,7 +499,7 @@ $(document).ready(function() {
         database.ref('/activeTrips').push(newTrip);
         tripRefresh();
         $('#formMessage').text("Trip Submitted Successfully");
-        $(document).scrollTop(0);
+        //$(document).scrollTop(0);
         //RESET THE FORM
 
         // RUTHIE LOOK HERE PLZ
@@ -560,7 +560,7 @@ $(document).ready(function() {
                 database.ref(refPath).remove();
                 tripRefresh();
                 $('#formMessage').text("Vessel Arrived Submitted Successfully");
-                $(document).scrollTop(0);
+                //$(document).scrollTop(0);
             });
 
 

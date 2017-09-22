@@ -27,7 +27,7 @@
       </nav>
       <div class="container hide" id="navMenu">
          <div class="jumbotron">
-            <button class="btn-lg btn-warning button btn" id="captainRole">Captain</button><button class="btn btn-lg btn-warning button" id="managerRole">Manager</button><button class="btn button btn-lg btn-warning disabled" id="bartenderRole">Bartender</button><button class="btn button btn-lg btn-warning" id="signout">Sign Out</button>
+            <button class="btn-lg btn-warning button btn" id="captainRole">Captain</button><button class="btn btn-lg btn-warning button" id="managerRole">Manager</button><button class="btn button btn-lg btn-warning disabled" id="bartenderRole">Bartender (Coming Soon)</button><button class="btn button btn-lg btn-warning" id="signout">Sign Out</button>
          </div>
       </div>
       <div class="container">
@@ -38,10 +38,10 @@
                   <div class="col-xs-12 marketing-site-two-up">
                      <i class="fa fa-ship" aria-hidden="true"></i>
                      <h4>Look at me. <br/>I'm the captain now.</h4>
-                     <button class="btn button btn-lg btn-warning"  id="iAmCaptain">Captain</button>
+                     <button class="btn button btn-lg btn-warning marketing-site-two-up-desc "  id="iAmCaptain">Captain</button>
                   </div>
                   <!--columns-->
-                  <div class="col-xs-12 marketing-site-two-up">
+                  <div class="col-xs-12 marketing-site-two-up"> 
                      <i class="fa fa-user-o" aria-hidden="true"></i>
                      <h4>Yea, I'm gonna need you to come in on Saturday.</h4>
                      <button id="iAmManager" class="btn button btn-lg btn-warning marketing-site-two-up-desc">Manager</button>
@@ -597,9 +597,144 @@
       </div>  <!-- modal -->
       </div> <!--  Main Container -->
 
+        <div id="daily-tasks-modal" class="modal" role="dialog">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-header"><button class="close" type="button" data-dismiss="modal"></button>
+               </div>
+               <!-- modal-header -->
+               <div class="modal-body">
+            
+                <h3>Vessel Procedures to be logged</h3>
+
+                <hr/>
+            <button class="btn btn-lg button btn-warning" data-toggle="collapse" data-target="#pump-out-div">Black Tank Pump Out</button><button class="btn button btn-lg btn-warning" data-toggle="collapse" data-target="#vessel-fueled-div">Vessel Fueled</button><button class="btn btn-lg button btn-warning" data-toggle="collapse" data-target="#vessel-watered-div">Water Tank Filled</button><button class="btn button btn-lg btn-warning" data-toggle="collapse" data-target="#vessel-washed-div">Vessel Washed</button>
+                    <div class="panel collapse" id="pump-out-div">
+                        <form id="pump-out-form">
+
+                      <h5>Waste Tank Pump Out</h5>
+                      <label>Which vessel was pumped out?
+                        <select id="vessel-pumped" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
 
 
+                    <div class="panel">
 
+                      <button id="vessel-pumped-out-submit" data-dismiss="modal" class="btn btn-lg btn-danger button">Submit</button>
+                
+                    </div><!--panel-->
+                
+                </form><!--vesselProcedures-->
+              </div><!--panel-->
+                <div class="panel collapse" id="vessel-fueled-div">
+                <form id="vesselProcedures1">
+
+                    <div class="panel">
+
+                      <h5>Fueling</h5>
+                      <label>Which vessel was fueled?
+                        <select id="vessel-fueled" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--panel-->
+
+                    <div class="panel">
+
+                      <label>How many gallons were added to the forward tank?</label>
+                      <input type="number" id="gallonsAddedFwd" placeholder="gallonsAddedFwd" class="soft"/>
+                
+                    </div><!--panel-->
+
+                    <div class="panel">
+
+                      <label>How many gallons were added to the aft tank?</label>
+                      <input type="number" id="gallonsAddedAft" placeholder="gallonsAddedAft" class="soft"/>
+
+                    </div><!--panel-->
+                    <div class="panel">
+
+                      <label>What was the total amount spent?</label>
+                      <input type="number" id="fuelAmountSpent" class="soft"/>
+                
+                    </div><!--panel-->
+                    <div class="panel">
+
+                      <button id="vesselFueledSubmit" data-dismiss="modal" class="btn btn-lg btn-danger button">Submit</button>
+
+                    </div><!--panel-->
+                    
+                </form><!--vessel-fueled-div-->
+              </div><!-- panel collapse -->
+        
+              <div class="collapse panel" id="vessel-watered-div">        
+                <form id="vessel-watered-form">
+
+                    <div class="panel">
+
+                      <h5>Fresh Water Tank Fill</h5>
+                      <label>Which water tank was filled?
+                        <select id="vessel-watered" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--panel-->
+
+                    <div class="panel">
+
+                      <button id="waterTankFilledSubmit" data-dismiss="modal" class="btn button btn-lg btn-danger">Submit</button>
+                
+                    </div><!--panel-->
+              </form>
+                                    </div><!--collapse-panel-->
+
+                    <div class="panel collapse" id="vessel-washed-div">
+                      <form id="vessel-washed-form">
+                      <h5>Vessel Wash</h5>
+                      <label>Which vessel was washed?
+                        <select id="vessel-washed" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+
+                    <div class="panel">
+
+                      <button id="vesselWashedSubmit" data-dismiss="modal" class="btn btn-danger btn-large button">Submit</button>
+                
+                    </div><!--panel-->
+                    
+                </form><!--vessel-washed-form-->
+              
+              </div><!--panel-->
+
+         
+
+
+               <div class="modal-footer">
+                  <button type="button" id="arrival-modal-button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+               <!-- modal footer -->
+            </div>
+            <!-- modal-body -->
+         </div>
+         <!-- modal-content -->
+      </div>
+      <!-- modal-dialog -->
+      </div>  <!-- modal -->
+      </div> <!--  Main Container -->
 
       <!-- Footer -->
       <div class="footer navbar-fixed-bottom navBer">
