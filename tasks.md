@@ -1,13 +1,12 @@
 # Harbor Master Tasks
 	
-- [ ]Log Out Buttons --Will
-   	- [ ]Integration of Gmail API to send --William *secondary task*
-- [ ]HTML Pages Fully Polished --Ruthie
-- [ ]Reposition Google Maps/Weather API -- Will
-- [ ]Manager Console - Reports Look a little off - submit.js creation needs tweaking --Ruthie & Jim
-- [ ]Bug Checking --All
+- [ ]Log Out Buttons 
+- [ ]Integration of Gmail API to send 
 
-
+- [X]HTML Pages Fully Polished --Ruthie
+- [X]Reposition Google Maps/Weather API -- Will
+- [X]Manager Console - Reports Look a little off - submit.js creation needs tweaking --Ruthie & Jim
+- [X]Bug Checking --All
 - [X]Fix Logic Issues in captain.html forms, submit.js --James/Ruthie
 - [X]Vessel Trip Submit, Trip Tracking, Select Active Trip to Checkout --James
 - [X]Creation of emailed report/Objects --JAmes 
