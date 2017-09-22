@@ -62,11 +62,12 @@
             <button class="btn-lg btn button btn-primary" id="show-modal-check-in">Vessel Check In (Start of Day)</button>
             <button class="btn-lg btn button btn-primary" id="show-modal-check-out">Vessel Check Out (End of Day)</button>
             <button class="btn-lg btn button btn-primary" id="show-modal-departure">Vessel Manifest - Departure</button>
-            <button class="btn-lg btn button btn-primary" id="show-arrival-div-captain">Vessel Manifest - Arrival</button>
+             <button class="btn-lg btn button btn-primary" data-toggle="collapse" data-target="#arrival-div-captain" id="show-arrival-div-captain">Vessel Manifest - Arrival</button>
             <button class="btn-lg btn button btn-primary" id="show-modal-daily-tasks">Vessel Daily Maintenence</button>
                         <div><h3 id="formMessage"></h3></div>
-               <div class="panel hide" id="arrival-div-captain">
-            
+
+               <div class="panel collapse" id="arrival-div-captain">
+<!--                 <div class="panel"> -->
                 <h2>Captain Active Trips</h2>
 
                 <hr/>
@@ -81,6 +82,9 @@
 
               </div>
                  </div><!-- divset1 well -->
+        
+    
+
          <div id="divSet2" class="well hide">
            
 
@@ -609,7 +613,7 @@
 
                     <div class="panel">
 
-                      <button id="tripArrivalSubmit" class="btn btn-lg btn-danger button" data-dismiss="modal">Submit</a>
+                      <button id="tripArrivalSubmit" class="btn btn-lg btn-danger button" data-dismiss="modal">Submit</button>
                 
                     </div><!--panel-->
                     
@@ -769,8 +773,7 @@
       </div>
       <!-- modal-dialog -->
       </div>  <!-- modal -->
-      </div> <!--  Main Container -->
-
+  
       <!-- Footer -->
       <div class="footer navbar-fixed-bottom navBer">
          <div class="row justify-content-center">
@@ -781,6 +784,7 @@
             </div>
          </div>
       </div>
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>

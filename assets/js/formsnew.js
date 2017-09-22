@@ -50,10 +50,10 @@ $("body").on("click",'#show-modal-departure',function(){
     $('#arrival-div').addClass("hide").removeClass("show")
 });
 
-$("body").on("click",'#show-arrival-div-captain',function(){
-    $('#arrival-div-captain').addClass("show").removeClass("hide");
-    //$('#arrival-modal').modal();
-});
+// $("body").on("click",'#show-arrival-div-captain',function(){
+//     $('#arrival-div-captain').addClass("show").removeClass("hide");
+//     //$('#arrival-modal').modal();
+// });
 
 $("body").on("click",'#show-modal-daily-tasks',function(){
     $('#daily-tasks-modal').modal();
