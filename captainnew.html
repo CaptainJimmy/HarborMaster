@@ -62,26 +62,61 @@
             <button class="btn-lg btn button btn-primary" id="show-modal-check-in">Vessel Check In (Start of Day)</button>
             <button class="btn-lg btn button btn-primary" id="show-modal-check-out">Vessel Check Out (End of Day)</button>
             <button class="btn-lg btn button btn-primary" id="show-modal-departure">Vessel Manifest - Departure</button>
-            <button class="btn-lg btn button btn-primary" id="show-arrival-div">Vessel Manifest - Arrival</button>
+            <button class="btn-lg btn button btn-primary" id="show-arrival-div-captain">Vessel Manifest - Arrival</button>
             <button class="btn-lg btn button btn-primary" id="show-modal-daily-tasks">Vessel Daily Maintenence</button>
                         <div><h3 id="formMessage"></h3></div>
-
-         </div><!-- divset1 well -->
-                       <div class="panel hide" id="arrival-div">
-        
-                <h2>Active Trips</h2>
+               <div class="panel hide" id="arrival-div-captain">
+            
+                <h2>Captain Active Trips</h2>
 
                 <hr/>
 
                 <p>Press the refresh button to get trips.</p>
 
-                <button class="btn btn-lg button btn-success" id="active-trips-refresh">Refresh</button>
+                <button class="btn btn-lg button btn-success" id="active-trips-refresh-captain">Refresh</button>
       
-                <div id="active-trips" class="reportInfo panel">
+                <div id="active-trips-captain" class="reportInfo panel">
 
                 </div>
 
-              </div><!--callout-->
+              </div>
+                 </div><!-- divset1 well -->
+         <div id="divSet2" class="well hide">
+           
+
+                <div class="panel managerDiv">
+                <h1>Harbor Master Manager Console</h1>
+              
+                <p> Select a button below for a current report.</p>
+              
+                <div class="button-group">
+                
+                  <button class="btn btn-warning btn-lg button" id="patriot-status">Patriot Vessel Status</button>
+                
+                  <button class="btn btn-warning btn-lg button" id="liberty-status">Liberty Vessel Status</button>
+              
+                </div>
+
+          <div class="panel managerDiv">
+        
+                <h2>Manager Active Trips. <br/> Press the Refresh Button to Get Trips: </h2>
+
+                <button class="btn btn-warning btn-lg button" id="active-trips-refresh-manager">Refresh</button>
+        
+                <div id="active-trips-manager" class="reportInfo"></div>
+
+          </div><!--panel-->
+    
+          <div class="panel managerDiv">
+
+                <h2>Report Info</h2>
+        
+                <div id="report-output"></div>
+
+          </div><!--panel-->
+        </div><!--divSet-->
+          
+
          <div id="check-in-modal" class="modal" role="dialog">
             <div class="modal-dialog modal-lg">
                <div class="modal-content">

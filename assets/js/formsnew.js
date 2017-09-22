@@ -50,8 +50,8 @@ $("body").on("click",'#show-modal-departure',function(){
     $('#arrival-div').addClass("hide").removeClass("show")
 });
 
-$("body").on("click",'#show-arrival-div',function(){
-    $('#arrival-div').addClass("show").removeClass("hide");
+$("body").on("click",'#show-arrival-div-captain',function(){
+    $('#arrival-div-captain').addClass("show").removeClass("hide");
     //$('#arrival-modal').modal();
 });
 

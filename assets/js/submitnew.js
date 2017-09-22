@@ -14,9 +14,11 @@ $(document).ready(function() {
 
     // function for refreshing the trips in the captain console
 
-    function tripRefresh() {
+    function tripRefresh(refreshLocation) {
+        console.log(refreshLocation);
+        var tripDiv=refreshLocation;
         database.ref('/activeTrips').once("value").then(function(snapshot) {
-            var tripDiv = $('#active-trips');
+        
             tripDiv.empty();
             tripDiv.html($('<tr>').addClass("reportInfo"));
             tripDiv.append(
@@ -447,15 +449,15 @@ $(document).ready(function() {
     //if rthere are active trips, push the data to #active-trips
 
 
-    $('#active-trips-refresh').on('click', function() {
-
-        tripRefresh();
+    $('#active-trips-refresh-captain').on('click', function() {
+        var refreshLocation=$('#active-trips-captain');
+        tripRefresh(refreshLocation);
 
     });
 
-    $('#active-trips-refresh2').on('click', function() {
-
-        tripRefresh();
+    $('#active-trips-refresh-manager').on('click', function() {
+        var refreshLocation=$('#active-trips-manager');
+        tripRefresh(refreshLocation);
 
     });
     //submit new manifest
