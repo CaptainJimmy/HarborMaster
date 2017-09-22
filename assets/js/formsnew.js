@@ -7,12 +7,14 @@ $('#iAmCaptain, #iAmManager').click(function () {
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet1").removeClass("hide").addClass("show");
       $("#bar").removeClass("hide").addClass("show");
+      $('#arrival-div').addClass("hide").removeClass("show")
    }
    else if (this.id == "iAmManager") {
    	  $("#navMenu").removeClass("hide").addClass("show");
    	  $("#roleCall").removeClass("show").addClass("hide");
       $("#divSet2").removeClass("hide").addClass("show");
       $("#bar").removeClass("hide").addClass("show");
+      $('#arrival-div').addClass("hide").removeClass("show")
    }
 });
 
@@ -22,18 +24,42 @@ $('#captainRole, #managerRole').click(function () {
       $("#li2").removeClass("active");
       $("#divSet1").addClass("show").removeClass("hide");
       $("#divSet2").removeClass("show").addClass("hide");
+      $('#arrival-div').addClass("hide").removeClass("show")
    }
      else if (this.id == "managerRole") {
       $("#li1").removeClass("active");
       $("#li2").addClass("active");
       $("#divSet1").removeClass("show").addClass("hide");
       $("#divSet2").addClass("show").removeClass("hide");
+      $('#arrival-div').addClass("hide").removeClass("show")
    }
 });
 
 $("body").on("click",'#show-modal-check-in',function(){
     $('#check-in-modal').modal();
+      $('#arrival-div').addClass("hide").removeClass("show");
 });
+
+$("body").on("click",'#show-modal-check-out',function(){
+    $('#check-out-modal').modal();
+    $('#arrival-div').addClass("hide").removeClass("show")
+});
+
+$("body").on("click",'#show-modal-departure',function(){
+    $('#departure-modal').modal();
+    $('#arrival-div').addClass("hide").removeClass("show")
+});
+
+$("body").on("click",'#show-arrival-div',function(){
+    $('#arrival-div').addClass("show").removeClass("hide");
+    //$('#arrival-modal').modal();
+});
+
+$("body").on("click",'#show-modal-daily-tasks',function(){
+    $('#daily-tasks-modal').modal();
+    $('#arrival-div').addClass("hide").removeClass("show")
+});
+
 
 //Captain Check In Form
 $("body").on("change", function() {
